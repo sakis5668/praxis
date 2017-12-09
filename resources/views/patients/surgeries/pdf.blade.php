@@ -27,7 +27,7 @@
         <td>{{ $patient->birth_date ? $patient->birth_date->format('d.m.Y') : 'no date' }}</td>
     </tr>
     <tr>
-        <td><strong>OP-Datum :</strong></td>
+        <td><strong>OP-Date :</strong></td>
         <td>{{ $surgery->date ? $surgery->date->format('d.m.Y') : 'no date'}}</td>
     </tr>
     </tbody>
