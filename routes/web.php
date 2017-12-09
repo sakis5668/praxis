@@ -11,6 +11,9 @@ Route::get('/admin', 'AdminController@index')->name('admin.index');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@welcome');
 
+Route::get('/utils/ssw', 'SSWCalculatorController@inputData')->name('ssw.input');
+Route::post('/utils/ssw', 'SSWCalculatorController@calculateResult')->name('ssw.output');
+
 Route::resource('/patients', 'PatientsController');
 Route::resource('/admin/users', 'AdminUsersController');
 

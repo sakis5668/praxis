@@ -49,6 +49,17 @@
                                    class="dropdown-item">{{__('msg_layouts_app.create.new.patient')}}</a>
                             </div>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownLeft"
+                               data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                {{__('msg_layouts_app.utils') }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownLeft">
+                                <a href="{{ route('ssw.input') }}"
+                                   class="dropdown-item">{{__('msg_layouts_app.utils.pregnancy.calculator')}}</a>
+                            </div>
+                        </li>
                     @endif
                 </ul>
             </div>
