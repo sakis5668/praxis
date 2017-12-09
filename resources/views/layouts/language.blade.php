@@ -1,0 +1,1 @@
+{{ App::setLocale(Auth::user()->language->language) }}
