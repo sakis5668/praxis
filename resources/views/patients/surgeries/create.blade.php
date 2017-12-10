@@ -53,6 +53,7 @@
                         <div class="row mt-2">
                             {!! Form::button('<i class="fa fa-check fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-primary form-control col-md-2 ml-auto']) !!}
                         </div>
+                        {{ Form::close() }}
 
                     </div>
 

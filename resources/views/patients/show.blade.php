@@ -5,6 +5,8 @@
     @include('layouts.language')
 
     <div class="container">
+
+        {{-- SHOW PATIENT DATA --}}
         <div class="row my-3">
             <div class="col-md-12">
 
@@ -18,7 +20,8 @@
                             <div class="col-md-2">
                                 <form method="get" action="{{ route('patients.edit', $patient->id) }}"
                                       class="form-inline">
-                                    <button type="submit" class="btn btn-light col-md-12"><i class="fa fa-pencil fa-lg"></i></button>
+                                    <button type="submit" class="btn btn-light col-md-12"><i
+                                                class="fa fa-pencil fa-lg"></i></button>
                                 </form>
                             </div>
                         </div>
@@ -84,58 +87,132 @@
 
                         <div class="row">
 
+                            {{-- Medical History--}}
                             <div class="col-md-3 py-1">
                                 <form method="get" action="{{ route('history.show', [$patient, $patient->history]) }}"
                                       class="form-inline">
-                                    <button type="submit" class="btn btn-cool col-md-12">{{__('patients-show-view.medical.history.button')}}</button>
+                                    <button type="submit"
+                                            class="btn btn-cool col-md-12">{{__('patients-show-view.medical.history.button')}}</button>
                                 </form>
                             </div>
 
+                            {{-- examinations --}}
                             <div class="col-md-3 py-1">
-                                <form method="get" action="{{ route('examinations.index', $patient) }}" class="form-inline">
-                                    <button type="submit" class="btn btn-cool col-md-12">{{__('patients-show-view.examinations.button')}}</button>
-                                </form>
-                            </div>
-
-                            <div class="col-md-3 py-1">
-                                <form method="get" action="{{ route('cytologies.index', $patient) }}" class="form-inline">
-                                    <button type="submit" class="btn btn-cool col-md-12">{{__('patients-show-view.cytologies.button')}}</button>
-                                </form>
-                            </div>
-
-                            <div class="col-md-3 py-1">
-                                <form method="get" action="{{ route('histologies.index', $patient) }}"
+                                <form method="get" action="{{ route('examinations.index', $patient) }}"
                                       class="form-inline">
-                                    <button type="submit" class="btn btn-cool col-md-12">{{__('patients-show-view.histologies.button')}}</button>
+                                    <button type="submit"
+                                            class="btn btn-cool col-md-12">{{__('patients-show-view.examinations.button')}}</button>
                                 </form>
                             </div>
-                        </div>
-                        <div class="row">
 
+                            {{-- Pregnacies--}}
                             <div class="col-md-3 py-1">
-                                <form method="get" action="{{ route('laboratory_examinations.index', $patient) }}"
+                                <form method="get" action="{{ route('pregnancies.index', $patient) }}"
                                       class="form-inline">
-                                    <button type="submit" class="btn btn-cool col-md-12">{{__('patients-show-view.laboratory.button')}}</button>
+                                    <button type="submit"
+                                            class="btn btn-cool col-md-12">{{__('patients-show-view.pregnancies.button')}}</button>
                                 </form>
                             </div>
 
-                            <div class="col-md-3 py-1">
-                                <form method="get" action="{{ route('imaging_results.index', $patient) }}"
-                                      class="form-inline">
-                                    <button type="submit" class="btn btn-cool col-md-12">{{__('patients-show-view.imaging.button')}}</button>
-                                </form>
-                            </div>
-
+                            {{-- Surgery--}}
                             <div class="col-md-3 py-1">
                                 <form method="get" action="{{ route('surgeries.index', $patient) }}"
                                       class="form-inline">
-                                    <button type="submit" class="btn btn-cool col-md-12">{{__('patients-show-view.surgery.button')}}</button>
+                                    <button type="submit"
+                                            class="btn btn-cool col-md-12">{{__('patients-show-view.surgery.button')}}</button>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            {{-- Cytology--}}
+                            <div class="col-md-3 py-1">
+                                <form method="get" action="{{ route('cytologies.index', $patient) }}"
+                                      class="form-inline">
+                                    <button type="submit"
+                                            class="btn btn-cool col-md-12">{{__('patients-show-view.cytologies.button')}}</button>
+                                </form>
+                            </div>
+
+                            {{-- Histology --}}
+                            <div class="col-md-3 py-1">
+                                <form method="get" action="{{ route('histologies.index', $patient) }}"
+                                      class="form-inline">
+                                    <button type="submit"
+                                            class="btn btn-cool col-md-12">{{__('patients-show-view.histologies.button')}}</button>
+                                </form>
+                            </div>
+
+                            {{-- Laboratory --}}
+                            <div class="col-md-3 py-1">
+                                <form method="get" action="{{ route('laboratory_examinations.index', $patient) }}"
+                                      class="form-inline">
+                                    <button type="submit"
+                                            class="btn btn-cool col-md-12">{{__('patients-show-view.laboratory.button')}}</button>
+                                </form>
+                            </div>
+
+                            {{-- Imaging --}}
+                            <div class="col-md-3 py-1">
+                                <form method="get" action="{{ route('imaging_results.index', $patient) }}"
+                                      class="form-inline">
+                                    <button type="submit"
+                                            class="btn btn-cool col-md-12">{{__('patients-show-view.imaging.button')}}</button>
                                 </form>
                             </div>
 
                         </div>
 
                     </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        {{-- PREGNANCY --}}
+        <div class="row my3">
+            <div class="col-md-12">
+
+                <div class="card">
+
+                    <div class="card-header lead font-weight-bold">
+                        <div class="row">
+                            <div class="col-md-12">
+                                Pregnancy
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-3 py-1">
+                                <form method="get" action="" class="form-inline">
+                                    <button type="submit" class="btn btn-cool col-md-12">History</button>
+                                </form>
+                            </div>
+                            <div class="col-md-3 py-1">
+                                <form method="get" action="" class="form-inline">
+                                    <button type="submit" class="btn btn-cool col-md-12">Examinations</button>
+                                </form>
+                            </div>
+                            <div class="col-md-3 py-1">
+                                <form method="get" action="" class="form-inline">
+                                    <button type="submit" class="btn btn-cool col-md-12">Prenatal</button>
+                                </form>
+                            </div>
+                            <div class="col-md-3 py-1">
+                                <form method="get" action="" class="form-inline">
+                                    <button type="submit" class="btn btn-cool col-md-12">Outcome</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
 
                 </div>
 

@@ -49,6 +49,11 @@ class Patient extends Model
         return $this->hasMany(Surgery::class);
     }
 
+    public function pregnancies()
+    {
+        return $this->hasMany(Pregnancy::class);
+    }
+
 
     public function getPatientPath()
 {

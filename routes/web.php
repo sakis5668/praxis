@@ -18,6 +18,7 @@ Route::resource('/patients', 'PatientsController');
 Route::resource('/admin/users', 'AdminUsersController');
 
 Route::prefix('patients')->group(function () {
+    Route::resource('{patient}/pregnancies', 'PregnanciesController');
     Route::resource('{patient}/examinations', 'ExaminationsController');
     Route::resource('{patient}/history', 'HistoriesController');
     Route::resource('{patient}/cytologies', 'CytologiesController');
@@ -28,5 +29,8 @@ Route::prefix('patients')->group(function () {
     Route::get('{patient}/surgeries/{surgery}/pdf', 'SurgeryPDFController@pdf')->name('surgeries.pdf');
 });
 
+Route::prefix('pregnancies')->group(function (){
+    Route::resource('{pregnancy}/history','PregnancyHistoryController')->names('pregnancy.history');
+});
 
 

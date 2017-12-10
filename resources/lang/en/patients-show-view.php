@@ -23,4 +23,5 @@ return [
     'laboratory.button'      => 'Laboratory',
     'imaging.button'         => 'Imaging',
     'surgery.button'         => 'Surgery',
+    'pregnancies.button'     => 'Pregnancies',
 ];
