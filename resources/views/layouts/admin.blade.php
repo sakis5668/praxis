@@ -95,5 +95,6 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="https://use.fontawesome.com/4e3ff56bb8.js"></script>
 </body>
 </html>

@@ -2,23 +2,23 @@
 
 @section('content')
 
-   @include('layouts.language')
+    @include('layouts.language')
 
     <div class="container">
         <div class="row mt-5">
-            <div class="col-md-4 offset-4">
+            <div class="col-md-4 offset-md-4">
 
                 <div class="card">
 
                     <div class="card-header lead text-center">
-                        <p>Calculate Pregnacy Age</p>
+                        Calculate Pregnacy Age
                     </div>
 
                     <div class="card-body">
                         {!! Form::open(['method'=>'post', 'action'=>'SSWCalculatorController@calculateResult']) !!}
                         <div class="row my-2 mx-1">
-                                {!! Form::label('lp', 'LP :', ['class'=>'col-md-4']) !!}
-                                {!! Form::text('lp', null, ['class'=>'form-control col-md-8 ml-auto']) !!}
+                            {!! Form::label('lp', 'LP :', ['class'=>'col-md-4']) !!}
+                            {!! Form::text('lp', null, ['class'=>'form-control col-md-8 ml-auto']) !!}
                         </div>
                         <div class="row my-2 mx-1">
                             {!! Form::label('et', 'ET :', ['class'=> 'col-md-4']) !!}
@@ -36,5 +36,11 @@
             </div>
         </div>
     </div>
+
+@endsection
+
+@section('scripts')
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.4/moment.min.js"></script>
 
 @endsection
