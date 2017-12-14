@@ -30,7 +30,7 @@
                             {!! Form::model($pregnancy, ['method'=>'patch', 'action'=>['PregnanciesController@update', $patient, $pregnancy]]) !!}
                             <div class="row mt-2">
                                 {!! Form::label('lmp', 'LMP :', ['class'=>'col-md-6']) !!}
-                                {!! Form::text('lmp', $pregnancy->lmp ? $pregnancy->lmp->format('d.m.Y'):'' , ['class'=> 'form-control col-md-6']) !!}
+                                {!! Form::text('lmp', $pregnancy->lmp ? $pregnancy->lmp->format('d.m.Y'):'' , ['class'=> 'form-control col-md-6', 'onblur'=>'return calculateET()']) !!}
                             </div>
                             <div class="row mt-2">
                                 {!! Form::label('edd', 'EDD :', ['class'=>'col-md-6']) !!}
@@ -77,6 +77,18 @@
                 return true;
             else
                 return false;
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.4/moment.min.js"></script>
+
+    <script>
+        function calculateET(){
+            var lmp = document.getElementById('lmp').value;
+            var lmpDate = moment(lmp, 'D.M.YYYY').format('DD.MM.YYYY');
+            var etDate = moment(lmp, 'D.M.YYYY').add(280, 'days').format('DD.MM.YYYY');
+            document.getElementById('lmp').value = lmpDate;
+            document.getElementById('edd').value = etDate;
         }
     </script>
 @endsection

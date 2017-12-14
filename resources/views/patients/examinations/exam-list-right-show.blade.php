@@ -6,7 +6,7 @@
                 {{__('examinations.findings.label')}} - {{ $examination->date->format('d.m.Y') }}
             </div>
             <div class="col-md-2 ml-auto">
-                {!! Form::model($examination, ['method'=>'get', 'action'=>['ExaminationsController@edit', $patient, $examination], 'onsubmit' => 'return ConfirmDelete()']) !!}
+                {!! Form::model($examination, ['method'=>'get', 'action'=>['ExaminationsController@edit', $patient, $examination]]) !!}
                 {!! Form::button('<i class="fa fa-pencil fa-lg" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-light col-md-12']) !!}
                 {!! Form::close() !!}
             </div>

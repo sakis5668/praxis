@@ -30,8 +30,9 @@ Route::prefix('patients')->group(function () {
     Route::get('{patient}/surgeries/{surgery}/pdf', 'SurgeryPDFController@pdf')->name('surgeries.pdf');
 });
 
-Route::prefix('pregnancies')->group(function (){
-    Route::resource('{pregnancy}/history','PregnancyHistoryController')->names('pregnancy.history');
+Route::prefix('pregnancies/{pregnancy}')->group(function (){
+    Route::resource('history','PregnancyHistoryController')->names('pregnancy.history');
+    Route::resource('examinations', 'PregnancyExaminationsController')->names('pregnancy.examinations');
 });
 
 

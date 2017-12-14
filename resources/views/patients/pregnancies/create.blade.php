@@ -25,7 +25,7 @@
                             {!! Form::open(['method'=>'post', 'action'=>['PregnanciesController@store', $patient]]) !!}
                             <div class="row mt-2">
                                 {!! Form::label('lmp', 'LMP :', ['class'=>'col-md-6']) !!}
-                                {!! Form::text('lmp', null, ['class'=> 'form-control col-md-6']) !!}
+                                {!! Form::text('lmp', null, ['class'=> 'form-control col-md-6', 'onblur'=>'return calculateET()']) !!}
                             </div>
                             <div class="row mt-2">
                                 {!! Form::label('edd', 'EDD :', ['class'=>'col-md-6']) !!}
@@ -65,5 +65,17 @@
 @endsection
 
 @section('scripts')
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.4/moment.min.js"></script>
+
+    <script>
+        function calculateET(){
+            var lmp = document.getElementById('lmp').value;
+            var lmpDate = moment(lmp, 'D.M.YYYY').format('DD.MM.YYYY');
+            var etDate = moment(lmp, 'D.M.YYYY').add(280, 'days').format('DD.MM.YYYY');
+            document.getElementById('lmp').value = lmpDate;
+            document.getElementById('edd').value = etDate;
+        }
+    </script>
 
 @endsection

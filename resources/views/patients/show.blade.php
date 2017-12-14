@@ -171,54 +171,6 @@
             </div>
         </div>
 
-
-        {{-- PREGNANCY --}}
-        <div class="row my3">
-            <div class="col-md-12">
-
-                <div class="card">
-
-                    <div class="card-header lead font-weight-bold">
-                        <div class="row">
-                            <div class="col-md-12">
-                                Pregnancy
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card-body">
-
-                        <div class="row">
-                            <div class="col-md-3 py-1">
-                                <form method="get" action="" class="form-inline">
-                                    <button type="submit" class="btn btn-cool col-md-12">History</button>
-                                </form>
-                            </div>
-                            <div class="col-md-3 py-1">
-                                <form method="get" action="" class="form-inline">
-                                    <button type="submit" class="btn btn-cool col-md-12">Examinations</button>
-                                </form>
-                            </div>
-                            <div class="col-md-3 py-1">
-                                <form method="get" action="" class="form-inline">
-                                    <button type="submit" class="btn btn-cool col-md-12">Prenatal</button>
-                                </form>
-                            </div>
-                            <div class="col-md-3 py-1">
-                                <form method="get" action="" class="form-inline">
-                                    <button type="submit" class="btn btn-cool col-md-12">Outcome</button>
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-        </div>
-
     </div>
 
 @endsection
