@@ -28,4 +28,9 @@ class Pregnancy extends Model
     {
         return $this->hasMany(PregnancyExamination::class);
     }
+
+    public function prenatals()
+    {
+        return $this->hasMany(PregnancyPrenatal::class);
+    }
 }

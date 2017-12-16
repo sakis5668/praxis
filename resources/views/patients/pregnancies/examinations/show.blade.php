@@ -53,7 +53,7 @@
                                 Findings :
                             </div>
                             <div class="col-md-10">
-                                {{ $examination->findings }}
+                                <p align="justify">{!! nl2br(e($examination->findings)) !!}</p>
                             </div>
                         </div>
                     </div>

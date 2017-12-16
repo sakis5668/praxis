@@ -33,6 +33,7 @@ Route::prefix('patients')->group(function () {
 Route::prefix('pregnancies/{pregnancy}')->group(function (){
     Route::resource('history','PregnancyHistoryController')->names('pregnancy.history');
     Route::resource('examinations', 'PregnancyExaminationsController')->names('pregnancy.examinations');
+    Route::resource('prenatals', 'PregnancyPrenatalsController')->names('pregnancy.prenatals');
 });
 
 
