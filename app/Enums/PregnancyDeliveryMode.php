@@ -4,34 +4,34 @@ namespace App\Enums;
 
 use BenSampo\Enum\Enum;
 
-final class PregnancyTerminationType extends Enum
+final class PregnancyDeliveryMode extends Enum
 {
-    const active = 1;
-    const delivered = 2;
-    const aborted = 3;
+    const spontaneous = 1;
+    const forceps = 2;
+    const vacuum = 3;
+    const section = 4;
 
-    /**
-     * Get the description for an enum value
-     *
-     * @param  int $value
-     * @return string
-     */
+
     public static function getDescription(int $value): string
     {
         switch ($value) {
-            case self::active:
-                return __('selectlist.pregnancy.termination.type.active');
+            case self::spontaneous:
+                return 'Spontaneous Delivery';
+            break;
+            case self::forceps:
+                return 'Forceps Extraction';
                 break;
-            case self::delivered:
-                return __('selectlist.pregnancy.termination.type.delivered');
+            case self::vacuum:
+                return 'Vacuum Extraction';
                 break;
-            case self::aborted:
-                return __('selectlist.pregnancy.termination.type.aborted');
+            case self::section:
+                return 'Caesarean Section';
                 break;
             default:
                 return self::getKey($value);
         }
     }
+
 
     public static function getDescriptions()
     {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Patient;
 use App\Pregnancy;
 use App\PregnancyHistory;
+use App\PregnancyOutcome;
 use App\PregnancyTerminationType;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -57,6 +58,11 @@ class PregnanciesController extends Controller
             $pregnancyHistory = new PregnancyHistory();
             $pregnancyHistory->pregnancy_id = $pregnancy->id;
             $pregnancyHistory->save();
+        }
+        if (!$pregnancy->outcome){
+            $outcome = new PregnancyOutcome();
+            $outcome->pregnancy_id=$pregnancy->id;
+            $outcome->save();
         }
         return redirect()->action('PregnanciesController@index', $patient);
     }

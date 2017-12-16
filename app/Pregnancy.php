@@ -33,4 +33,9 @@ class Pregnancy extends Model
     {
         return $this->hasMany(PregnancyPrenatal::class);
     }
+
+    public function outcome()
+    {
+        return $this->hasOne(PregnancyOutcome::class);
+    }
 }

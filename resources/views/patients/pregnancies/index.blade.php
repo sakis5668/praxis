@@ -27,7 +27,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-hover">
+                            <table class="table">
                                 <thead class="thead-light">
                                 <tr>
                                     <th scope="col">ID</th>

@@ -6,15 +6,15 @@ use BenSampo\Enum\Enum;
 
 final class PregnancyPrenatalType extends Enum
 {
-    const CVS = 0;
-    const Amniocentesis = 1;
-    const NIPT = 2;
-    const NuchalTranslucency = 3;
-    const FirstTrimesterScan = 4;
-    const SecondTrimesterScan = 5;
-    const ThirdTrimesterScan = 6;
-    const DopplerSonography = 7;
-    const RoutineScan = 8;
+    const CVS = 1;
+    const Amniocentesis = 2;
+    const NIPT = 3;
+    const NuchalTranslucency = 4;
+    const FirstTrimesterScan = 5;
+    const SecondTrimesterScan = 6;
+    const ThirdTrimesterScan = 7;
+    const DopplerSonography = 8;
+    const RoutineScan = 9;
 
 
     public static function getDescription(int $value): string

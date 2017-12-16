@@ -34,6 +34,7 @@ Route::prefix('pregnancies/{pregnancy}')->group(function (){
     Route::resource('history','PregnancyHistoryController')->names('pregnancy.history');
     Route::resource('examinations', 'PregnancyExaminationsController')->names('pregnancy.examinations');
     Route::resource('prenatals', 'PregnancyPrenatalsController')->names('pregnancy.prenatals');
+    Route::resource('outcome', 'PregnancyOutcomesController')->names('pregnancy.outcome');
 });
 
 

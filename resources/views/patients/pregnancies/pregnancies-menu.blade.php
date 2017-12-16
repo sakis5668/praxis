@@ -37,7 +37,7 @@
                             </form>
                         </div>
                         <div class="col-md-3 py-1">
-                            <form method="get" action="" class="form-inline">
+                            <form method="get" action="{{ route('pregnancy.outcome.show', [$pregnancy, $pregnancy->outcome]) }}" class="form-inline">
                                 <button type="submit" class="btn btn-cool col-md-12">Outcome</button>
                             </form>
                         </div>
