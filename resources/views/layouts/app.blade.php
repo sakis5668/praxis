@@ -56,9 +56,9 @@
                                 {{__('msg_layouts_app.utils') }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownLeft">
-                                <a href="{{ route('ssw.input') }}"
+                                <a href="{{ route('wks.calculate') }}"
                                    class="dropdown-item">{{__('msg_layouts_app.utils.pregnancy.calculator')}}</a>
-                                <a href="{{ route('bmi.calcucate') }}"
+                                <a href="{{ route('bmi.calculate') }}"
                                     class="dropdown-item">Calculate BMI</a>
                             </div>
                         </li>

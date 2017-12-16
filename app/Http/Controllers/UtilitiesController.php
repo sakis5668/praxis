@@ -10,4 +10,9 @@ class UtilitiesController extends Controller
     {
         return view('utils.bmi.calculate');
     }
+
+    public function calculateWeeks()
+    {
+        return view('utils.wks.calculate');
+    }
 }

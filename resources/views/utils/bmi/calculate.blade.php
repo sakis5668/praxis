@@ -5,9 +5,10 @@
     @include('layouts.language')
 
     <div class="container">
+
+        {{--The calculation card--}}
         <div class="row mt-5">
             <div class="col-md-4 offset-md-4">
-
                 <div class="card">
 
                     <div class="card-header lead text-center">
@@ -37,7 +38,12 @@
                     </div>
 
                 </div>
+            </div>
+        </div>
 
+        {{--The results card--}}
+        <div class="row mt-3">
+            <div class="col-md-4 offset-md-4">
                 <div class="card">
 
                     <div class="card-header lead text-center">
@@ -64,7 +70,6 @@
                     </div>
 
                 </div>
-
             </div>
         </div>
     </div>
@@ -81,7 +86,7 @@
             var h = height / 100;
             var h2 = h * h;
             var bmi = weight / h2;
-            document.getElementById('bmi').value=bmi.toFixed(1);
+            document.getElementById('bmi').value = bmi.toFixed(1);
         }
     </script>
 
