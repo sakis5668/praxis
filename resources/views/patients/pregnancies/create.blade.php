@@ -29,7 +29,7 @@
                             </div>
                             <div class="row mt-2">
                                 {!! Form::label('edd', 'EDD :', ['class'=>'col-md-6']) !!}
-                                {!! Form::text('edd', null, ['class'=> 'form-control col-md-6']) !!}
+                                {!! Form::text('edd', null, ['class'=> 'form-control col-md-6', 'onblur'=>'return setCorrET()']) !!}
                             </div>
                             <div class="row mt-2">
                                 {!! Form::label('corrected_edd', 'EDD corr. :', ['class'=>'col-md-6']) !!}
@@ -37,8 +37,9 @@
                             </div>
                             <hr>
                             <div class="row mt-2">
-                                {!! Form::label('pregnancy_termination_type_id', 'Termination Type :', ['class'=>'col-md-6']) !!}
-                                {!! Form::select('pregnancy_termination_type_id', [''=> 'Select']+ $pregnancyTerminationTypes, ['class'=>'form-control col-md-6']) !!}
+                                {!! Form::label('pregnancy_termination_type', 'Termination Type :', ['class'=>'col-md-6']) !!}
+                                {{--{!! Form::select('pregnancy_termination_type', [''=> 'Select']+ \App\Enums\PregnancyTerminationType::getKeys(), ['class'=>'form-control col-md-6']) !!}--}}
+                                {!! Form::select('pregnancy_termination_type', [''=> 'Select']+ \App\Enums\PregnancyTerminationType::getDescriptions(), ['class'=>'form-control col-md-6']) !!}
 
                             </div>
                             <div class="row mt-2">
@@ -75,6 +76,14 @@
             var etDate = moment(lmp, 'D.M.YYYY').add(280, 'days').format('DD.MM.YYYY');
             document.getElementById('lmp').value = lmpDate;
             document.getElementById('edd').value = etDate;
+        }
+    </script>
+
+    <script>
+        function setCorrET(){
+            var edd = document.getElementById('edd').value;
+            var eddDate = moment(edd, 'D.M.YYYY').format('DD.MM.YYYY');
+            document.getElementById('corrected_edd').value = eddDate;
         }
     </script>
 

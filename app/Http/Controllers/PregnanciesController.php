@@ -25,13 +25,13 @@ class PregnanciesController extends Controller
 
     public function create(Patient $patient)
     {
-        $pregnancyTerminationTypes = PregnancyTerminationType::pluck('type', 'id')->all();
-        return view('patients.pregnancies.create', compact('patient', 'pregnancyTerminationTypes'));
+        return view('patients.pregnancies.create', compact('patient'));
     }
 
 
     public function store(Request $request, Patient $patient)
     {
+        $input = $request->all();
         $input['patient_id'] = $patient->id;
         if ($request['lmp']) {
             $input['lmp'] = Carbon::createFromFormat('d.m.Y', $request['lmp']);
@@ -48,9 +48,7 @@ class PregnanciesController extends Controller
         } else {
             $input['corrected_edd'] = null;
         }
-        if ($request['pregnancy_termination_type_id']) {
-            $input['pregnancy_termination_type_id'] = $request['pregnancy_termination_type_id'];
-        }
+
         if ($request['finished']) {
             $input['finished'] = true;
         }
@@ -72,8 +70,7 @@ class PregnanciesController extends Controller
 
     public function edit(Patient $patient, Pregnancy $pregnancy)
     {
-        $pregnancyTerminationTypes = PregnancyTerminationType::pluck('type', 'id')->all();
-        return view('patients.pregnancies.edit', compact('patient', 'pregnancy', 'pregnancyTerminationTypes'));
+        return view('patients.pregnancies.edit', compact('patient', 'pregnancy'));
     }
 
 

@@ -8,7 +8,7 @@ class Pregnancy extends Model
 {
     protected $fillable = [
         'patient_id', 'lmp', 'edd',
-        'corrected_edd', 'pregnancy_termination_type_id', 'finished'
+        'corrected_edd', 'pregnancy_termination_type', 'finished'
     ];
 
     protected $dates = ['lmp', 'edd', 'corrected_edd'];
@@ -17,11 +17,6 @@ class Pregnancy extends Model
     public function patient()
     {
         return $this->belongsTo(Patient::class);
-    }
-
-    public function pregnancyTerminationType()
-    {
-        return $this->belongsTo(PregnancyTerminationType::class);
     }
 
     public function pregnancyHistory()

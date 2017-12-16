@@ -16,7 +16,7 @@ class CreatePregnanciesTable extends Migration
         Schema::create('pregnancies', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('patient_id')->unsigned()->nullable();
-            $table->integer('pregnancy_termination_type_id')->unsigned()->nullable()->default(1);
+            $table->integer('pregnancy_termination_type')->nullable();
             $table->date('lmp')->nullable();
             $table->date('edd')->nullable();
             $table->date('corrected_edd')->nullable();

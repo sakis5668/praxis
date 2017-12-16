@@ -43,17 +43,21 @@
                                 @foreach($patient->pregnancies as $pregnancy)
                                     <tr>
                                         <th scope="row">{{ $pregnancy->id }}</th>
-                                        <td><a href="{{ route ('pregnancies.show', [$patient,$pregnancy]) }}">{{ $pregnancy->lmp ? $pregnancy->lmp->format('d.m.Y') : 'no date' }}</a></td>
-                                        <td><a href="{{ route ('pregnancies.show', [$patient,$pregnancy]) }}">{{ $pregnancy->edd ? $pregnancy->edd->format('d.m.Y') : 'no date'}}</a></td>
-                                        <td><a href="{{ route ('pregnancies.show', [$patient,$pregnancy]) }}">{{ $pregnancy->corrected_edd ? $pregnancy->corrected_edd->format('d.m.Y') : 'no date'}}</a></td>
-                                        <td>{{ $pregnancy->pregnancyTerminationType->type }}</td>
+                                        <td>
+                                            <a href="{{ route ('pregnancies.show', [$patient,$pregnancy]) }}">{{ $pregnancy->lmp ? $pregnancy->lmp->format('d.m.Y') : 'no date' }}</a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route ('pregnancies.show', [$patient,$pregnancy]) }}">{{ $pregnancy->edd ? $pregnancy->edd->format('d.m.Y') : 'no date'}}</a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route ('pregnancies.show', [$patient,$pregnancy]) }}">{{ $pregnancy->corrected_edd ? $pregnancy->corrected_edd->format('d.m.Y') : 'no date'}}</a>
+                                        </td>
+                                        <td>{{ \App\Enums\PregnancyTerminationType::getDescription($pregnancy->pregnancy_termination_type) }}</td>
                                         <td>{{ $pregnancy->finished ? 'Yes' : 'No'}}</td>
                                         <td>
-                                            {{--@if(! $pregnancy->finished)--}}
-                                                {!! Form::open(['method'=>'get', 'action'=>['PregnanciesController@edit', $patient, $pregnancy]]) !!}
-                                                {!! Form::button('<i class="fa fa-pencil fa-lg"></i>',['type'=>'submit', 'class' => 'btn btn-light col-md-12']) !!}
-                                                {!! Form::close() !!}
-                                            {{--@endif--}}
+                                            {!! Form::open(['method'=>'get', 'action'=>['PregnanciesController@edit', $patient, $pregnancy]]) !!}
+                                            {!! Form::button('<i class="fa fa-pencil fa-lg"></i>',['type'=>'submit', 'class' => 'btn btn-light col-md-12']) !!}
+                                            {!! Form::close() !!}
                                         </td>
                                     </tr>
                                 @endforeach
