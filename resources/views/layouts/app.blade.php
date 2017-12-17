@@ -13,7 +13,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('styles')
-
 </head>
 
 <body>
@@ -59,7 +58,7 @@
                                 <a href="{{ route('wks.calculate') }}"
                                    class="dropdown-item">{{__('msg_layouts_app.utils.pregnancy.calculator')}}</a>
                                 <a href="{{ route('bmi.calculate') }}"
-                                    class="dropdown-item">Calculate BMI</a>
+                                   class="dropdown-item">Calculate BMI</a>
                             </div>
                         </li>
                     @endif
@@ -115,5 +114,6 @@
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="https://use.fontawesome.com/4e3ff56bb8.js"></script>
+
 </body>
 </html>

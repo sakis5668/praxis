@@ -13,7 +13,7 @@
                     <div class="card-header lead font-weight-bold">
                         <div class="row">
                             <div class="col-md-10">
-                                {{ $history->patient->last_name . ', ' . $history->patient->first_name . ' - Medical History'}}
+                                {{ $history->patient->last_name . ', ' . $history->patient->first_name . ' - ' . __('history.medical.history.label')}}
                             </div>
                             <div class="col-md-2 ml-auto">
                                 {!! Form::open(['method' => 'delete', 'action' => ['HistoriesController@destroy', $patient, $history], 'onsubmit' => 'return ConfirmDelete()']) !!}
@@ -33,8 +33,6 @@
                         <div class="col-md-12">
                             <div class="row mt-3">
                                 {!! Form::button('<i class="fa fa-check fa-lg" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-light col-md-2 ml-auto']) !!}
-
-                                {{--{!! Form::submit(__('patients-history-edit-view.save.button'), ['class' => 'btn btn-primary col-md-2 ml-auto']) !!}--}}
                             </div>
                         </div>
                         {!! Form::close() !!}

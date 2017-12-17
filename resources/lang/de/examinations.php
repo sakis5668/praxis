@@ -7,14 +7,11 @@
  */
 
 return [
-    'examinations'       => 'Examinations',
-    //'new.button'         => 'New',
+    'examinations'       => 'Untersuchungen',
     'id.label'           => 'ID',
-    'date.label'         => 'Date',
-    'no.date.label'      => 'no date',
-    'new.findings.label' => 'New Findings',
-    //'save.button'        => 'Save',
-    'findings.label'     => 'Findings',
-    //'delete.button'      => 'Delete',
-    //'edit.button'        => 'Edit'
+    'date.label'         => 'Datum',
+    'no.date.label'      => 'kein Datum',
+    'new.findings.label' => 'Neue Befunde',
+    'findings.label'     => 'Befunde',
+    'instructions.label' => 'Empfehlungen',
 ];

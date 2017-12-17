@@ -2,8 +2,13 @@
 
     <div class="card-header font-weight-bold">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-6">
                 {{__('examinations.examinations')}}
+            </div>
+            <div class="col-md-3">
+                {!! Form::open(['method'=>'get', 'action'=>['ExaminationsPDFController@pdfOverview', $patient]]) !!}
+                {!! Form::button('<i class="fa fa-file-pdf-o fa-lg"></i>', ['type'=>'submit', 'class'=>'form-control btn btn-light']) !!}
+                {!! Form::close() !!}
             </div>
             <div class="col-md-3 ml-auto">
                 {!! Form::open(['method' => 'get', 'action' => ['ExaminationsController@create', $patient]]) !!}

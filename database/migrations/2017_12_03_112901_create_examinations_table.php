@@ -18,6 +18,7 @@ class CreateExaminationsTable extends Migration
             $table->integer('patient_id')->unsigned()->nullable();
             $table->date('date')->nullable();
             $table->text('findings')->nullable();
+            $table->text('instructions')->nullable();
             $table->timestamps();
         });
 
