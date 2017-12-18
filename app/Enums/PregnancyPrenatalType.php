@@ -21,31 +21,31 @@ final class PregnancyPrenatalType extends Enum
     {
         switch ($value) {
             case self::CVS:
-                return 'CVS';
+                return __('selectlist.pregnancy.prenatal.cvs');
                 break;
             case self::Amniocentesis:
-                return 'Amniocentesis';
+                return __('selectlist.pregnancy.prenatal.amniocentesis');
                 break;
             case self::NIPT:
-                return 'NIPT';
+                return __('selectlist.pregnancy.prenatal.nipt');
                 break;
             case self::NuchalTranslucency:
-                return 'Nuchal Translucency';
+                return __('selectlist.pregnancy.prenatal.nt');
                 break;
             case self::FirstTrimesterScan:
-                return 'First Trimester Scan';
+                return __('selectlist.pregnancy.prenatal.firsttrimester');
                 break;
             case self::SecondTrimesterScan:
-                return 'Second Trimester Scan';
+                return __('selectlist.pregnancy.prenatal.secondtrimester');
                 break;
             case self::ThirdTrimesterScan:
-                return 'Third Trimester Scan';
+                return __('selectlist.pregnancy.prenatal.thirdtrimester');
                 break;
             case self::DopplerSonography:
-                return 'Doppler Sonography';
+                return __('selectlist.pregnancy.prenatal.doppler');
                 break;
             case self::RoutineScan:
-                return 'Routine Scan';
+                return __('selectlist.pregnancy.prenatal.routine');
                 break;
             default:
                 return self::getKey($value);

@@ -17,8 +17,7 @@
                     <div class="card-header lead">
                         <div class="row">
                             <div class="col-md-8">
-                                Pregnancy History
-
+                                {{__('pregnancy.history.edit.title')}}
                             </div>
                             <div class="col-md-2 ml-auto">
                                 {!! Form::open(['method'=>'get', 'action'=>['PregnancyHistoryController@edit', $pregnancy, $history]]) !!}

@@ -13,7 +13,7 @@
                     <div class="card-header lead">
                         <div class="row my-1">
                             <div class="col-md-12">
-                                Enter New Pregnancy Data
+                                {{__('pregnancy.create.view.title')}}
                             </div>
                         </div>
                     </div>
@@ -24,26 +24,25 @@
 
                             {!! Form::open(['method'=>'post', 'action'=>['PregnanciesController@store', $patient]]) !!}
                             <div class="row mt-2">
-                                {!! Form::label('lmp', 'LMP :', ['class'=>'col-md-6']) !!}
+                                {!! Form::label('lmp', __('pregnancy.LMP') . ' :', ['class'=>'col-md-6']) !!}
                                 {!! Form::text('lmp', null, ['class'=> 'form-control col-md-6', 'onblur'=>'return calculateET()']) !!}
                             </div>
                             <div class="row mt-2">
-                                {!! Form::label('edd', 'EDD :', ['class'=>'col-md-6']) !!}
+                                {!! Form::label('edd', __('pregnancy.EDD') . ' :', ['class'=>'col-md-6']) !!}
                                 {!! Form::text('edd', null, ['class'=> 'form-control col-md-6', 'onblur'=>'return setCorrET()']) !!}
                             </div>
                             <div class="row mt-2">
-                                {!! Form::label('corrected_edd', 'EDD corr. :', ['class'=>'col-md-6']) !!}
+                                {!! Form::label('corrected_edd', __('pregnancy.EDDcorr') .' :', ['class'=>'col-md-6']) !!}
                                 {!! Form::text('corrected_edd', null, ['class'=> 'form-control col-md-6']) !!}
                             </div>
                             <hr>
                             <div class="row mt-2">
-                                {!! Form::label('pregnancy_termination_type', 'Termination Type :', ['class'=>'col-md-6']) !!}
-                                {{--{!! Form::select('pregnancy_termination_type', [''=> 'Select']+ \App\Enums\PregnancyTerminationType::getKeys(), ['class'=>'form-control col-md-6']) !!}--}}
-                                {!! Form::select('pregnancy_termination_type', [''=> 'Select']+ \App\Enums\PregnancyTerminationType::getDescriptions(), ['class'=>'form-control col-md-6']) !!}
+                                {!! Form::label('pregnancy_termination_type', __('pregnancy.termination.type') . ' :', ['class'=>'col-md-6']) !!}
+                                {!! Form::select('pregnancy_termination_type', [''=> __('pregnancy.select')]+ \App\Enums\PregnancyTerminationType::getDescriptions(), ['class'=>'form-control col-md-6']) !!}
 
                             </div>
                             <div class="row mt-2">
-                                {!! Form::label('finished', 'Finished :' , ['class' => 'col-md-6']) !!}
+                                {!! Form::label('finished', __('pregnancy.Finished') . ' :' , ['class' => 'col-md-6']) !!}
                                 {!! Form::checkbox('finished', null, false, ['class' => 'form-control col-md-6']) !!}
                             </div>
                             <hr>

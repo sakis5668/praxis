@@ -18,7 +18,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-9">
-                                Prenatal Diagnosis Findings
+                                {{__('pregnancy.prenatal.findings')}}
                             </div>
                             <div class="col-md-3">
                                 {!! Form::open(['method'=>'get', 'action'=>['PregnancyPrenatalsController@edit', $pregnancy, $prenatal]]) !!}
@@ -30,24 +30,24 @@
 
                     <div class="card-body">
                         <div class="row mt-3">
-                            <div class="col-md-2">Date :</div>
-                            <div class="col-md-2">{{ $prenatal->date ? $prenatal->date->format('d.m.Y') : 'no date' }}</div>
+                            <div class="col-md-3">{{__('pregnancy.Date')}} :</div>
+                            <div class="col-md-2">{{ $prenatal->date ? $prenatal->date->format('d.m.Y') : __('pregnancy.nodate') }}</div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-2">Weeks :</div>
+                            <div class="col-md-3">{{__('pregnancy.Weeks')}} :</div>
                             <div class="col-md-2">{{ $prenatal->pregnancy_age }}</div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-2">Type :</div>
+                            <div class="col-md-3">{{__('pregnancy.Type')}} :</div>
                             <div class="col-md-4">{{ \App\Enums\PregnancyPrenatalType::getDescription($prenatal->type) }}</div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-2">Examiner :</div>
+                            <div class="col-md-3">{{__('pregnancy.Examiner')}} :</div>
                             <div class="col-md-4">{{ $prenatal->examiner }}</div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-2">Findings :</div>
-                            <div class="col-md-10"><p align="justify">{!! nl2br(e($prenatal->findings)) !!}</p></div>
+                            <div class="col-md-3">{{__('pregnancy.Findings')}} :</div>
+                            <div class="col-md-9"><p align="justify">{!! nl2br(e($prenatal->findings)) !!}</p></div>
                         </div>
                     </div>
 

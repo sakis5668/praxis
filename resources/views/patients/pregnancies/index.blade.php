@@ -15,7 +15,7 @@
                     <div class="card-header font-weight-bold">
                         <div class="row">
                             <div class="col-md-10">
-                                <p>Pregnancies</p>
+                                <p>{{__('pregnancy.Pregnancies')}}</p>
                             </div>
                             <div class="col-md-2 ml-auto">
                                 {!! Form::open(['method'=>'get', 'action'=>['PregnanciesController@create', $patient]]) !!}
@@ -30,12 +30,12 @@
                             <table class="table">
                                 <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">LMP</th>
-                                    <th scope="col">EDD</th>
-                                    <th scope="col">EDD (corr.)</th>
-                                    <th scope="col">Termination</th>
-                                    <th scope="col">Finished</th>
+                                    <th scope="col">{{__('pregnancy.ID')}}</th>
+                                    <th scope="col">{{__('pregnancy.LMP')}}</th>
+                                    <th scope="col">{{__('pregnancy.EDD')}}</th>
+                                    <th scope="col">{{__('pregnancy.EDDcorr')}}</th>
+                                    <th scope="col">{{__('pregnancy.Termination')}}</th>
+                                    <th scope="col">{{__('pregnancy.Finished')}}</th>
                                     <th></th>
                                 </tr>
                                 </thead>
@@ -50,10 +50,10 @@
                                             <a href="{{ route ('pregnancies.show', [$patient,$pregnancy]) }}">{{ $pregnancy->edd ? $pregnancy->edd->format('d.m.Y') : 'no date'}}</a>
                                         </td>
                                         <td>
-                                            <a href="{{ route ('pregnancies.show', [$patient,$pregnancy]) }}">{{ $pregnancy->corrected_edd ? $pregnancy->corrected_edd->format('d.m.Y') : 'no date'}}</a>
+                                            <a href="{{ route ('pregnancies.show', [$patient,$pregnancy]) }}">{{ $pregnancy->corrected_edd ? $pregnancy->corrected_edd->format('d.m.Y') : __('pregnancy.nodate')}}</a>
                                         </td>
-                                        <td>{{ \App\Enums\PregnancyTerminationType::getDescription($pregnancy->pregnancy_termination_type) }}</td>
-                                        <td>{{ $pregnancy->finished ? 'Yes' : 'No'}}</td>
+                                        <td>{{ $pregnancy->pregnancy_termination_type ?  \App\Enums\PregnancyTerminationType::getDescription($pregnancy->pregnancy_termination_type) : __('pregnancy.notavail')}}</td>
+                                        <td>{{ $pregnancy->finished ? __('pregnancy.Yes') : __('pregnancy.No')}}</td>
                                         <td>
                                             {!! Form::open(['method'=>'get', 'action'=>['PregnanciesController@edit', $patient, $pregnancy]]) !!}
                                             {!! Form::button('<i class="fa fa-pencil fa-lg"></i>',['type'=>'submit', 'class' => 'btn btn-light col-md-12']) !!}

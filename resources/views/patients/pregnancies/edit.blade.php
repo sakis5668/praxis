@@ -13,7 +13,7 @@
                     <div class="card-header lead">
                         <div class="row my-1">
                             <div class="col-md-8">
-                                Edit Pregnancy Data
+                                {{__('pregnancy.edit.view.title')}}
                             </div>
                             <div class="col-md-4">
                                 {!! Form::model($pregnancy, ['method'=>'delete', 'action'=>['PregnanciesController@destroy', $patient, $pregnancy], 'onsubmit' => 'return ConfirmDelete()']) !!}
@@ -29,26 +29,25 @@
 
                             {!! Form::model($pregnancy, ['method'=>'patch', 'action'=>['PregnanciesController@update', $patient, $pregnancy]]) !!}
                             <div class="row mt-2">
-                                {!! Form::label('lmp', 'LMP :', ['class'=>'col-md-6']) !!}
+                                {!! Form::label('lmp', __('pregnancy.LMP') . ' :', ['class'=>'col-md-6']) !!}
                                 {!! Form::text('lmp', $pregnancy->lmp ? $pregnancy->lmp->format('d.m.Y'):'' , ['class'=> 'form-control col-md-6', 'onblur'=>'return calculateET()']) !!}
                             </div>
                             <div class="row mt-2">
-                                {!! Form::label('edd', 'EDD :', ['class'=>'col-md-6']) !!}
+                                {!! Form::label('edd', __('pregnancy.EDD') . ' :', ['class'=>'col-md-6']) !!}
                                 {!! Form::text('edd', $pregnancy->edd ? $pregnancy->edd->format('d.m.Y'):'', ['class'=> 'form-control col-md-6', 'onblur'=>'return setCorrET()']) !!}
                             </div>
                             <div class="row mt-2">
-                                {!! Form::label('corrected_edd', 'EDD corr. :', ['class'=>'col-md-6']) !!}
+                                {!! Form::label('corrected_edd', __('pregnancy.EDDcorr') . ' :', ['class'=>'col-md-6']) !!}
                                 {!! Form::text('corrected_edd', $pregnancy->corrected_edd ? $pregnancy->corrected_edd->format('d.m.Y'):'', ['class'=> 'form-control col-md-6']) !!}
                             </div>
                             <hr>
                             <div class="row mt-2">
-                                {!! Form::label('pregnancy_termination_type', 'Termination Type :', ['class'=>'col-md-6']) !!}
-                                {{--{!! Form::select('pregnancy_termination_type', \App\Enums\PregnancyTerminationType::getKeys(), $pregnancy->pregnancy_termination_type ,['class'=>'form-control col-md-6']) !!}--}}
+                                {!! Form::label('pregnancy_termination_type', __('pregnancy.termination.type') . ' :', ['class'=>'col-md-6']) !!}
                                 {!! Form::select('pregnancy_termination_type', \App\Enums\PregnancyTerminationType::getDescriptions(), $pregnancy->pregnancy_termination_type ,['class'=>'form-control col-md-6']) !!}
 
                             </div>
                             <div class="row mt-2">
-                                {!! Form::label('finished', 'Finished :' , ['class' => 'col-md-6']) !!}
+                                {!! Form::label('finished', __('pregnancy.Finished') . ' :', ['class' => 'col-md-6']) !!}
                                 {!! Form::checkbox('finished', $pregnancy->finished, null, ['class' => 'form-control col-md-6']) !!}
                             </div>
                             <hr>

@@ -19,7 +19,7 @@
                 <div class="card">
 
                     <div class="card-header">
-                        Findings
+                        {{__('pregnancy.Findings')}}
                     </div>
 
                     <div class="card-body">

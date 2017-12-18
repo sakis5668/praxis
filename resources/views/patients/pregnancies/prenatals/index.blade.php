@@ -17,7 +17,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        Prenatal Diagnosis Findings
+                        {{__('pregnancy.prenatal.findings')}}
                     </div>
                     <div class="card-body">
 

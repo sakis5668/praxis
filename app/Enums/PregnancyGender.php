@@ -14,10 +14,10 @@ final class PregnancyGender extends Enum
     {
         switch ($value) {
             case self::male:
-                return 'male';
+                return __('selectlist.pregnancy.gender.male');
                 break;
             case self::female:
-                return 'female';
+                return __('selectlist.pregnancy.gender.female');
                 break;
             default:
                 return self::getKey($value);

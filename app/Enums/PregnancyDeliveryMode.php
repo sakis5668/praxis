@@ -16,16 +16,16 @@ final class PregnancyDeliveryMode extends Enum
     {
         switch ($value) {
             case self::spontaneous:
-                return 'Spontaneous Delivery';
+                return __('selectlist.pregnancy.delivery.mode.spontaneous');
             break;
             case self::forceps:
-                return 'Forceps Extraction';
+                return __('selectlist.pregnancy.delivery.mode.forceps');
                 break;
             case self::vacuum:
-                return 'Vacuum Extraction';
+                return __('selectlist.pregnancy.delivery.mode.vacuum');
                 break;
             case self::section:
-                return 'Caesarean Section';
+                return __('selectlist.pregnancy.delivery.mode.csection');
                 break;
             default:
                 return self::getKey($value);

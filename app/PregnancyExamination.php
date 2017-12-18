@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PregnancyExamination extends Model
 {
-    protected $fillable = ['pregnancy_id', 'date', 'pregnancy_age', 'findings'];
+    protected $fillable = ['pregnancy_id', 'date', 'pregnancy_age', 'findings', 'instructions'];
     protected $dates = ['date'];
 
 

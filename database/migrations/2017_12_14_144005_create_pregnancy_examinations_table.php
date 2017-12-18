@@ -19,6 +19,7 @@ class CreatePregnancyExaminationsTable extends Migration
             $table->date('date')->nullable();
             $table->string('pregnancy_age')->nullable();
             $table->text('findings')->nullable();
+            $table->text('instructions')->nullable();
             $table->timestamps();
         });
         Schema::table('pregnancy_examinations', function (Blueprint $table) {

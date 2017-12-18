@@ -19,23 +19,27 @@
                 <div class="card">
 
                     <div class="card-header">
-                        Create New Pregnancy Examination
+                        {{__('pregnancy.new.exam.title')}}
                     </div>
 
                     <div class="card-body">
                         {!! Form::open(['method'=>'post', 'action'=>['PregnancyExaminationsController@store', $pregnancy]]) !!}
                         <input type="hidden" name="corret" id="corret" value="{{ $pregnancy->corrected_edd->format('d.m.Y') }}">
                         <div class="row mt-3">
-                            {!! Form::label('date', 'Date : ', ['class'=>'col-md-2']) !!}
+                            {!! Form::label('date', __('pregnancy.Date') . ' :', ['class'=>'col-md-3']) !!}
                             {!! Form::text('date', \Carbon\Carbon::now()->format('d.m.Y'), ['class'=>'form-control col-md-2', 'autofocus', 'onblur'=>'return getWksString()']) !!}
                         </div>
                         <div class="row mt-3">
-                            {!! Form::label('pregnancy_age', 'Weeks :', ['class'=>'col-md-2']) !!}
+                            {!! Form::label('pregnancy_age', __('pregnancy.Weeks') . ' :', ['class'=>'col-md-3']) !!}
                             {!! Form::text('pregnancy_age', null, ['class'=>'form-control col-md-2']) !!}
                         </div>
                         <div class="row mt-3">
-                            {!! Form::label('findings', 'Findings :', ['class'=>'col-md-2']) !!}
-                            {!! Form::textarea('findings', null, ['class'=>'form-control col-md-10']) !!}
+                            {!! Form::label('findings', __('pregnancy.Findings') . ' :', ['class'=>'col-md-3']) !!}
+                            {!! Form::textarea('findings', null, ['class'=>'form-control col-md-9', 'rows'=>'6']) !!}
+                        </div>
+                        <div class="row mt-3">
+                            {!! Form::label('instructions', __('pregnancy.Instructions') . ' :', ['class'=>'col-md-3']) !!}
+                            {!! Form::textarea('instructions', null, ['class'=>'form-control col-md-9', 'rows' => '3']) !!}
                         </div>
                         <hr>
                         <div class="row mt-3">
