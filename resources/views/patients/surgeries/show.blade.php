@@ -67,9 +67,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-md-2 font-weight-bold text-right">{{__('surgery.text.label')}}</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">{!! nl2br(e($surgery->text)) !!}</div>
+                            <div class="col-md-10"><p align="justify">{!! nl2br(e($surgery->text)) !!}</p></div>
                         </div>
                     </div>
 

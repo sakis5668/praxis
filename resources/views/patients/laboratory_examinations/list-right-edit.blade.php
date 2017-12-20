@@ -11,7 +11,7 @@
                     <div class="col-md-4">
                         {!! Form::model($laboratoryExamination,['method'=>'patch', 'action'=>['LaboratoryExaminationsController@update', $patient, $laboratoryExamination]]) !!}
                         <div class="row">
-                            {!! Form::text('date', $laboratoryExamination->date ? $laboratoryExamination->date->format('d.m.Y') : null, ['class' => 'form-control col-md-6 px-1 ml-auto']) !!}
+                            {!! Form::text('date', $laboratoryExamination->date ? $laboratoryExamination->date->format('d.m.Y') : null, ['class' => 'form-control col-md-6 px-1 ml-auto', 'autofocus', 'onfocus'=>'this.select();']) !!}
                             {!! Form::button('<i class="fa fa-check fa-lg" aria-hidden="true"></i>', ['type'=>'submit', 'class'=> 'btn btn-primary col-md-4 ml-auto']) !!}
                         </div>
                         {!! Form::close() !!}

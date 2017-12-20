@@ -48,10 +48,8 @@
                         </div>
                         <hr>
                         <div class="row mt-2">
-                            {!! Form::label('text', __('surgery.text.label'), ['class'=>'col-md-12']) !!}
-                        </div>
-                        <div class="row mt-2">
-                            {!! Form::textarea('text', null, ['class'=>'form-control col-md-12', 'rows'=>10]) !!}
+                            {!! Form::label('text', __('surgery.text.label'), ['class'=>'col-md-2 text-right']) !!}
+                            {!! Form::textarea('text', null, ['class'=>'form-control col-md-10', 'rows'=>10]) !!}
                         </div>
                         <hr>
                         <div class="row mt-2">

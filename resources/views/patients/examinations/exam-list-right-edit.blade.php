@@ -30,7 +30,7 @@
                     <div class="col-md-9">{!! Form::textarea('instructions', null, ['class'=>'form-control', 'rows'=>'4']) !!}</div>
                 </div>
                 <div class="row mt-3 col-md-2 ml-auto">
-                    {!! Form::button('<i class="fa fa-check fa-lg" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-light col-md-12']) !!}
+                    {!! Form::button('<i class="fa fa-check fa-lg" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-primary col-md-12']) !!}
                 </div>
                 {!! Form::close() !!}
             </div>
