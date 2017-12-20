@@ -37,7 +37,7 @@
 
                     <div class="card-body">
                         <div class="row mt-3">
-                            <div class="col-md-3">
+                            <div class="col-md-3 text-right">
                                 {{__('pregnancy.Date')}} :
                             </div>
                             <div class="col-md-2">
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-3">
+                            <div class="col-md-3 text-right">
                                 {{__('pregnancy.Weeks')}} :
                             </div>
                             <div class="col-md-2">
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-3">
+                            <div class="col-md-3 text-right">
                                 {{__('pregnancy.Findings')}} :
                             </div>
                             <div class="col-md-9">
@@ -61,7 +61,7 @@
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-3">
+                            <div class="col-md-3 text-right">
                                 {{__('pregnancy.Instructions')}} :
                             </div>
                             <div class="col-md-9">

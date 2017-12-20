@@ -37,15 +37,15 @@
 
                     <div class="card-body">
                         <div class="row mt-3">
-                            <div class="col-md-3">{{__('pregnancy.Date')}} :</div>
+                            <div class="col-md-3 text-right">{{__('pregnancy.Date')}} :</div>
                             <div class="col-md-2">{{ $prenatal->date ? $prenatal->date->format('d.m.Y') : __('pregnancy.nodate') }}</div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-3">{{__('pregnancy.Weeks')}} :</div>
+                            <div class="col-md-3 text-right">{{__('pregnancy.Weeks')}} :</div>
                             <div class="col-md-2">{{ $prenatal->pregnancy_age }}</div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-3">{{__('pregnancy.Type')}} :</div>
+                            <div class="col-md-3 text-right">{{__('pregnancy.Type')}} :</div>
                             @if($prenatal->type)
                                 <div class="col-md-4">{{ \App\Enums\PregnancyPrenatalType::getDescription($prenatal->type) }}</div>
                             @else
@@ -53,11 +53,11 @@
                             @endif
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-3">{{__('pregnancy.Examiner')}} :</div>
+                            <div class="col-md-3 text-right">{{__('pregnancy.Examiner')}} :</div>
                             <div class="col-md-4">{{ $prenatal->examiner }}</div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-3">{{__('pregnancy.Findings')}} :</div>
+                            <div class="col-md-3 text-right">{{__('pregnancy.Findings')}} :</div>
                             <div class="col-md-9"><p align="justify">{!! nl2br(e($prenatal->findings)) !!}</p></div>
                         </div>
                     </div>

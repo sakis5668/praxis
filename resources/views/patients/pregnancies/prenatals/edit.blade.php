@@ -39,23 +39,23 @@
                         {!! Form::model($prenatal, ['method'=>'patch', 'action'=>['PregnancyPrenatalsController@update', $pregnancy, $prenatal]]) !!}
                         <input type="hidden" name="corret" id="corret" value="{{ $pregnancy->corrected_edd->format('d.m.Y') }}">
                         <div class="row mt-3">
-                            {!! Form::label('date', __('pregnancy.Date') . ' :', ['class'=>'col-md-3']) !!}
+                            {!! Form::label('date', __('pregnancy.Date') . ' :', ['class'=>'col-md-3 text-right']) !!}
                             {!! Form::text('date', $prenatal->date ? $prenatal->date->format('d.m.Y'): __('pregnancy.nodate'), ['class'=>'form-control col-md-2', 'autofocus', 'onblur'=>'return getWksString()']) !!}
                         </div>
                         <div class="row mt-3">
-                            {!! Form::label('pregnancy_age', __('pregnancy.Weeks') . ' :', ['class'=>'col-md-3']) !!}
+                            {!! Form::label('pregnancy_age', __('pregnancy.Weeks') . ' :', ['class'=>'col-md-3 text-right']) !!}
                             {!! Form::text('pregnancy_age', null, ['class'=>'form-control col-md-2']) !!}
                         </div>
                         <div class="row mt-3">
-                            {!! Form::label('type', __('pregnancy.Type') . ' :', ['class'=>'col-md-3']) !!}
+                            {!! Form::label('type', __('pregnancy.Type') . ' :', ['class'=>'col-md-3 text-right']) !!}
                             {!! Form::select('type', \App\Enums\PregnancyPrenatalType::getDescriptions(), $prenatal->type, ['class'=>'form-control col-md-4']) !!}
                         </div>
                         <div class="row mt-3">
-                            {!! Form::label('examiner', __('pregnancy.Examiner') . ' :', ['class'=>'col-md-3']) !!}
+                            {!! Form::label('examiner', __('pregnancy.Examiner') . ' :', ['class'=>'col-md-3 text-right']) !!}
                             {!! Form::text('examiner', null, ['class'=>'form-control col-md-5']) !!}
                         </div>
                         <div class="row mt-3">
-                            {!! Form::label('findings', __('pregnancy.Findings') . ' :', ['class'=>'col-md-3']) !!}
+                            {!! Form::label('findings', __('pregnancy.Findings') . ' :', ['class'=>'col-md-3 text-right']) !!}
                             {!! Form::textarea('findings', null, ['class'=>'form-control col-md-9', 'rows'=>'5']) !!}
                         </div>
                         <div class="row mt-3">
