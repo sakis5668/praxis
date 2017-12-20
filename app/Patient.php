@@ -21,32 +21,32 @@ class Patient extends Model
 
     public function examinations()
     {
-        return $this->hasMany(Examination::class);
+        return $this->hasMany(Examination::class)->orderBy('date', 'desc');
     }
 
     public function cytologies()
     {
-        return $this->hasMany(Cytology::class);
+        return $this->hasMany(Cytology::class)->orderBy('date', 'desc');
     }
 
     public function histologies()
     {
-        return $this->hasMany(Histology::class);
+        return $this->hasMany(Histology::class)->orderBy('date', 'desc');
     }
 
     public function laboratoryExaminations()
     {
-        return $this->hasMany(LaboratoryExamination::class);
+        return $this->hasMany(LaboratoryExamination::class)->orderBy('date', 'desc');
     }
 
     public function imagingResults()
     {
-        return $this->hasMany(ImagingResult::class);
+        return $this->hasMany(ImagingResult::class)->orderBy('date', 'desc');
     }
 
     public function surgeries()
     {
-        return $this->hasMany(Surgery::class);
+        return $this->hasMany(Surgery::class)->orderBy('date', 'desc');
     }
 
     public function pregnancies()
