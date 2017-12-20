@@ -5,7 +5,14 @@
     @include('layouts.language')
 
     <div class="container">
+
         <div class="row my-3">
+            <div class="col-md-12">
+                @include('patients.actions-top')
+            </div>
+        </div>
+
+        <div class="row  my-3">
             <div class="col-md-4">
                 @include('patients.imaging_results.list-left')
             </div>
@@ -13,8 +20,8 @@
                 @include('patients.imaging_results.list-right-create')
             </div>
         </div>
-    </div>
 
+    </div>
 @endsection
 
 @section('scripts')

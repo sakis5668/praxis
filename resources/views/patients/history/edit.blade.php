@@ -5,6 +5,13 @@
     @include('layouts.language')
 
     <div class="container">
+
+        <div class="row my-3">
+            <div class="col-md-12">
+                @include('patients.actions-top')
+            </div>
+        </div>
+
         <div class="row my-3">
             <div class="col-md-12">
 
@@ -49,8 +56,7 @@
 
 @section('scripts')
     <script>
-        function ConfirmDelete()
-        {
+        function ConfirmDelete() {
             var x = confirm("Are you sure you want to delete?");
             if (x)
                 return true;

@@ -4,15 +4,22 @@
 
     @include('layouts.language')
 
-    @include('patients.pregnancies.pregnancies-menu')
-
     <div class="container">
-        <div class="row">
+        <div class="row my-3">
+            <div class="col-md-12">
+                @include('patients.actions-top')
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-md-12">
+                @include('patients.pregnancies.pregnancies-menu')
+            </div>
+        </div>
+        <div class="row my-3">
             <div class="col-md-4">
                 @include('patients.pregnancies.prenatals.left-list')
             </div>
             <div class="col-md-8">
-
                 <div class="card">
 
                     <div class="card-header">
@@ -39,7 +46,11 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-3">{{__('pregnancy.Type')}} :</div>
-                            <div class="col-md-4">{{ \App\Enums\PregnancyPrenatalType::getDescription($prenatal->type) }}</div>
+                            @if($prenatal->type)
+                                <div class="col-md-4">{{ \App\Enums\PregnancyPrenatalType::getDescription($prenatal->type) }}</div>
+                            @else
+                                <div class="col-md-4">{{__('pregnancy.notavail')}}</div>
+                            @endif
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-3">{{__('pregnancy.Examiner')}} :</div>
@@ -52,7 +63,6 @@
                     </div>
 
                 </div>
-
             </div>
         </div>
     </div>

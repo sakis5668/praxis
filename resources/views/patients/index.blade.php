@@ -42,19 +42,19 @@
                         <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead class="thead-light">
-                                <tr><th scope="col">{{__('patients-index-view.id')}}</th>
+                                <tr>
+                                    {{--<th scope="col">{{__('patients-index-view.id')}}</th>--}}
                                     <th scope="col">{{__('patients-index-view.last.name') }}</th>
                                     <th scope="col">{{__('patients-index-view.first.name')}}</th>
                                     <th scope="col">{{__('patients-index-view.email')}}</th>
                                     <th scope="col">{{__('patients-index-view.mobile.number')}}</th>
                                     <th scope="col">{{__('patients-index-view.phone.number')}}</th>
-
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($patients as $patient)
                                     <tr>
-                                        <th scope="row">{{ $patient->id }}</th>
+                                        {{--<th scope="row">{{ $patient->id }}</th>--}}
                                         <td>
                                             <a href="{{ route('patients.show', $patient->id) }}">{{ $patient->last_name }}</a>
                                         </td>

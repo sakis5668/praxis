@@ -1,13 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
+
     @include('layouts.language')
-    @include('patients.back-to-patients-button')
 
     <div class="container">
-        <div class="row my-3">
-            <div class="col-md-12">
 
+        <div class="row  my-3">
+            <div class="col-md-12">
+                @include('patients.actions-top')
+            </div>
+        </div>
+
+        <div class="row  my-3">
+            <div class="col-md-12">
                 <div class="card">
 
                     <div class="card-header lead font-weight-bold">
@@ -25,14 +31,14 @@
 
                     <div class="card-body">
                         <div class="col-md-12">
-                            {!! nl2br(e($patient->history->history)) !!}
+                            <p align="justify">{!! nl2br(e($patient->history->history)) !!}</p>
                         </div>
                     </div>
 
                 </div>
-
             </div>
         </div>
+
     </div>
 
 @endsection

@@ -17,17 +17,19 @@ class PregnancyExaminationsController extends Controller
     public function index(Pregnancy $pregnancy)
     {
         $examination = $pregnancy->examinations->first();
+        $patient = $pregnancy->patient;
         if ($examination!=null) {
             return redirect()->action('PregnancyExaminationsController@show', [$pregnancy, $examination]);
         } else {
-            return view('patients.pregnancies.examinations.index', compact('pregnancy'));
+            return view('patients.pregnancies.examinations.index', compact('pregnancy', 'patient'));
         }
     }
 
 
     public function create(Pregnancy $pregnancy)
     {
-        return view('patients.pregnancies.examinations.create', compact('pregnancy'));
+        $patient = $pregnancy->patient;
+        return view('patients.pregnancies.examinations.create', compact('pregnancy', 'patient'));
     }
 
 
@@ -45,13 +47,15 @@ class PregnancyExaminationsController extends Controller
 
     public function show(Pregnancy $pregnancy,  PregnancyExamination $examination)
     {
-        return view('patients.pregnancies.examinations.show', compact('pregnancy', 'examination'));
+        $patient = $pregnancy->patient;
+        return view('patients.pregnancies.examinations.show', compact('pregnancy', 'examination', 'patient'));
     }
 
 
     public function edit(Pregnancy $pregnancy, PregnancyExamination $examination)
     {
-        return view('patients.pregnancies.examinations.edit', compact('pregnancy', 'examination'));
+        $patient = $pregnancy->patient;
+        return view('patients.pregnancies.examinations.edit', compact('pregnancy', 'examination', 'patient'));
     }
 
 

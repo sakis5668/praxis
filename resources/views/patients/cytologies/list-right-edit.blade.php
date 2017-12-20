@@ -11,8 +11,8 @@
                     <div class="col-md-4">
                         {!! Form::model($cytology,['method'=>'patch', 'action'=>['CytologiesController@update', $patient, $cytology]]) !!}
                         <div class="row">
-                            {!! Form::text('date', $cytology->date ? $cytology->date->format('d.m.Y') : null, ['class' => 'form-control text-right col-md-6 px-1 ml-auto']) !!}
-                            {!! Form::button('<i class="fa fa-check fa-lg" aria-hidden="true"></i>', ['type'=>'submit', 'class'=> 'btn btn-light col-md-4 ml-auto']) !!}
+                            {!! Form::text('date', $cytology->date ? $cytology->date->format('d.m.Y') : null, ['class' => 'form-control col-md-6 px-1 ml-auto']) !!}
+                            {!! Form::button('<i class="fa fa-check fa-lg" aria-hidden="true"></i>', ['type'=>'submit', 'class'=> 'btn btn-primary col-md-4 ml-auto']) !!}
                         </div>
                         {!! Form::close() !!}
                     </div>

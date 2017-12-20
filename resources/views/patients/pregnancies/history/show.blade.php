@@ -4,14 +4,19 @@
 
     @include('layouts.language')
 
-    {{-- MENU --}}
-    @include('patients.pregnancies.pregnancies-menu')
-
-    {{-- HISTORY AREA--}}
     <div class="container">
         <div class="row my-3">
             <div class="col-md-12">
-
+                @include('patients.actions-top')
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-md-12">
+                @include('patients.pregnancies.pregnancies-menu')
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-md-12">
                 <div class="card">
 
                     <div class="card-header lead">
@@ -36,7 +41,6 @@
                     </div>
 
                 </div>
-
             </div>
         </div>
     </div>

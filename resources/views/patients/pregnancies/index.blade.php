@@ -4,12 +4,14 @@
 
     @include('layouts.language')
 
-    @include('patients.back-to-patients-button')
-
     <div class="container">
         <div class="row my-3">
             <div class="col-md-12">
-
+                @include('patients.actions-top')
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-md-12">
                 <div class="card">
 
                     <div class="card-header font-weight-bold">
@@ -68,7 +70,6 @@
                     </div>
 
                 </div>
-
             </div>
         </div>
     </div>

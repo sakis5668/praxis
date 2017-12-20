@@ -18,6 +18,10 @@
             <div class="col-md-12">
                 {!! Form::model($examination, ['method'=>'patch', 'action'=>['ExaminationsController@update', $patient, $examination], 'class' => 'col-md-12']) !!}
                 <div class="row mt-3">
+                    <div class="col-md-3 text-right font-weight-bold">{!! Form::label('date', __('examinations.date.label'). ' :') !!}</div>
+                    <div class="col-md-3">{!! Form::text('date', $examination->date ? $examination->date->format('d.m.Y') : '' , ['class'=>'form-control']) !!}</div>
+                </div>
+                <div class="row mt-3">
                     <div class="col-md-3 text-right font-weight-bold">{!! Form::label('findings', __('examinations.findings.label').' :') !!}</div>
                     <div class="col-md-9">{!! Form::textarea('findings', null, ['class'=> 'form-control', 'rows'=>'8']) !!}</div>
                 </div>

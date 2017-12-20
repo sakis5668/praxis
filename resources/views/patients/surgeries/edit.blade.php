@@ -7,7 +7,11 @@
     <div class="container">
         <div class="row my-3">
             <div class="col-md-12">
-
+                @include('patients.actions-top')
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-md-12">
                 <div class="card">
 
                     <div class="card-header lead">
@@ -25,26 +29,26 @@
 
                         {!! Form::model($surgery,['method'=>'patch', 'action'=>['SurgeriesController@update', $patient, $surgery]]) !!}
                         <div class="row mt-2">
-                            {!! Form::label('date', __('surgery.date2.label'), ['class' => 'col-md-2']) !!}
+                            {!! Form::label('date', __('surgery.date2.label'), ['class' => 'col-md-2 text-right']) !!}
                             {!! Form::text('date',$surgery->date ? $surgery->date->format('d.m.Y') : null, ['class'=>'form-control col-md-2']) !!}
                         </div>
                         <div class="row mt-2">
-                            {!! Form::label('diagnosis', __('surgery.diagnosis2.label'), ['class'=>'col-md-2']) !!}
+                            {!! Form::label('diagnosis', __('surgery.diagnosis2.label'), ['class'=>'col-md-2 text-right']) !!}
                             {!! Form::text('diagnosis', null, ['class'=>'form-control col-md-4']) !!}
-                            {!! Form::label('therapy', __('surgery.therapy2.label'), ['class'=>'col-md-2']) !!}
+                            {!! Form::label('therapy', __('surgery.therapy2.label'), ['class'=>'col-md-2 text-right']) !!}
                             {!! Form::text('therapy', null, ['class'=>'form-control col-md-4']) !!}
                         </div>
                         <hr>
                         <div class="row mt-2">
-                            {!! Form::label('surgeon', __('surgery.surgeon.label'), ['class'=>'col-md-2']) !!}
+                            {!! Form::label('surgeon', __('surgery.surgeon.label'), ['class'=>'col-md-2 text-right']) !!}
                             {!! Form::text('surgeon', null, ['class'=>'form-control col-md-4']) !!}
-                            {!! Form::label('assistant', __('surgery.assistant.label'), ['class'=>'col-md-2']) !!}
+                            {!! Form::label('assistant', __('surgery.assistant.label'), ['class'=>'col-md-2 text-right']) !!}
                             {!! Form::text('assistant', null, ['class'=>'form-control col-md-4']) !!}
                         </div>
                         <div class="row mt-2">
-                            {!! Form::label('anesthesia', __('surgery.anesthesia.label'), ['class'=>'col-md-2']) !!}
+                            {!! Form::label('anesthesia', __('surgery.anesthesia.label'), ['class'=>'col-md-2 text-right']) !!}
                             {!! Form::text('anesthesia', null, ['class'=>'form-control col-md-4']) !!}
-                            {!! Form::label('anesthesist', __('surgery.anesthesist.label'), ['class'=>'col-md-2']) !!}
+                            {!! Form::label('anesthesist', __('surgery.anesthesist.label'), ['class'=>'col-md-2 text-right']) !!}
                             {!! Form::text('anesthesist', null, ['class'=>'form-control col-md-4']) !!}
                         </div>
                         <hr>
@@ -52,7 +56,7 @@
                             {!! Form::label('text', __('surgery.text.label'), ['class'=>'col-md-12']) !!}
                         </div>
                         <div class="row mt-2">
-                            {!! Form::textarea('text', null, ['class'=>'form-control col-md-12', 'rows'=>15]) !!}
+                            {!! Form::textarea('text', null, ['class'=>'form-control col-md-12', 'rows'=>10]) !!}
                         </div>
                         <hr>
                         <div class="row mt-2">
@@ -62,11 +66,11 @@
                     </div>
 
                 </div>
-
-
             </div>
         </div>
     </div>
+
+
 
 @endsection
 

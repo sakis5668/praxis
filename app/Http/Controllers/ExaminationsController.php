@@ -54,6 +54,9 @@ class ExaminationsController extends Controller
     public function update(Request $request, Patient $patient, Examination $examination)
     {
         $input = $request->all();
+        if($request['date']){
+            $input['date'] = Carbon::createFromFormat('d.m.Y', $request['date']);
+        }
         $examination->update($input);
         return redirect()->action('ExaminationsController@show', [$patient, $examination]);
     }

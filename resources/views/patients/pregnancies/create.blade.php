@@ -6,8 +6,12 @@
 
     <div class="container">
         <div class="row my-3">
-            <div class="col-md-6 offset-3">
-
+            <div class="col-md-12">
+                @include('patients.actions-top')
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-md-6 offset-md-3">
                 <div class="card">
 
                     <div class="card-header lead">
@@ -57,10 +61,10 @@
                     </div>
 
                 </div>
-
             </div>
         </div>
     </div>
+
 
 @endsection
 

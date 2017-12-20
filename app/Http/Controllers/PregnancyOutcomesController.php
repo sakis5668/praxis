@@ -17,13 +17,15 @@ class PregnancyOutcomesController extends Controller
 
     public function show(Pregnancy $pregnancy, PregnancyOutcome $outcome)
     {
-        return view('patients.pregnancies.outcome.show', compact('pregnancy', 'outcome'));
+        $patient = $pregnancy->patient;
+        return view('patients.pregnancies.outcome.show', compact('pregnancy', 'outcome', 'patient'));
     }
 
 
     public function edit(Pregnancy $pregnancy, PregnancyOutcome $outcome)
     {
-        return view('patients.pregnancies.outcome.edit', compact('pregnancy', 'outcome'));
+        $patient = $pregnancy->patient;
+        return view('patients.pregnancies.outcome.edit', compact('pregnancy', 'outcome', 'patient'));
     }
 
 
