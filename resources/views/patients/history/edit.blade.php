@@ -34,12 +34,12 @@
 
                         {{ Form::model($history, ['method'=>'patch', 'action' => ['HistoriesController@update', $patient, $history]]) }}
                         <div class="row mt-3">
-                            {!! Form::textarea('history', null, ['class' => 'form-control col-md-12', 'rows' => '15']) !!}
+                            {!! Form::textarea('history', null, ['class' => 'form-control col-md-12', 'rows' => '15', 'autofocus']) !!}
                         </div>
                         <hr>
                         <div class="col-md-12">
                             <div class="row mt-3">
-                                {!! Form::button('<i class="fa fa-check fa-lg" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-light col-md-2 ml-auto']) !!}
+                                {!! Form::button('<i class="fa fa-check fa-lg" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-primary col-md-2 ml-auto']) !!}
                             </div>
                         </div>
                         {!! Form::close() !!}

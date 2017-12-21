@@ -29,7 +29,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($patient->examinations as $examination)
+                    @foreach($patient->examinationsOrderByDateDesc as $examination)
                         <tr>
                             <td>
                                 <a href="{{ route('examinations.show', [$patient, $examination])  }}">{{ $examination->date ? $examination->date->format('d.m.Y') : __('examinations.no.date.label') }}</a>

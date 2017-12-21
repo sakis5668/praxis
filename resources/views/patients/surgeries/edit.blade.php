@@ -30,7 +30,7 @@
                         {!! Form::model($surgery,['method'=>'patch', 'action'=>['SurgeriesController@update', $patient, $surgery]]) !!}
                         <div class="row mt-2">
                             {!! Form::label('date', __('surgery.date2.label'), ['class' => 'col-md-2 text-right']) !!}
-                            {!! Form::text('date',$surgery->date ? $surgery->date->format('d.m.Y') : null, ['class'=>'form-control col-md-2']) !!}
+                            {!! Form::text('date',$surgery->date ? $surgery->date->format('d.m.Y') : null, ['class'=>'form-control col-md-2', 'autofocus', 'onfocus'=>'this.select();']) !!}
                         </div>
                         <div class="row mt-2">
                             {!! Form::label('diagnosis', __('surgery.diagnosis2.label'), ['class'=>'col-md-2 text-right']) !!}

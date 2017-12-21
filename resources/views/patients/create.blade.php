@@ -22,7 +22,7 @@
                         {!! Form::open(['method'=>'post', 'action'=>'PatientsController@store']) !!}
                         <div class="row mt-3">
                             {!! Form::label('last_name', __('patients-create-view.last.name.label'), ['class'=>'col-md-2']) !!}
-                            {!! Form::text('last_name', null, ['class' => 'form-control col-md-4']) !!}
+                            {!! Form::text('last_name', null, ['class' => 'form-control col-md-4', 'autofocus']) !!}
                             {!! Form::label('first_name', __('patients-create-view.first.name.label'), ['class' => 'col-md-2']) !!}
                             {!! Form::text('first_name', null, ['class'=>'form-control col-md-4']) !!}
                         </div>
