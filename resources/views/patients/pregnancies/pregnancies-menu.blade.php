@@ -3,7 +3,7 @@
     <div class="card-header lead font-weight-bold">
         <div class="row">
             <div class="col-md-10">
-                {{__('pregnancy.Pregnancy')}} - {{__('pregnancy.EDD')}} : {{ $pregnancy->edd ? $pregnancy->edd->format('d.m.Y') : __('pregnancy.no.edd.msg') }}
+                {{__('pregnancy.Pregnancy')}} - {{__('pregnancy.EDDcorr')}} : {{ $pregnancy->corrected_edd ? $pregnancy->corrected_edd->format('d.m.Y') : __('pregnancy.no.edd.msg') }}
             </div>
             <div class="col-md-2 ml-auto">
                 <form method="get" action="{{ route('pregnancies.index', $pregnancy->patient) }}">
