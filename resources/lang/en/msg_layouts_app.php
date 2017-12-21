@@ -21,4 +21,5 @@ return [
     'admin.main.message'         => 'This is the administration area',
     'utils'                      => 'Utilities',
     'utils.pregnancy.calculator' => 'Pegnancy Calculator',
+    'utils.calculate.bmi'        => 'Calculate BMI',
 ];

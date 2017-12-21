@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\History;
 use App\Http\Requests\PatientsRequest;
 use App\Patient;
+use App\Pregnancy;
 use Carbon\Carbon;
 use Session;
 

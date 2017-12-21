@@ -46,6 +46,7 @@
                                    class="dropdown-item">{{__('msg_layouts_app.list.patients')}}</a>
                                 <a href="{{ route('patients.create') }}"
                                    class="dropdown-item">{{__('msg_layouts_app.create.new.patient')}}</a>
+                                <a href="{{ route('patients.index') }}" class="dropdown-item">Pregnant</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -58,7 +59,7 @@
                                 <a href="{{ route('wks.calculate') }}"
                                    class="dropdown-item">{{__('msg_layouts_app.utils.pregnancy.calculator')}}</a>
                                 <a href="{{ route('bmi.calculate') }}"
-                                   class="dropdown-item">Calculate BMI</a>
+                                   class="dropdown-item">{{__('msg_layouts_app.utils.calculate.bmi')}}</a>
                             </div>
                         </li>
                     @endif
