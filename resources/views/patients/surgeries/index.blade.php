@@ -32,7 +32,7 @@
                             <table class="table table-hover">
                                 <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">{{__('surgery.id.label')}}</th>
+                                    {{--<th scope="col">{{__('surgery.id.label')}}</th>--}}
                                     <th scope="col">{{__('surgery.date.label')}}</th>
                                     <th scope="col">{{__('surgery.diagnosis.label')}}</th>
                                     <th scope="col">{{__('surgery.therapy.label')}}</th>
@@ -41,7 +41,7 @@
                                 <tbody>
                                 @foreach($patient->surgeries as $surgery)
                                     <tr>
-                                        <th scope="row">{{ $surgery->id }}</th>
+                                        {{--<th scope="row">{{ $surgery->id }}</th>--}}
                                         <td>
                                             <a href="{{ route('surgeries.show', [$patient, $surgery]) }}">{{ $surgery->date ? $surgery->date->format('d.m.Y') : __('surgery.no.date.label') }} </a>
                                         </td>

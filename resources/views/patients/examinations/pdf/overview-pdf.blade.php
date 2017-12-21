@@ -2,16 +2,18 @@
 
 @section('content')
 
-    <h4>Übersicht</h4>
+    @include('layouts.language')
+
+    <h4>{{__('overview-pdf.title')}}</h4>
     <hr>
     <table class="table">
         <tbody>
         <tr>
-            <td>Name :</td>
+            <td>{{__('overview-pdf.Name')}} :</td>
             <td><strong>{{$patient->last_name}}, {{ $patient->first_name }}</strong></td>
         </tr>
         <tr>
-            <td>Geb.-Datum :</td>
+            <td>{{__('overview-pdf.BirthDate')}} :</td>
             @if($patient->birthdate)
                 <td>{{ $patient->birth_date->format('d.m.Y') }}</td>
             @else
@@ -19,9 +21,17 @@
             @endif
         </tr>
         <tr>
-            <td>Addresse :</td>
+            <td>{{__('overview-pdf.Address')}} :</td>
             @if($patient->address)
                 <td>{{ $patient->address}}</td>
+            @else
+                <td><i>-</i></td>
+            @endif
+        </tr>
+        <tr>
+            <td>{{__('overview-pdf.Information')}} :</td>
+            @if($patient->information)
+                <td>{{ $patient->information }}</td>
             @else
                 <td><i>-</i></td>
             @endif
@@ -34,7 +44,7 @@
     <table class="table">
         <tbody>
         <tr>
-            <td><strong>Anamnese :</strong></td>
+            <td><strong>{{__('overview-pdf.History')}} :</strong></td>
             <td>{!! nl2br(e($patient->history->history)) !!}</td>
         </tr>
         </tbody>
@@ -54,21 +64,20 @@
     <table class="table">
 
 
-
         @foreach($patient->examinations as $examination)
 
             <tr align="justify">
-                <th><strong>Datum :</strong></th>
+                <th><strong>{{__('overview-pdf.Date')}} :</strong></th>
                 <td><strong>{{ $examination->date ? $examination->date->format('d.m.Y') : '-' }}</strong></td>
             </tr>
 
             <tr align="justify">
-                <td>Befunde :</td>
+                <td>{{__('overview-pdf.Findings')}} :</td>
                 <td>{!! nl2br(e($examination->findings)) !!}</td>
             </tr>
 
             <tr align="justify">
-                <td>Empfehlungen :</td>
+                <td>{{__('overview-pdf.Instructions')}} :</td>
                 @if($examination->instructions)
                     <td>{!! nl2br(e($examination->instructions)) !!}</td>
                 @else

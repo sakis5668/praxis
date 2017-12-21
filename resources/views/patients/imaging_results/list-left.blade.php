@@ -21,7 +21,7 @@
                     <table class="table">
                         <thead class="thead-light">
                         <tr>
-                            <th scope="col">{{__('imaging.id.label')}}</th>
+                            {{--<th scope="col">{{__('imaging.id.label')}}</th>--}}
                             <th scope="col">{{__('imaging.date.label')}}</th>
                             <th scope="col"></th>
                         </tr>
@@ -29,7 +29,7 @@
                         <tbody>
                         @foreach($patient->imagingResults()->orderby('date')->get() as $imagingResult)
                             <tr>
-                                <th scope="row">{{ $imagingResult->id }}</th>
+                                {{--<th scope="row">{{ $imagingResult->id }}</th>--}}
                                 <td>
                                     <a
                                             href="{{ route('imaging_results.show', [$patient, $imagingResult]) }}">{{ $imagingResult->date ? $imagingResult->date->format('d.m.Y') : __('imaging.no.date.label') }}

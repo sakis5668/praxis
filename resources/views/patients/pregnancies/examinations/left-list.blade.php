@@ -18,7 +18,7 @@
         <table class="table">
             <thead class="thead-light">
             <tr>
-                <th scope="col">{{__('pregnancy.ID')}}</th>
+                {{--<th scope="col">{{__('pregnancy.ID')}}</th>--}}
                 <th scope="col">{{__('pregnancy.Date')}}</th>
                 <th scope="col">{{__('pregnancy.Weeks')}}</th>
             </tr>
@@ -26,7 +26,7 @@
             <tbody>
             @foreach($pregnancy->examinations as $examination)
                 <tr>
-                    <th scope="row">{{$examination->id}}</th>
+                    {{--<th scope="row">{{$examination->id}}</th>--}}
                     <td><a href="{{ route('pregnancy.examinations.show', [$pregnancy, $examination]) }}">{{ $examination->date ? $examination->date->format('d.m.Y') : __('pregnancy.nodate') }}</a></td>
                     <td>{{ $examination->pregnancy_age }}</td>
                 </tr>

@@ -32,7 +32,7 @@
                             <table class="table">
                                 <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">{{__('pregnancy.ID')}}</th>
+                                    {{--<th scope="col">{{__('pregnancy.ID')}}</th>--}}
                                     <th scope="col">{{__('pregnancy.LMP')}}</th>
                                     <th scope="col">{{__('pregnancy.EDD')}}</th>
                                     <th scope="col">{{__('pregnancy.EDDcorr')}}</th>
@@ -44,7 +44,7 @@
                                 <tbody>
                                 @foreach($patient->pregnancies as $pregnancy)
                                     <tr>
-                                        <th scope="row">{{ $pregnancy->id }}</th>
+                                        {{--<th scope="row">{{ $pregnancy->id }}</th>--}}
                                         <td>
                                             <a href="{{ route ('pregnancies.show', [$patient,$pregnancy]) }}">{{ $pregnancy->lmp ? $pregnancy->lmp->format('d.m.Y') : 'no date' }}</a>
                                         </td>

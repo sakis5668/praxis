@@ -20,7 +20,7 @@
                     <table class="table">
                         <thead class="thead-light">
                         <tr>
-                            <th scope="col">{{__('cytology.id.label')}}</th>
+                            {{--<th scope="col">{{__('cytology.id.label')}}</th>--}}
                             <th scope="col">{{__('cytology.date.label')}}</th>
                             <th scope="col"></th>
                         </tr>
@@ -28,7 +28,7 @@
                         <tbody>
                         @foreach($patient->cytologies()->orderby('date')->get() as $cytology)
                                 <tr>
-                                    <th scope="row">{{ $cytology->id }}</th>
+                                    {{--<th scope="row">{{ $cytology->id }}</th>--}}
                                     <td>
                                         <a
                                            href="{{ route('cytologies.show', [$patient, $cytology]) }}">{{ $cytology->date ? $cytology->date->format('d.m.Y') : __('cytology.no.date.label') }}
