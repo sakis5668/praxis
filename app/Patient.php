@@ -14,6 +14,7 @@ class Patient extends Model
 
     protected $dates = ['birth_date'];
 
+    private $starting_path = '/docs/patients';
 
     public function history()
     {
@@ -60,9 +61,12 @@ class Patient extends Model
         return $this->hasMany(Pregnancy::class)->orderBy('edd');
     }
 
+
+
     public function getPatientPath()
     {
-        $tmp = public_path() . '/docs';
+        //$tmp = public_path() . '/docs';
+        $tmp = public_path() . $this->starting_path;
         $first_capital = mb_substr($this->last_name, 0, 1);
         if ($this->uniord($first_capital) < 256) {
             $language = 'latin';
@@ -76,7 +80,8 @@ class Patient extends Model
 
     public function getShortPatientPath()
     {
-        $tmp = '/docs';
+        //$tmp = '/docs';
+        $tmp = $this->starting_path;
         $first_capital = mb_substr($this->last_name, 0, 1);
         if ($this->uniord($first_capital) < 256) {
             $language = 'latin';
