@@ -28,8 +28,8 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-4">
-                                <img src="{{ $drugCompany->logo ? $drugCompany->logo : 'http://placehold.it/400x400' }}"
-                                     alt="" class="img-thumbnail">
+                                <img src="{{ $drugCompany->logo ? url('/') . '/docs/logos/' . $drugCompany->logo : 'http://placehold.it/400x400' }}"
+                                     alt="" class="img-thumbnail" width="100%">
                             </div>
                             <div class="col-md-8">
                                 <div class="row mt-2">
@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="row mt-2">
                                     <div class="col-md-3 font-weight-bold text-right">Homepage :</div>
-                                    <div class="col-md-9">{{ $drugCompany->website }}</div>
+                                    <div class="col-md-9"><a href="http://{{ $drugCompany->website }}" target="_blank">{{ $drugCompany->website }}</a></div>
                                 </div>
                             </div>
                         </div>

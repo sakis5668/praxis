@@ -31,7 +31,7 @@
                     <div class="card-body">
 
                         <div class="col-md-12">
-                            {!! Form::model($drugCompany, ['method'=>'patch', 'action'=>['AdminDrugCompaniesController@update', $drugCompany]]) !!}
+                            {!! Form::model($drugCompany, ['method'=>'patch', 'action'=>['AdminDrugCompaniesController@update', $drugCompany], 'files'=> true]) !!}
 
                             <div class="row mt-2">
                                 {!! Form::label('name', 'Name :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
@@ -73,11 +73,11 @@
                                 {!! Form::text('website', null, ['class'=>'form-control col-md-9']) !!}
                             </div>
                             <hr>
-                            <div class="row mt-2">
+                            {{--<div class="row mt-2">
                                 {!! Form::label('logo', 'Logo :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
                                 {!! Form::file('logo', null, ['class'=>'form-control']) !!}
                             </div>
-                            <hr>
+                            <hr>--}}
                             <div class="row mt-2">
                                 {!! Form::button('<i class="fa fa-check fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-primary form-control col-md-2 ml-auto']) !!}
                             </div>

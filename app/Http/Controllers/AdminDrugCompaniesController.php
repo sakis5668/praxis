@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\DrugCompany;
+use FontLib\Table\Type\name;
 use Illuminate\Http\Request;
 
 class AdminDrugCompaniesController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('is.admin');
@@ -33,6 +35,15 @@ class AdminDrugCompaniesController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+        if ($request->file('logo')) {
+            $file = $request->file('logo');
+            $name = time() . $file->getClientOriginalName();
+            $file->move(public_path() . '/docs/logos', $name);
+            $input['logo'] = $name;
+        }
+//        $input = $request->all();
+
+
         $drugCompany = DrugCompany::create($input);
         return redirect()->action('AdminDrugCompaniesController@show', $drugCompany);
     }
@@ -60,6 +71,7 @@ class AdminDrugCompaniesController extends Controller
 
     public function destroy(DrugCompany $drugCompany)
     {
+        unlink(public_path() . '/docs/logos/' . $drugCompany->logo);
         $drugCompany->delete();
         return redirect()->action('AdminDrugCompaniesController@index');
     }
