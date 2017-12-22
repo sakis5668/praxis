@@ -49,6 +49,17 @@
                                    class="dropdown-item">{{__('msg_layouts_app.admin.users.create.new')}}</a>
                             </div>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarMedications"
+                               data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                {{__('msg_layouts_app.Drugs')}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarMedications">
+                                <a href="#" class="dropdown-item">{{__('msg_layouts_app.Companies')}}</a>
+                                <a href="#" class="dropdown-item">{{__('msg_layouts_app.Products')}}</a>
+                            </div>
+                        </li>
                     @endif
                 </ul>
             </div>

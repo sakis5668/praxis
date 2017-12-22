@@ -13,8 +13,8 @@
 
                     {{-- THE HEADER CONTAINS THE SEARCH FIELD --}}
                     <div class="card-header">
-                        <div class="row">
-                            <div class="col-md-4  my-1">
+                        <div class="row mt-3">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <form method="get" action="{{ route('patients.index') }}" role="search">
                                         <div class="input-group">
@@ -28,7 +28,7 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="col-md-6  my-1 ml-auto">
+                            <div class="col-md-6 ml-auto">
                                 @if(Session::has('patient_deleted'))
                                     <p class="btn-delete font-weight-bold">{{ session('patient_deleted') }}</p>
                                 @endif
