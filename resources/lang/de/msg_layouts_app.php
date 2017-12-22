@@ -23,4 +23,5 @@ return [
     'utils'                      => 'Werkzeuge',
     'utils.pregnancy.calculator' => 'SSW berechnen',
     'utils.calculate.bmi'        => 'BMI berechnen',
+    'Pregnant'                   => 'Schwangere',
 ];

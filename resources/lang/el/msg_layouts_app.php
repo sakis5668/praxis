@@ -22,4 +22,5 @@ return [
     'utils'                      => 'Εργαλεία',
     'utils.pregnancy.calculator' => 'Υπολογιστής κύησης',
     'utils.calculate.bmi'        => 'Δείκτης μάζας σώματος',
+    'Pregnant'                   => 'Έγκυες',
 ];

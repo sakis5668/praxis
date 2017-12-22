@@ -29,6 +29,7 @@ Route::get('patients/{patient}/surgeries/{surgery}/pdf', 'SurgeryPDFController@p
  */
 Route::resource('/patients', 'PatientsController');
 Route::resource('/admin/users', 'AdminUsersController');
+Route::get('pregnancies', 'ActivePregnanciesController@index')->name('pregnancies');
 
 /**
  * Patients

@@ -22,4 +22,5 @@ return [
     'utils'                      => 'Utilities',
     'utils.pregnancy.calculator' => 'Pegnancy Calculator',
     'utils.calculate.bmi'        => 'Calculate BMI',
+    'Pregnant'                   => 'Pregnant',
 ];

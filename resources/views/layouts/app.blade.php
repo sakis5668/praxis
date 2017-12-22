@@ -46,7 +46,8 @@
                                    class="dropdown-item">{{__('msg_layouts_app.list.patients')}}</a>
                                 <a href="{{ route('patients.create') }}"
                                    class="dropdown-item">{{__('msg_layouts_app.create.new.patient')}}</a>
-                                <a href="{{ route('patients.index') }}" class="dropdown-item">Pregnant</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="{{ route('pregnancies') }}" class="dropdown-item">{{__('msg_layouts_app.Pregnant')}}</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">

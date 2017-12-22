@@ -43,7 +43,6 @@
                             <table class="table table-hover">
                                 <thead class="thead-light">
                                 <tr>
-                                    {{--<th scope="col">{{__('patients-index-view.id')}}</th>--}}
                                     <th scope="col">{{__('patients-index-view.last.name') }}</th>
                                     <th scope="col">{{__('patients-index-view.first.name')}}</th>
                                     <th scope="col">{{__('patients-index-view.email')}}</th>
@@ -54,14 +53,11 @@
                                 <tbody>
                                 @foreach($patients as $patient)
                                     <tr>
-                                        {{--<th scope="row">{{ $patient->id }}</th>--}}
-                                        <td>
-                                            <a href="{{ route('patients.show', $patient->id) }}">{{ $patient->last_name }}</a>
-                                        </td>
-                                        <td>{{ $patient->first_name }}</td>
-                                        <td>{{ $patient->email }}</td>
-                                        <td>{{ $patient->mobile_number }}</td>
-                                        <td>{{ $patient->phone_number }}</td>
+                                        <td><a href="{{ route('patients.show', $patient) }}">{{ $patient->last_name }}</a></td>
+                                        <td><a href="{{ route('patients.show', $patient) }}">{{ $patient->first_name }}</a></td>
+                                        <td><a href="{{ route('patients.show', $patient) }}">{{ $patient->email }}</a></td>
+                                        <td><a href="{{ route('patients.show', $patient) }}">{{ $patient->mobile_number }}</a></td>
+                                        <td><a href="{{ route('patients.show', $patient) }}">{{ $patient->phone_number }}</a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>
