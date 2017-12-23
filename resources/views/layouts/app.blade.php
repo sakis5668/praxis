@@ -35,6 +35,7 @@
                     @if(Auth::guest())
                         {{-- write nothing !--}}
                     @else
+
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownLeft"
                                data-toggle="dropdown"
@@ -50,6 +51,20 @@
                                 <a href="{{ route('pregnancies') }}" class="dropdown-item">{{__('msg_layouts_app.Pregnant')}}</a>
                             </div>
                         </li>
+
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDrugs"
+                               data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                {{__('msg_layouts_app.Products')}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDrugs">
+                                <a href="{{ route('user.drugs.index') }}"
+                                   class="dropdown-item">{{__('msg_layouts_app.Products')}}</a>
+
+                            </div>
+                        </li>
+
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownLeft"
                                data-toggle="dropdown"
@@ -63,6 +78,7 @@
                                    class="dropdown-item">{{__('msg_layouts_app.utils.calculate.bmi')}}</a>
                             </div>
                         </li>
+
                     @endif
                 </ul>
             </div>

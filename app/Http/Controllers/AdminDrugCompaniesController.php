@@ -38,12 +38,9 @@ class AdminDrugCompaniesController extends Controller
         if ($request->file('logo')) {
             $file = $request->file('logo');
             $name = time() . $file->getClientOriginalName();
-            $file->move(public_path() . '/docs/logos', $name);
+            $file->move(public_path() . '/docs/images/logos', $name);
             $input['logo'] = $name;
         }
-//        $input = $request->all();
-
-
         $drugCompany = DrugCompany::create($input);
         return redirect()->action('AdminDrugCompaniesController@show', $drugCompany);
     }
@@ -71,7 +68,9 @@ class AdminDrugCompaniesController extends Controller
 
     public function destroy(DrugCompany $drugCompany)
     {
-        unlink(public_path() . '/docs/logos/' . $drugCompany->logo);
+        if ($drugCompany->logo) {
+            unlink(public_path() . '/docs/images/logos/' . $drugCompany->logo);
+        }
         $drugCompany->delete();
         return redirect()->action('AdminDrugCompaniesController@index');
     }

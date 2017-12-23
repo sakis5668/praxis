@@ -13,7 +13,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-8 lead">
-                                Edit Company Data
+                                {{__('drug-companies.Edit Company Data')}}
                             </div>
                             <div class="col-md-2 ml-md-auto">
                                 {!! Form::open(['method'=>'delete', 'action'=>['AdminDrugCompaniesController@destroy', $drugCompany], 'onsubmit' => 'return ConfirmDelete()']) !!}
@@ -34,50 +34,45 @@
                             {!! Form::model($drugCompany, ['method'=>'patch', 'action'=>['AdminDrugCompaniesController@update', $drugCompany], 'files'=> true]) !!}
 
                             <div class="row mt-2">
-                                {!! Form::label('name', 'Name :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
+                                {!! Form::label('name', __('drug-companies.Name') . ' :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
                                 {!! Form::text('name', null, ['class'=>'form-control col-md-9']) !!}
                             </div>
                             <div class="row mt-2">
-                                {!! Form::label('subtitle', 'Subtitle :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
+                                {!! Form::label('subtitle', __('drug-companies.Subtitle') . ' :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
                                 {!! Form::text('subtitle', null, ['class'=>'form-control col-md-9']) !!}
                             </div>
                             <hr>
                             <div class="row mt-2">
-                                {!! Form::label('street', 'Street :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
+                                {!! Form::label('street', __('drug-companies.Street') . ' :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
                                 {!! Form::text('street', null, ['class'=>'form-control col-md-9']) !!}
                             </div>
                             <div class="row mt-2">
-                                {!! Form::label('postal', 'Postal :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
+                                {!! Form::label('postal', __('drug-companies.Postal') . ' :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
                                 {!! Form::text('postal', null, ['class'=>'form-control col-md-2']) !!}
                             </div>
                             <div class="row mt-2">
-                                {!! Form::label('city', 'City :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
+                                {!! Form::label('city', __('drug-companies.City') . ' :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
                                 {!! Form::text('city', null, ['class'=>'form-control col-md-9']) !!}
                             </div>
                             <hr>
                             <div class="row mt-2">
-                                {!! Form::label('phone', 'Phone :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
+                                {!! Form::label('phone', __('drug-companies.Phone') . ' :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
                                 {!! Form::text('phone', null, ['class'=>'form-control col-md-4']) !!}
                             </div>
                             <div class="row mt-2">
-                                {!! Form::label('fax', 'Fax :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
+                                {!! Form::label('fax', __('drug-companies.Fax') . ' :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
                                 {!! Form::text('fax', null, ['class'=>'form-control col-md-4']) !!}
                             </div>
                             <hr>
                             <div class="row mt-2">
-                                {!! Form::label('email', 'E-Mail :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
+                                {!! Form::label('email', __('drug-companies.E-Mail') . ' :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
                                 {!! Form::text('email', null, ['class'=>'form-control col-md-9']) !!}
                             </div>
                             <div class="row mt-2">
-                                {!! Form::label('website', 'Homepage :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
+                                {!! Form::label('website', __('drug-companies.Homepage') . ' :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
                                 {!! Form::text('website', null, ['class'=>'form-control col-md-9']) !!}
                             </div>
                             <hr>
-                            {{--<div class="row mt-2">
-                                {!! Form::label('logo', 'Logo :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
-                                {!! Form::file('logo', null, ['class'=>'form-control']) !!}
-                            </div>
-                            <hr>--}}
                             <div class="row mt-2">
                                 {!! Form::button('<i class="fa fa-check fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-primary form-control col-md-2 ml-auto']) !!}
                             </div>

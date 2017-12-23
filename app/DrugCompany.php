@@ -10,4 +10,9 @@ class DrugCompany extends Model
         'name', 'subtitle', 'street', 'postal', 'city',
         'email', 'website', 'phone', 'fax', 'logo'
     ];
+
+    public function drugs()
+    {
+        return $this->hasMany(Drug::class);
+    }
 }

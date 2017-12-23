@@ -57,7 +57,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarMedications">
                                 <a href="{{ route('drugCompanies.index') }}" class="dropdown-item">{{__('msg_layouts_app.Companies')}}</a>
-                                <a href="#" class="dropdown-item">{{__('msg_layouts_app.Products')}}</a>
+                                <a href="{{ route('drugs.index') }}" class="dropdown-item">{{__('msg_layouts_app.Products')}}</a>
                             </div>
                         </li>
                     @endif

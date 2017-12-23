@@ -27,9 +27,10 @@ Route::get('patients/{patient}/surgeries/{surgery}/pdf', 'SurgeryPDFController@p
 /**
  * Main Level
  */
-Route::resource('/patients', 'PatientsController');
-Route::resource('/admin/users', 'AdminUsersController');
+Route::resource('patients', 'PatientsController');
+Route::resource('admin/users', 'AdminUsersController');
 Route::resource('admin/drugCompanies', 'AdminDrugCompaniesController');
+Route::resource('admin/drugs', 'AdminDrugsController');
 Route::get('pregnancies', 'ActivePregnanciesController@index')->name('pregnancies');
 
 /**
@@ -56,4 +57,8 @@ Route::prefix('pregnancies/{pregnancy}')->group(function (){
     Route::resource('outcome', 'PregnancyOutcomesController')->names('pregnancy.outcome');
 });
 
-
+/**
+ * User Drugs Index and Show
+ */
+Route::get('user/drugs', 'UserDrugsController@index')->name('user.drugs.index');
+Route::get('user/drugs/{drug}', 'UserDrugsController@show')->name('user.drugs.show');

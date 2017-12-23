@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
 
@@ -8,11 +8,10 @@
         <div class="row mt-3">
             <div class="col-md-12">
                 <div class="card">
-
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-4">
-                                <form method="get" action="{{ route('drugCompanies.index') }}" role="search">
+                                <form method="get" action="{{ route('user.drugs.index') }}" role="search">
                                     <div class="input-group">
                                         <input type="text" name="search" class="form-control">
                                         <span class="input-group-btn">
@@ -24,55 +23,50 @@
                                 </form>
                             </div>
                             <div class="col-md-4 lead font-weight-bold text-center">
-                                {{__('drug-companies.Companies')}}
-                            </div>
-                            <div class="col-md-2 ml-auto">
-                                {!! Form::open(['method'=>'get', 'action'=>'AdminDrugCompaniesController@create']) !!}
-                                {!! Form::button('<i class="fa fa-plus fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-light col-md-12']) !!}
-                                {!! Form::close() !!}
+                                {{__('drug-companies.Products')}}
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                     <div class="card-body">
+
                         <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead class="thead-light">
                                 <tr>
+                                    <th scope="col">{{__('drug-companies.Product')}}</th>
+                                    <th scope="col">{{__('drug-companies.Content')}}</th>
                                     <th scope="col">{{__('drug-companies.Company')}}</th>
-                                    <th scope="col">{{__('drug-companies.City')}}</th>
-                                    <th scope="col">{{__('drug-companies.Phone')}}</th>
-                                    <th scope="col">{{__('drug-companies.Fax')}}</th>
-                                    <th scope="col">{{__('drug-companies.Homepage')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($drugCompanies as $drugCompany)
+                                @foreach($drugs as $drug)
                                     <tr>
-                                        <td><a href="{{ route('drugCompanies.show', $drugCompany) }}">{{ $drugCompany->name }}</a></td>
-                                        <td><a href="{{ route('drugCompanies.show', $drugCompany) }}">{{ $drugCompany->city }}</a></td>
-                                        <td><a href="{{ route('drugCompanies.show', $drugCompany) }}">{{ $drugCompany->phone }}</a></td>
-                                        <td><a href="{{ route('drugCompanies.show', $drugCompany) }}">{{ $drugCompany->fax }}</a></td>
-                                        <td><a href="{{ route('drugCompanies.show', $drugCompany) }}">{{ $drugCompany->website }}</a></td>
+                                        <td><a href="{{ route('user.drugs.show', $drug) }}">{{ $drug->name }}</a></td>
+                                        <td><a href="{{ route('user.drugs.show', $drug) }}">{{ $drug->content }}</a></td>
+                                        @if($drug->drugCompany)
+                                            <td>
+                                                <a href="{{ route('user.drugs.show', $drug) }}">{{ $drug->drugCompany->name }}</a>
+                                            </td>
+                                        @else
+                                            <td></td>
+                                        @endif
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
 
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-
     {{-- PAGINATION --}}
     <div class="container mt-3">
-        {{ $drugCompanies->appends(\Illuminate\Support\Facades\Input::except('page'))->links() }}
+        {{ $drugs->appends(\Illuminate\Support\Facades\Input::except('page'))->links() }}
     </div>
-
 
 @endsection
