@@ -50,7 +50,9 @@
                         <hr>
                         <div class="row mt-2">
                             {!! Form::label('filename', __('drug-companies.Picture') . ' :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
-                            {!! Form::file('filename', null, ['class'=>'form-control col-md-9']) !!}
+{{--                            {!! Form::file('filename', null, ['class'=>'form-control col-md-9']) !!}--}}
+                            <input type="button" class="btn btn-outline-cool" id="loadFileXml" value="{{__('drug-companies.Select File')}}" onclick="document.getElementById('filename').click();" />
+                            <input type="file" style="display:none;" id="filename" name="filename"/>
                         </div>
                         <hr>
                         <div class="row mt-2">

@@ -12,7 +12,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-8 lead">
-                               {{__('drug-companies. Drug Data')}}
+                               {{__('drug-companies.Drug Data')}}
                             </div>
                             <div class="col-md-2 ml-auto">
                                 {!! Form::open(['method'=>'get', 'action'=>['AdminDrugsController@edit', $drug]]) !!}
