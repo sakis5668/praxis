@@ -41,7 +41,7 @@
                                 <hr>
                                 <div class="row mt-2">
                                     <div class="col-md-3 font-weight-bold text-right">{{__('drug-companies.Information')}} :</div>
-                                    <div class="col-md-9">{{ $drug->information }}</div>
+                                    <div class="col-md-9"><p align="justify">{!! nl2br(e($drug->information)) !!}</p></div>
                                 </div>
                                 <div class="row mt-2">
                                     <div class="col-md-3 font-weight-bold text-right">{{__('drug-companies.Content')}} :</div>
