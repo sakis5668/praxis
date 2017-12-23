@@ -15,7 +15,11 @@ class UserDrugsController extends Controller
     {
         if (request('search')) {
             $search = request('search');
-            $drugs = Drug::where('name', 'like', '%' . $search . '%')->paginate(12);
+            $drugs = Drug::where('name', 'like', '%' . $search . '%')
+                ->orWhere('information', 'like', '%' . $search . '%')
+                ->orWhere('content', 'like', '%' . $search . '%')
+                ->orWhere('dosage', 'like', '%' . $search . '%')
+                ->paginate(12);
             return view('drugs.index', compact('drugs'));
         }
         $drugs = Drug::paginate(12);
