@@ -1,15 +1,19 @@
 <div class="card">
 
-    <div class="card-header font-weight-bold">
+    <div class="card-header">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-12 text-center">
                 {{__('histology.histologies.label')}}
             </div>
-            <div class="col-md-3 ml-auto">
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
                 {!! Form::open(['method' => 'get', 'action' => ['HistologiesController@create', $patient]]) !!}
-                {!! Form::button('<i class="fa fa-plus fa-lg" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-cool']) !!}
+                {!! Form::button('<i class="fa fa-plus fa-lg" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-outline-cool']) !!}
                 {!! Form::close() !!}
             </div>
+            <div class="col-md-3"></div>
         </div>
     </div>
 
@@ -18,17 +22,9 @@
             <div class="col-md-12">
                 <div class="table-responsive">
                     <table class="table">
-                        <thead class="thead-light">
-                        <tr>
-                            {{--<th scope="col">{{__('histology.id.label')}}</th>--}}
-                            <th scope="col">{{__('histology.date.label')}}</th>
-                            <th scope="col"></th>
-                        </tr>
-                        </thead>
                         <tbody>
                         @foreach($patient->histologies()->orderby('date')->get() as $histology)
                             <tr>
-                                {{--<th scope="row">{{ $histology->id }}</th>--}}
                                 <td>
                                     <a
                                             href="{{ route('histologies.show', [$patient, $histology]) }}">{{ $histology->date ? $histology->date->format('d.m.Y') : __('$histology.no.date.label') }}

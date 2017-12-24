@@ -21,12 +21,12 @@ return [
     'ID'              => 'ID',
     'no birth date'   => 'ημερομηνία γέννησης λείπει',
     'Actions'         => 'Ενέργειες',
-    'Medical History' => 'Ιατρικό ιστορικό',
+    'Medical History' => 'Ιστορικό',
     'Examinations'    => 'Εξετάσεις',
-    'Cytologies'      => 'Κυτταρολογικές',
-    'Histologies'     => 'Ιστολογικές',
-    'Laboratory'      => 'Εργαστηριακά',
-    'Imaging'         => 'Απεικονιστικές',
+    'Cytologies'      => 'Κυτταρολογία',
+    'Histologies'     => 'Ιστολογία',
+    'Laboratory'      => 'Εργαστήρια',
+    'Imaging'         => 'Απεικονίσεις',
     'Surgery'         => 'Χειρουργεία',
     'Pregnancies'     => 'Κυήσεις'
 ];
