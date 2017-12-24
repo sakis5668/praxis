@@ -13,48 +13,59 @@
                     <div class="card-header lead">
 
                         <div class="row">
-                            <div class="col-md-12">{{__('patients-create-view.enter.new.patient')}}</div>
+                            <div class="col-md-10">{{__('patients.New Patient')}}</div>
+                            <div class="col-md-2 ml-auto">
+                                {!! Form::open(['method'=>'get','action'=>'PatientsController@index' ]) !!}
+                                {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-light col-md-12']) !!}
+                                {!! Form::close() !!}
+                            </div>
                         </div>
                     </div>
 
                     <div class="card-body">
 
                         {!! Form::open(['method'=>'post', 'action'=>'PatientsController@store']) !!}
-                        <div class="row mt-3">
-                            {!! Form::label('last_name', __('patients-create-view.last.name.label'), ['class'=>'col-md-2']) !!}
-                            {!! Form::text('last_name', null, ['class' => 'form-control col-md-4', 'autofocus']) !!}
-                            {!! Form::label('first_name', __('patients-create-view.first.name.label'), ['class' => 'col-md-2']) !!}
-                            {!! Form::text('first_name', null, ['class'=>'form-control col-md-4']) !!}
+                        <div class="row mt-2 mx-1">
+                            {!! Form::label('last_name', __('patients.Last Name') . ' :', ['class'=>'col-md-4 text-right font-weight-bold']) !!}
+                            {!! Form::text('last_name', null, ['class' => 'form-control col-md-8', 'autofocus']) !!}
                         </div>
-                        <div class="row mt-3">
-                            {!! Form::label('middle_name', __('patients-create-view.middle.name.label'), ['class'=>'col-md-2']) !!}
-                            {!! Form::text('middle_name', null, ['class' => 'form-control col-md-4']) !!}
+                        <div class="row mt-2 mx-1">
+                            {!! Form::label('first_name', __('patients.First Name') . ' :', ['class' => 'col-md-4 text-right font-weight-bold']) !!}
+                            {!! Form::text('first_name', null, ['class'=>'form-control col-md-8']) !!}
+                        </div>
+                        <div class="row mt-2 mx-1">
+                            {!! Form::label('middle_name', __('patients.Middle Name') . ' :', ['class'=>'col-md-4 text-right font-weight-bold']) !!}
+                            {!! Form::text('middle_name', null, ['class' => 'form-control col-md-8']) !!}
                         </div>
                         <hr>
-                        <div class="row mt-3">
-                            {!! Form::label('birth_date', __('patients-create-view.birthdate.label'), ['class'=>'col-md-2']) !!}
+                        <div class="row mt-2 mx-1">
+                            {!! Form::label('birth_date', __('patients.Birth Date') . ' :', ['class'=>'col-md-4 text-right font-weight-bold']) !!}
                             {!! Form::text('birth_date', null, ['class' => 'form-control col-md-4']) !!}
-                            {!! Form::label('email', __('patients-create-view.email.label'), ['class' => 'col-md-2']) !!}
-                            {!! Form::text('email', null, ['class'=>'form-control col-md-4']) !!}
                         </div>
-                        <div class="row mt-3">
-                            {!! Form::label('mobile_number', __('patients-create-view.mobile.number.label'), ['class'=>'col-md-2']) !!}
+                        <div class="row mt-2 mx-1">
+                            {!! Form::label('email', __('patients.E-Mail') . ' :', ['class' => 'col-md-4 text-right font-weight-bold']) !!}
+                            {!! Form::text('email', null, ['class'=>'form-control col-md-8']) !!}
+                        </div>
+                        <div class="row mt-2 mx-1">
+                            {!! Form::label('mobile_number', __('patients.Mobile Number') . ' :', ['class'=>'col-md-4 text-right font-weight-bold']) !!}
                             {!! Form::text('mobile_number', null, ['class' => 'form-control col-md-4']) !!}
-                            {!! Form::label('phone_number', __('patients-create-view.phone.number.label'), ['class' => 'col-md-2']) !!}
+                        </div>
+                        <div class="row mt-2 mx-1">
+                            {!! Form::label('phone_number', __('patients.Phone Number') . ' :', ['class' => 'col-md-4 text-right font-weight-bold']) !!}
                             {!! Form::text('phone_number', null, ['class'=>'form-control col-md-4']) !!}
                         </div>
                         <hr>
-                        <div class="row mt-3">
-                            {!! Form::label('address', __('patients-create-view.address.label'), ['class'=>'col-md-2']) !!}
-                            {!! Form::text('address', null, ['class' => 'form-control col-md-10']) !!}
+                        <div class="row mt-2 mx-1">
+                            {!! Form::label('address', __('patients.Address') . ' :', ['class'=>'col-md-4 text-right font-weight-bold']) !!}
+                            {!! Form::text('address', null, ['class' => 'form-control col-md-8']) !!}
                         </div>
                         <hr>
-                        <div class="row mt-3">
-                            {!! Form::label('information', __('patients-create-view.information.label'), ['class'=>'col-md-2']) !!}
-                            {!! Form::textarea('information', null, ['class' => 'form-control col-md-10', 'rows' => '10']) !!}
+                        <div class="row mt-2 mx-1">
+                            {!! Form::label('information', __('patients.Information') . ' :', ['class'=>'col-md-4 text-right font-weight-bold']) !!}
+                            {!! Form::textarea('information', null, ['class' => 'form-control col-md-8', 'rows' => 5]) !!}
                         </div>
                         <hr>
-                        <div class="row mt-3">
+                        <div class="row mt-2 mx-1">
                             {!! Form::button('<i class="fa fa-check fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-primary col-md-2 ml-auto']) !!}
                         </div>
                         {!! Form::close() !!}

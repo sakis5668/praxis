@@ -28,11 +28,13 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="col-md-6 ml-auto">
-                                @if(Session::has('patient_deleted'))
-                                    <p class="btn-delete font-weight-bold">{{ session('patient_deleted') }}</p>
-                                @endif
+
+                            <div class="col-md-2 ml-auto">
+                                {!! Form::open(['method'=>'get', 'action'=>'PatientsController@create']) !!}
+                                {!! Form::button('<i class="fa fa-plus fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-light col-md-12']) !!}
+                                {!! Form::close() !!}
                             </div>
+
                         </div>
                     </div>
 
@@ -40,32 +42,44 @@
                     <div class="card-body">
 
                         <div class="table-responsive">
+
                             <table class="table table-hover">
                                 <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">{{__('patients-index-view.last.name') }}</th>
-                                    <th scope="col">{{__('patients-index-view.first.name')}}</th>
-                                    <th scope="col">{{__('patients-index-view.email')}}</th>
-                                    <th scope="col">{{__('patients-index-view.mobile.number')}}</th>
-                                    <th scope="col">{{__('patients-index-view.phone.number')}}</th>
+                                    <th>{{__('patients.Last Name') }}</th>
+                                    <th>{{__('patients.First Name')}}</th>
+                                    <th>{{__('patients.E-Mail')}}</th>
+{{--                                    <th>{{__('patients.Mobile Number')}}</th>--}}
+{{--                                    <th>{{__('patients.Phone Number')}}</th>--}}
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($patients as $patient)
                                     <tr>
-                                        <td><a href="{{ route('patients.show', $patient) }}">{{ $patient->last_name }}</a></td>
-                                        <td><a href="{{ route('patients.show', $patient) }}">{{ $patient->first_name }}</a></td>
-                                        <td><a href="{{ route('patients.show', $patient) }}">{{ $patient->email }}</a></td>
-                                        <td><a href="{{ route('patients.show', $patient) }}">{{ $patient->mobile_number }}</a></td>
-                                        <td><a href="{{ route('patients.show', $patient) }}">{{ $patient->phone_number }}</a></td>
+                                        <td>
+                                            <a href="{{ route('patients.show', $patient) }}">{{ $patient->last_name }}</a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('patients.show', $patient) }}">{{ $patient->first_name }}</a>
+                                        </td>
+                                        <td><a href="{{ route('patients.show', $patient) }}">{{ $patient->email }}</a>
+                                        </td>
+                                        {{--<td>--}}
+                                            {{--<a href="{{ route('patients.show', $patient) }}">{{ $patient->mobile_number }}</a>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                            {{--<a href="{{ route('patients.show', $patient) }}">{{ $patient->phone_number }}</a>--}}
+                                        {{--</td>--}}
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
+
                         </div>
 
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

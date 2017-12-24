@@ -33,45 +33,49 @@
 
                     <div class="card-body">
 
-                        <div class="row my-1">
-                            <div class="col-md-3 font-weight-bold text-right">{{__('patients-show-view.middle.name.label')}}</div>
-                            <div class="col-md-4">{{$patient->middle_name}}</div>
+                        <div class="row mt-2">
+                            <div class="col-md-4 font-weight-bold text-right">{{__('patients.Middle Name')}} :</div>
+                            <div class="col-md-8">{{$patient->middle_name}}</div>
                         </div>
 
-                        <div class="row my-1">
-                            <div class="col-md-3 font-weight-bold text-right">{{__('patients-show-view.birthdate.label')}}</div>
-                            <div class="col-md-2">{{ $patient->birth_date ? $patient->birth_date->format('d.m.Y') : __('patients-show-view.no.birthdate.label') }}</div>
-                        </div>
-
-                        <hr>
-
-                        <div class="row my-1">
-                            <div class="col-md-3 font-weight-bold text-right">{{__('patients-show-view.email.label')}}</div>
-                            <div class="col-md-4">{{ $patient->email }}</div>
-                        </div>
-
-                        <div class="row my-1">
-                            <div class="col-md-3 font-weight-bold text-right">{{__('patients-show-view.mobile.number.label')}}</div>
-                            <div class="col-md-4">{{ $patient->mobile_number }}</div>
-                        </div>
-
-                        <div class="row my-1">
-                            <div class="col-md-3 font-weight-bold text-right">{{__('patients-show-view.phone.number.label')}}</div>
-                            <div class="col-md-4">{{ $patient->phone_number }}</div>
+                        <div class="row mt-2">
+                            <div class="col-md-4 font-weight-bold text-right">{{__('patients.Birth Date')}} :</div>
+                            @if($patient->birth_date)
+                                <div class="col-md-8">{{ $patient->birth_date->format('d.m.Y') }}</div>
+                            @else
+                                <div class="col-md-8"><i>{{__('patients.no birth date')}}</i></div>
+                            @endif
                         </div>
 
                         <hr>
 
-                        <div class="row my-1">
-                            <div class="col-md-3 font-weight-bold text-right">{{__('patients-show-view.address.label')}}</div>
-                            <div class="col-md-4">{{ $patient->address }}</div>
+                        <div class="row mt-2">
+                            <div class="col-md-4 font-weight-bold text-right">{{__('patients.E-Mail')}} :</div>
+                            <div class="col-md-8">{{ $patient->email }}</div>
+                        </div>
+
+                        <div class="row mt-2">
+                            <div class="col-md-4 font-weight-bold text-right">{{__('patients.Mobile Number')}} :</div>
+                            <div class="col-md-8">{{ $patient->mobile_number }}</div>
+                        </div>
+
+                        <div class="row mt-2">
+                            <div class="col-md-4 font-weight-bold text-right">{{__('patients.Phone Number')}} :</div>
+                            <div class="col-md-8">{{ $patient->phone_number }}</div>
                         </div>
 
                         <hr>
 
-                        <div class="row my-1">
-                            <div class="col-md-3 font-weight-bold text-right">{{__('patients-show-view.information.label')}}</div>
-                            <div class="col-md-9">{!! nl2br(e($patient->information)) !!}</div>
+                        <div class="row mt-2">
+                            <div class="col-md-4 font-weight-bold text-right">{{__('patients.Address')}} :</div>
+                            <div class="col-md-8">{{ $patient->address }}</div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row mt-2">
+                            <div class="col-md-4 font-weight-bold text-right">{{__('patients.Information')}} :</div>
+                            <div class="col-md-8"><p align="justify">{!! nl2br(e($patient->information)) !!}</p></div>
                         </div>
 
                     </div>
