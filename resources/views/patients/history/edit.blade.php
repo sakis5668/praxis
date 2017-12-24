@@ -33,8 +33,8 @@
                     <div class="card-body">
 
                         {{ Form::model($history, ['method'=>'patch', 'action' => ['HistoriesController@update', $patient, $history]]) }}
-                        <div class="row mt-3">
-                            {!! Form::textarea('history', null, ['class' => 'form-control col-md-12', 'rows' => '15', 'autofocus']) !!}
+                        <div class="row mt-3 mx-1">
+                            {!! Form::textarea('history', null, ['class' => 'form-control col-md-12', 'rows' => 10, 'autofocus']) !!}
                         </div>
                         <hr>
                         <div class="col-md-12">
