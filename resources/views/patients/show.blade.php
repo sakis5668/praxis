@@ -24,7 +24,7 @@
                             <div class="col-md-2">
                                 <form method="get" action="{{ route('patients.edit', $patient->id) }}"
                                       class="form-inline">
-                                    <button type="submit" class="btn btn-light col-md-12"><i
+                                    <button type="submit" class="btn btn-outline-cool col-md-12"><i
                                                 class="fa fa-pencil fa-lg"></i></button>
                                 </form>
                             </div>

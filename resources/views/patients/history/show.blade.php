@@ -23,7 +23,7 @@
                             </div>
                             <div class="col-md-2 ml-auto">
                                 <form method="get" action="{{ route('history.edit', [$patient, $patient->history]) }}" class="form-inline">
-                                    <button type="submit" class="btn btn-light col-md-12"><i class="fa fa-pencil fa-lg"></i></button>
+                                    <button type="submit" class="btn btn-outline-cool col-md-12"><i class="fa fa-pencil fa-lg"></i></button>
                                 </form>
                             </div>
                         </div>

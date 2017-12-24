@@ -7,7 +7,7 @@
             </div>
             <div class="col-md-2">
                 {!! Form::open(['method'=>'get', 'action'=>['PatientsController@show', $patient->id]]) !!}
-                {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-light col-md-12']) !!}
+                {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
                 {!! Form::close() !!}
             </div>
         </div>
