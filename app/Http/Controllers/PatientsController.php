@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\History;
 use App\Http\Requests\PatientsRequest;
 use App\Patient;
+use App\Physician;
 use Carbon\Carbon;
 use Session;
 
@@ -33,7 +34,8 @@ class PatientsController extends Controller
 
     public function create()
     {
-        return view('patients.create');
+        $physicians = Physician::pluck('name', 'id')->all();
+        return view('patients.create', compact('physicians'));
     }
 
 
@@ -62,7 +64,8 @@ class PatientsController extends Controller
 
     public function edit(Patient $patient)
     {
-        return view('patients.edit', compact('patient'));
+        $physicians = Physician::pluck('name', 'id')->all();
+        return view('patients.edit', compact('patient', 'physicians'));
     }
 
 

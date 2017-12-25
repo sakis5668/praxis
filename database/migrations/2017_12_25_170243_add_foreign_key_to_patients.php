@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPhysicianIdToPatients extends Migration
+class AddForeignKeyToPatients extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddPhysicianIdToPatients extends Migration
     public function up()
     {
         Schema::table('patients', function (Blueprint $table) {
-            $table->integer('physician_id')->unsigned()->nullable()->after('information');
+            $table->foreign('physician_id')->references('id')->on('physicians')->onDelete('set null');
         });
     }
 
@@ -26,7 +26,7 @@ class AddPhysicianIdToPatients extends Migration
     public function down()
     {
         Schema::table('patients', function (Blueprint $table) {
-            $table->dropColumn('physician_id');
+            //
         });
     }
 }

@@ -36,6 +36,7 @@
                     @if(Auth::guest())
                         {{-- write nothing !--}}
                     @else
+
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownLeft"
                                data-toggle="dropdown"
@@ -49,6 +50,18 @@
                                    class="dropdown-item">{{__('msg_layouts_app.admin.users.create.new')}}</a>
                             </div>
                         </li>
+
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="physicians"
+                               data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                               Physicians
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="physicians">
+                                <a href="{{ route('physicians.index') }}" class="dropdown-item">List Physicians</a>
+                            </div>
+                        </li>
+
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" id="navbarMedications"
                                data-toggle="dropdown"
@@ -60,6 +73,7 @@
                                 <a href="{{ route('drugs.index') }}" class="dropdown-item">{{__('msg_layouts_app.Products')}}</a>
                             </div>
                         </li>
+
                     @endif
                 </ul>
             </div>

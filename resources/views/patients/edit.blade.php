@@ -60,16 +60,20 @@
                             {!! Form::text('phone_number', null, ['class'=>'form-control col-md-4']) !!}
                         </div>
                         <hr>
+
+                        <div class="row mt-2 mx-1">
+                            {!! Form::label('physician_id', 'Physician :', ['class'=>'col-md-4 font-weight-bold'] ) !!}
+                            {!! Form::select('physician_id', $physicians, $patient->physician_id,['class' => 'form-control col-md-4'] ) !!}
+                        </div>
+                        <hr>
                         <div class="row mt-2 mx-1">
                             {!! Form::label('address', __('patients.Address') . ' :', ['class'=>'col-md-4 font-weight-bold']) !!}
                             {!! Form::text('address', null, ['class' => 'form-control col-md-8']) !!}
                         </div>
-                        <hr>
                         <div class="row mt-2 mx-1">
                             {!! Form::label('information', __('patients.Information') . ' :', ['class'=>'col-md-4 font-weight-bold']) !!}
                             {!! Form::textarea('information', null, ['class' => 'form-control col-md-8', 'rows' => 5]) !!}
                         </div>
-                        <hr>
                         <div class="row mt-2 mx-1">
                             {!! Form::button('<i class="fa fa-check fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-primary col-md-2 ml-auto']) !!}
                         </div>

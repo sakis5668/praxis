@@ -27,6 +27,9 @@ class CreatePatientsTable extends Migration
             $table->integer('physician_id')->unsigned()->nullable();
             $table->timestamps();
         });
+        Schema::table('patients', function (Blueprint $table) {
+            $table->foreign('physician_id')->references('id')->on('physicians')->onDelete('set null');
+        });
     }
 
     /**

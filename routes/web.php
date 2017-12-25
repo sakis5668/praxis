@@ -31,6 +31,7 @@ Route::resource('patients', 'PatientsController');
 Route::resource('admin/users', 'AdminUsersController');
 Route::resource('admin/drugCompanies', 'AdminDrugCompaniesController');
 Route::resource('admin/drugs', 'AdminDrugsController');
+Route::resource('admin/physicians', 'PhysicianController');
 Route::get('pregnancies', 'ActivePregnanciesController@index')->name('pregnancies');
 
 /**
