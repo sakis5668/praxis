@@ -2,11 +2,16 @@
 
     <div class="card-header">
         <div class="row my-1">
-            <div class="col-md-9 lead">
+            <div class="col-md-6 lead">
                 {{__('patients.Actions') . ' - ' . $patient->last_name . ' ' . $patient->first_name}}
             </div>
             <div class="col-md-3">
-                {!! Form::open(['method'=>'get', 'action'=>['PatientsController@show', $patient->id]]) !!}
+                {!! Form::open(['method'=>'get', 'action'=>'PatientsController@index']) !!}
+                {!! Form::button('<i class="fa fa-home fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
+                {!! Form::close() !!}
+            </div>
+            <div class="col-md-3">
+                {!! Form::open(['method'=>'get', 'action'=>['PatientsController@show', $patient]]) !!}
                 {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
                 {!! Form::close() !!}
             </div>
