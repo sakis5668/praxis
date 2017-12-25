@@ -17,17 +17,19 @@
 
                 <div class="card">
 
-                    <div class="card-header lead font-weight-bold">
+                    <div class="card-header">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-8 lead">
                                 {{ $history->patient->last_name . ', ' . $history->patient->first_name . ' - ' . __('history.medical.history.label')}}
                             </div>
-                            <div class="col-md-2 ml-auto">
+                        </div>
+                        <div class="row justify-content-end">
+                            <div class="col-6 col-md-3">
                                 {!! Form::open(['method' => 'delete', 'action' => ['HistoriesController@destroy', $patient, $history], 'onsubmit' => 'return ConfirmDelete()']) !!}
                                 {!! Form::button('<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>', ['type'=>'submit', 'class'=>'btn btn-delete col-md-12']) !!}
                                 {!! Form::close() !!}
                             </div>
-                            <div class="col-md-2 ml-auto">
+                            <div class="col-6 col-md-3">
                                 {!! Form::open(['method' => 'get', 'action' => ['HistoriesController@show', $patient, $history]]) !!}
                                 {!! Form::button('<i class="fa fa-arrow-left fa-lg" aria-hidden="true"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
                                 {!! Form::close() !!}

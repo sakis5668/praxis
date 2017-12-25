@@ -1,19 +1,18 @@
 <div class="card">
 
-    <div class="card-header font-weight-bold">
+    <div class="card-header">
         <div class="row">
             <div class="col-md-12 lead">
                 {{__('examinations.findings.label')}} - {{ $examination->date->format('d.m.Y') }}
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6"></div>
-            <div class="col-md-3 ml-auto">
+        <div class="row justify-content-end">
+            <div class="col-6 col-md-3 mt-1">
                 {!! Form::model($examination, ['method'=>'delete', 'action'=>['ExaminationsController@destroy', $patient, $examination], 'onsubmit' => 'return ConfirmDelete()']) !!}
                 {!! Form::button('<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-delete col-md-12']) !!}
                 {!! Form::close() !!}
             </div>
-            <div class="col-md-3 ml-auto">
+            <div class="col-6 col-md-3 mt-1">
                 {!! Form::open(['method'=>'get', 'action'=>['ExaminationsController@show', $patient, $examination]]) !!}
                 {!! Form::button('<i class="fa fa-arrow-left fa-lg" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-outline-cool col-md-12']) !!}
                 {!! Form::close() !!}

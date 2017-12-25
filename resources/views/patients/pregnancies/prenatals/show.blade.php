@@ -29,7 +29,7 @@
                             </div>
                             <div class="col-md-3">
                                 {!! Form::open(['method'=>'get', 'action'=>['PregnancyPrenatalsController@edit', $pregnancy, $prenatal]]) !!}
-                                {!! Form::button('<i class="fa fa-pencil fa-lg"></i>',['type'=>'submit', 'class'=>'form-control btn btn-light']) !!}
+                                {!! Form::button('<i class="fa fa-pencil fa-lg"></i>',['type'=>'submit', 'class'=>'form-control btn btn-outline-cool']) !!}
                                 {!! Form::close() !!}
                             </div>
                         </div>
@@ -37,15 +37,15 @@
 
                     <div class="card-body">
                         <div class="row mt-3">
-                            <div class="col-md-3 text-right">{{__('pregnancy.Date')}} :</div>
-                            <div class="col-md-2">{{ $prenatal->date ? $prenatal->date->format('d.m.Y') : __('pregnancy.nodate') }}</div>
+                            <div class="col-md-4 font-weight-bold">{{__('pregnancy.Date')}} :</div>
+                            <div class="col-md-4">{{ $prenatal->date ? $prenatal->date->format('d.m.Y') : __('pregnancy.nodate') }}</div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-3 text-right">{{__('pregnancy.Weeks')}} :</div>
-                            <div class="col-md-2">{{ $prenatal->pregnancy_age }}</div>
+                            <div class="col-md-4 font-weight-bold">{{__('pregnancy.Weeks')}} :</div>
+                            <div class="col-md-4">{{ $prenatal->pregnancy_age }}</div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-3 text-right">{{__('pregnancy.Type')}} :</div>
+                            <div class="col-md-4 font-weight-bold">{{__('pregnancy.Type')}} :</div>
                             @if($prenatal->type)
                                 <div class="col-md-4">{{ \App\Enums\PregnancyPrenatalType::getDescription($prenatal->type) }}</div>
                             @else
@@ -53,12 +53,12 @@
                             @endif
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-3 text-right">{{__('pregnancy.Examiner')}} :</div>
+                            <div class="col-md-4 font-weight-bold">{{__('pregnancy.Examiner')}} :</div>
                             <div class="col-md-4">{{ $prenatal->examiner }}</div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-3 text-right">{{__('pregnancy.Findings')}} :</div>
-                            <div class="col-md-9"><p align="justify">{!! nl2br(e($prenatal->findings)) !!}</p></div>
+                            <div class="col-md-4 font-weight-bold">{{__('pregnancy.Findings')}} :</div>
+                            <div class="col-md-8"><p align="justify">{!! nl2br(e($prenatal->findings)) !!}</p></div>
                         </div>
                     </div>
 

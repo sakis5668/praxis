@@ -7,14 +7,14 @@
  */
 
 return [
-    'create.view.title'   => 'Εισαγωγή νέων δεδομένων κύησης',
+    'create.view.title'   => 'Νέα δεδομένα κύησης',
     'edit.view.title'     => 'Διόρθωση δεδομένων κύησης',
     'ID'                  => '#',
     'LMP'                 => 'ΤΕΡ',
     'EDD'                 => 'ΠΗΤ',
     'EDDcorr'             => 'ΠΗΤ (διορθ.)',
     'select'              => 'Επιλογή...',
-    'termination.type'    => 'Είδος τερματισμού',
+    'termination.type'    => 'Tερματισμός',
     'Termination'         => 'Τερματισμός',
     'Finished'            => 'Λήξη',
     'nodate'              => 'λείπει',
@@ -40,7 +40,7 @@ return [
     'Gender'              => 'Φύλλο',
     'WeightInGrams'       => 'Βάρος [g]',
     'Indication'          => 'Ένδειξη',
-    'Comment'             => 'Σχόλειο',
+    'Comment'             => 'Σχόλιο',
     'outcome.title'       => 'Έκβαση κύησης',
     'new.prenatal.title'  => 'Νέα δεδομένα προγεννετικού',
     'Type'                => 'Είδος',

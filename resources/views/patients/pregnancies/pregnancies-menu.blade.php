@@ -1,13 +1,13 @@
 <div class="card">
 
-    <div class="card-header lead font-weight-bold">
+    <div class="card-header">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-9 lead">
                 {{__('pregnancy.Pregnancy')}} - {{__('pregnancy.EDDcorr')}} : {{ $pregnancy->corrected_edd ? $pregnancy->corrected_edd->format('d.m.Y') : __('pregnancy.no.edd.msg') }}
             </div>
-            <div class="col-md-2 ml-auto">
+            <div class="col-md-3">
                 <form method="get" action="{{ route('pregnancies.index', $pregnancy->patient) }}">
-                    <button type="submit" class="btn btn-light col-md-12"><i class="fa fa-arrow-left"></i></button>
+                    <button type="submit" class="btn btn-outline-cool col-md-12"><i class="fa fa-arrow-left"></i></button>
                 </form>
             </div>
         </div>

@@ -17,7 +17,9 @@
                             </div>
                         @endif
 
-                        {{__('msg_layouts_app.home.login.message')}}
+                        <p align="justify">{!! nl2br(e(__('hippocrates.oath-original'))) !!}</p>
+                        <hr>
+                            <p align="justify"><i>{!! nl2br(e(__('hippocrates.oath'))) !!}</i></p>
                     </div>
                 </div>
             </div>

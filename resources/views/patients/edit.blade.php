@@ -13,15 +13,13 @@
                     <div class="card-header lead">
 
                         <div class="row">
-                            <div class="col-md-8 lead">{{__('patients.Edit Patient')}}</div>
-                            {{--<div class="col-md-6 font-weight-bold">{{ $patient->last_name . ', ' . $patient->first_name }}</div>--}}
-
-                            <div class="col-md-2 ml-auto">
+                            <div class="col-md-6 lead mt-1">{{__('patients.Edit Patient')}}</div>
+                            <div class="col-md-3 mt-1">
                                 {!! Form::open(['method' => 'delete', 'action' => ['PatientsController@destroy', $patient], 'onsubmit' => 'return ConfirmDelete()']) !!}
                                 {!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-delete col-md-12']) !!}
                                 {!! Form::close() !!}
                             </div>
-                            <div class="col-md-2 ml-auto">
+                            <div class="col-md-3 mt-1">
                                 {!! Form::open(['method'=>'get','action'=>['PatientsController@show', $patient] ]) !!}
                                 {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
                                 {!! Form::close() !!}
@@ -32,43 +30,43 @@
                     <div class="card-body">
                         {!! Form::model($patient,['method'=>'patch', 'action'=>['PatientsController@update', $patient]]) !!}
                         <div class="row mt-2 mx-1">
-                            {!! Form::label('last_name', __('patients.Last Name') . ' :', ['class'=>'col-md-4 font-weight-bold text-right']) !!}
+                            {!! Form::label('last_name', __('patients.Last Name') . ' :', ['class'=>'col-md-4 font-weight-bold']) !!}
                             {!! Form::text('last_name', null, ['class' => 'form-control col-md-8', 'autofocus']) !!}
 
                         </div>
                         <div class="row mt-2 mx-1">
-                            {!! Form::label('first_name', __('patients.First Name') . ' :', ['class' => 'col-md-4 font-weight-bold text-right']) !!}
+                            {!! Form::label('first_name', __('patients.First Name') . ' :', ['class' => 'col-md-4 font-weight-bold']) !!}
                             {!! Form::text('first_name', null, ['class'=>'form-control col-md-8']) !!}
                         </div>
                         <div class="row mt-2 mx-1">
-                            {!! Form::label('middle_name', __('patients.Middle Name') . ' :', ['class'=>'col-md-4 font-weight-bold text-right']) !!}
+                            {!! Form::label('middle_name', __('patients.Middle Name') . ' :', ['class'=>'col-md-4 font-weight-bold']) !!}
                             {!! Form::text('middle_name', null, ['class' => 'form-control col-md-8']) !!}
                         </div>
                         <hr>
                         <div class="row mt-2 mx-1">
-                            {!! Form::label('birth_date', __('patients.Birth Date') . ' :', ['class'=>'col-md-4 font-weight-bold text-right']) !!}
+                            {!! Form::label('birth_date', __('patients.Birth Date') . ' :', ['class'=>'col-md-4 font-weight-bold']) !!}
                             {!! Form::text('birth_date', $patient->birth_date ? $patient->birth_date->format('d.m.Y') : null, ['class' => 'form-control col-md-4']) !!}
                         </div>
                         <div class="row mt-2 mx-1">
-                            {!! Form::label('email', __('patients.E-Mail') . ' :', ['class' => 'col-md-4 font-weight-bold text-right']) !!}
+                            {!! Form::label('email', __('patients.E-Mail') . ' :', ['class' => 'col-md-4 font-weight-bold']) !!}
                             {!! Form::text('email', null, ['class'=>'form-control col-md-8']) !!}
                         </div>
                         <div class="row mt-2 mx-1">
-                            {!! Form::label('mobile_number', __('patients.Mobile Number') . ' :', ['class'=>'col-md-4 font-weight-bold text-right']) !!}
+                            {!! Form::label('mobile_number', __('patients.Mobile Number') . ' :', ['class'=>'col-md-4 font-weight-bold']) !!}
                             {!! Form::text('mobile_number', null, ['class' => 'form-control col-md-4']) !!}
                         </div>
                         <div class="row mt-2 mx-1">
-                            {!! Form::label('phone_number', __('patients.Phone Number') . ' :', ['class' => 'col-md-4 font-weight-bold text-right']) !!}
+                            {!! Form::label('phone_number', __('patients.Phone Number') . ' :', ['class' => 'col-md-4 font-weight-bold']) !!}
                             {!! Form::text('phone_number', null, ['class'=>'form-control col-md-4']) !!}
                         </div>
                         <hr>
                         <div class="row mt-2 mx-1">
-                            {!! Form::label('address', __('patients.Address') . ' :', ['class'=>'col-md-4 font-weight-bold text-right']) !!}
+                            {!! Form::label('address', __('patients.Address') . ' :', ['class'=>'col-md-4 font-weight-bold']) !!}
                             {!! Form::text('address', null, ['class' => 'form-control col-md-8']) !!}
                         </div>
                         <hr>
                         <div class="row mt-2 mx-1">
-                            {!! Form::label('information', __('patients.Information') . ' :', ['class'=>'col-md-4 font-weight-bold text-right']) !!}
+                            {!! Form::label('information', __('patients.Information') . ' :', ['class'=>'col-md-4 font-weight-bold']) !!}
                             {!! Form::textarea('information', null, ['class' => 'form-control col-md-8', 'rows' => 5]) !!}
                         </div>
                         <hr>

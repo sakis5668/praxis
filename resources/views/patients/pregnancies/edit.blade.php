@@ -11,17 +11,24 @@
             </div>
         </div>
         <div class="row my-3">
-            <div class="col-md-6 offset-md-3">
+            <div class="col-md-8 offset-md-2">
                 <div class="card">
 
                     <div class="card-header lead">
-                        <div class="row my-1">
-                            <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-12 mt-1 text-center">
                                 {{__('pregnancy.edit.view.title')}}
                             </div>
-                            <div class="col-md-4">
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-6 col-md-3 mt-1">
                                 {!! Form::model($pregnancy, ['method'=>'delete', 'action'=>['PregnanciesController@destroy', $patient, $pregnancy], 'onsubmit' => 'return ConfirmDelete()']) !!}
                                 {!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['type'=>'submit', 'class'=> 'btn btn-delete col-md-12 ml-auto']) !!}
+                                {!! Form::close() !!}
+                            </div>
+                            <div class="col-6 col-md-3 mt-1">
+                                {!! Form::open(['method'=>'get', 'action'=>['PregnanciesController@index', $patient]]) !!}
+                                {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>',['type'=>'submit', 'class'=>'form-control btn btn-outline-cool col-md-12']) !!}
                                 {!! Form::close() !!}
                             </div>
                         </div>
@@ -33,25 +40,25 @@
 
                             {!! Form::model($pregnancy, ['method'=>'patch', 'action'=>['PregnanciesController@update', $patient, $pregnancy]]) !!}
                             <div class="row mt-2">
-                                {!! Form::label('lmp', __('pregnancy.LMP') . ' :', ['class'=>'col-md-6']) !!}
+                                {!! Form::label('lmp', __('pregnancy.LMP') . ' :', ['class'=>'col-md-6 font-weight-bold']) !!}
                                 {!! Form::text('lmp', $pregnancy->lmp ? $pregnancy->lmp->format('d.m.Y'):'' , ['class'=> 'form-control col-md-6', 'onblur'=>'return calculateET()']) !!}
                             </div>
                             <div class="row mt-2">
-                                {!! Form::label('edd', __('pregnancy.EDD') . ' :', ['class'=>'col-md-6']) !!}
+                                {!! Form::label('edd', __('pregnancy.EDD') . ' :', ['class'=>'col-md-6 font-weight-bold']) !!}
                                 {!! Form::text('edd', $pregnancy->edd ? $pregnancy->edd->format('d.m.Y'):'', ['class'=> 'form-control col-md-6', 'onblur'=>'return setCorrET()']) !!}
                             </div>
                             <div class="row mt-2">
-                                {!! Form::label('corrected_edd', __('pregnancy.EDDcorr') . ' :', ['class'=>'col-md-6']) !!}
+                                {!! Form::label('corrected_edd', __('pregnancy.EDDcorr') . ' :', ['class'=>'col-md-6 font-weight-bold']) !!}
                                 {!! Form::text('corrected_edd', $pregnancy->corrected_edd ? $pregnancy->corrected_edd->format('d.m.Y'):'', ['class'=> 'form-control col-md-6']) !!}
                             </div>
                             <hr>
                             <div class="row mt-2">
-                                {!! Form::label('pregnancy_termination_type', __('pregnancy.termination.type') . ' :', ['class'=>'col-md-6']) !!}
+                                {!! Form::label('pregnancy_termination_type', __('pregnancy.termination.type') . ' :', ['class'=>'col-md-6 font-weight-bold']) !!}
                                 {!! Form::select('pregnancy_termination_type', \App\Enums\PregnancyTerminationType::getDescriptions(), $pregnancy->pregnancy_termination_type ,['class'=>'form-control col-md-6']) !!}
 
                             </div>
                             <div class="row mt-2">
-                                {!! Form::label('finished', __('pregnancy.Finished') . ' :', ['class' => 'col-md-6']) !!}
+                                {!! Form::label('finished', __('pregnancy.Finished') . ' :', ['class' => 'col-md-6 font-weight-bold']) !!}
                                 {!! Form::checkbox('finished', $pregnancy->finished, null, ['class' => 'form-control col-md-6']) !!}
                             </div>
                             <hr>

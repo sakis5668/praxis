@@ -14,14 +14,14 @@
             <div class="col-md-12">
                 <div class="card">
 
-                    <div class="card-header font-weight-bold">
+                    <div class="card-header">
                         <div class="row">
-                            <div class="col-md-10">
+                            <div class="col-md-10 lead">
                                 <p>{{__('pregnancy.Pregnancies')}}</p>
                             </div>
-                            <div class="col-md-2 ml-auto">
+                            <div class="col-md-2">
                                 {!! Form::open(['method'=>'get', 'action'=>['PregnanciesController@create', $patient]]) !!}
-                                {!! Form::button('<i class="fa fa-plus fa-lg"></i>', ['type'=> 'submit', 'class'=>'form-control btn btn-light']) !!}
+                                {!! Form::button('<i class="fa fa-plus fa-lg"></i>', ['type'=> 'submit', 'class'=>'form-control btn btn-outline-cool']) !!}
                                 {!! Form::close() !!}
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                                         <td>{{ $pregnancy->finished ? __('pregnancy.Yes') : __('pregnancy.No')}}</td>
                                         <td>
                                             {!! Form::open(['method'=>'get', 'action'=>['PregnanciesController@edit', $patient, $pregnancy]]) !!}
-                                            {!! Form::button('<i class="fa fa-pencil fa-lg"></i>',['type'=>'submit', 'class' => 'btn btn-light col-md-12']) !!}
+                                            {!! Form::button('<i class="fa fa-pencil fa"></i>',['type'=>'submit', 'class' => 'btn btn-outline-primary col-12']) !!}
                                             {!! Form::close() !!}
                                         </td>
                                     </tr>

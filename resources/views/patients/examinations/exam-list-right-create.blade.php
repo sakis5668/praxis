@@ -6,8 +6,8 @@
                 {{__('examinations.new.findings.label')}} - {{ \Carbon\Carbon::now()->format('d.m.Y') }}
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3 ml-auto">
+        <div class="row justify-content-end">
+            <div class="col-md-3">
                 {!! Form::open(['method'=>'get', 'action'=>['ExaminationsController@index', $patient]]) !!}
                 {!! Form::button('<i class="fa fa-arrow-left fa-lg" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-outline-cool']) !!}
                 {!! Form::close() !!}

@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-8">
                 {{__('cytology.cytology.label')}}
-                ( {{$cytology->date ? $cytology->date->format('d.m.Y') : __('cytology.no.date.label')}} )
+                ({{$cytology->date ? $cytology->date->format('d.m.Y') : __('cytology.no.date.label')}})
             </div>
 
             <div class="col-md-4">
