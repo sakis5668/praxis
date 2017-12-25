@@ -26,4 +26,6 @@ return [
     'Drugs'                      => 'Σκευάσματα',
     'Companies'                  => 'Εταιρείες',
     'Products'                   => 'Προϊόντα',
+    'Physicians'                 => 'Ιατροί',
+    'List Physicians'            => 'Λίστα ιατρών',
 ];

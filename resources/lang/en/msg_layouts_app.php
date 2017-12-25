@@ -26,4 +26,6 @@ return [
     'Drugs'                      => 'Drugs',
     'Companies'                  => 'Companies',
     'Products'                   => 'Products',
+    'Physicians'                 => 'Physicians',
+    'List Physicians'            => 'List Physicians',
 ];

@@ -7,17 +7,16 @@
  */
 
 return [
-    'user.id.label'               => 'ID',
-    'user.name.label'             => 'Όνομα χρήστη',
+    'user.name.label'             => 'Όνομα',
     'user.email.label'            => 'E-Mail',
     'user.role.label'             => 'Δικαιώματα',
     'user.language.label'         => 'Γλώσσα',
-    'user.created.at.label'       => 'Δημιουργήθηκε στις',
-    'user.updated.at.label'       => 'Ανανεώθηκε στις',
+    'user.created.at.label'       => 'Δημιουργίας',
+    'user.updated.at.label'       => 'Ανανέωση',
     'edit.user.label'             => 'Επεξεργασία Χρήστη',
-    'create.new.user.label'       => 'Δημιουργία Νέου Χρήστη',
+    'create.new.user.label'       => 'Νέος Χρήστης',
     'user.password.label'         => 'Κωδικός',
-    'user.password.confirm.label' => 'Επιβεβαίωση κωδικού',
+    'user.password.confirm.label' => 'Επιβεβαίωση',
     'select.role'                 => 'Επιλέξτε δικαιώματα',
     'select.language'             => 'Επιλέξτε γλώσσα',
 ];

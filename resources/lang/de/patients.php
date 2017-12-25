@@ -28,5 +28,6 @@ return [
     'Laboratory'      => 'Labor',
     'Imaging'         => 'Bildgebung',
     'Surgery'         => 'Operation',
-    'Pregnancies'     => 'Gravidität'
+    'Pregnancies'     => 'Gravidität',
+    'Physician'       => 'Arzt',
 ];

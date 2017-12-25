@@ -46,8 +46,6 @@
                             <div class="dropdown-menu" aria-labelledby#="navbarDropdownLeft">
                                 <a href="{{ route('users.index') }}"
                                    class="dropdown-item">{{__('msg_layouts_app.admin.users.list')}}</a>
-                                <a href="{{ route('users.create') }}"
-                                   class="dropdown-item">{{__('msg_layouts_app.admin.users.create.new')}}</a>
                             </div>
                         </li>
 
@@ -55,10 +53,10 @@
                             <a href="#" class="nav-link dropdown-toggle" id="physicians"
                                data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false">
-                               Physicians
+                               {{__('msg_layouts_app.Physicians')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="physicians">
-                                <a href="{{ route('physicians.index') }}" class="dropdown-item">List Physicians</a>
+                                <a href="{{ route('physicians.index') }}" class="dropdown-item">{{__('msg_layouts_app.List Physicians')}}</a>
                             </div>
                         </li>
 

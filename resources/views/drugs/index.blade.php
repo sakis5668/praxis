@@ -15,14 +15,14 @@
                                     <div class="input-group">
                                         <input type="text" name="search" class="form-control">
                                         <span class="input-group-btn">
-                                            <button type="submit" class="btn btn-secondary">
+                                            <button type="submit" class="btn btn-outline-cool">
                                                 <i class="fa fa-search"></i>
                                             </button>
                                         </span>
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-md-4 lead font-weight-bold text-center">
+                            <div class="col-md-8 lead text-right">
                                 {{__('drug-companies.Products')}}
                             </div>
                         </div>

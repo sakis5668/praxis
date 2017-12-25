@@ -17,18 +17,16 @@
                         <div class="row">
 
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <form method="get" action="{{ route('physicians.index') }}" role="search">
-                                        <div class="input-group">
-                                            <input type="text" name="search" class="form-control">
-                                            <span class="input-group-btn">
-                                                <button type="submit" class="btn btn-secondary">
+                                <form method="get" action="{{ route('physicians.index') }}" role="search">
+                                    <div class="input-group">
+                                        <input type="text" name="search" class="form-control">
+                                        <span class="input-group-btn">
+                                                <button type="submit" class="btn btn-outline-cool">
                                                     <i class="fa fa-search"></i>
                                                 </button>
                                              </span>
-                                        </div>
-                                    </form>
-                                </div>
+                                    </div>
+                                </form>
                             </div>
 
                             <div class="col-md-3 ml-auto">
@@ -44,22 +42,23 @@
                     <div class="card-body">
 
                         <div class="table-responsive">
+
                             <table class="table table-hover">
                                 <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Specialty</th>
-                                    {{--<th scope="col">Address</th>
-                                    <th scope="col">City</th>--}}
+                                    <th scope="col">{{__('physicians.Name')}}</th>
+                                    <th scope="col">{{__('physicians.Specialty')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($physicians as $physician)
                                     <tr>
-                                        <td><a href="{{ route('physicians.show', $physician) }}">{{ $physician->name }}</a></td>
-                                        <td><a href="{{ route('physicians.show', $physician) }}">{{ $physician->specialty }}</a></td>
-                                        {{--<td><a href="{{ route('physicians.show', $physician) }}">{{ $physician->address }}</a></td>
-                                        <td><a href="{{ route('physicians.show', $physician) }}">{{ $physician->city }}</a></td>--}}
+                                        <td>
+                                            <a href="{{ route('physicians.show', $physician) }}">{{ $physician->name }}</a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('physicians.show', $physician) }}">{{ $physician->specialty }}</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

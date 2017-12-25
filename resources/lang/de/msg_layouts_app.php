@@ -27,4 +27,6 @@ return [
     'Drugs'                      => 'Medikation',
     'Companies'                  => 'Unternehmen',
     'Products'                   => 'Produkte',
+    'Physicians'                 => 'Ärzte',
+    'List Physicians'            => 'Ärzte-Liste',
 ];

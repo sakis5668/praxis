@@ -7,15 +7,14 @@
  */
 
 return [
-    'user.id.label'               => 'ID',
-    'user.name.label'             => 'User Name',
+    'user.name.label'             => 'Name',
     'user.email.label'            => 'E-Mail',
     'user.role.label'             => 'Role',
     'user.language.label'         => 'Language',
-    'user.created.at.label'       => 'Created at',
-    'user.updated.at.label'       => 'Updated at',
+    'user.created.at.label'       => 'Created',
+    'user.updated.at.label'       => 'Updated',
     'edit.user.label'             => 'Edit User',
-    'create.new.user.label'       => 'Create New User',
+    'create.new.user.label'       => 'New User',
     'user.password.label'         => 'Password',
     'user.password.confirm.label' => 'Password confirm',
     'select.role'                 => 'Select Role',

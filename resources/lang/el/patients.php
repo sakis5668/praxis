@@ -10,7 +10,7 @@ return [
     'New Patient'     => 'Νέος ασθενής',
     'Last Name'       => 'Επώνυμο',
     'First Name'      => 'Όνομα',
-    'Middle Name'     => 'Μεσαίο όνομα',
+    'Middle Name'     => 'Πατρώνυμο',
     'Birth Date'      => 'Ημ. γέννησης',
     'E-Mail'          => 'E-Mail',
     'Mobile Number'   => 'Κινητό τηλέφωνο',
@@ -28,5 +28,6 @@ return [
     'Laboratory'      => 'Εργαστήρια',
     'Imaging'         => 'Απεικονίσεις',
     'Surgery'         => 'Χειρουργεία',
-    'Pregnancies'     => 'Κυήσεις'
+    'Pregnancies'     => 'Κυήσεις',
+    'Physician'       => 'Ιατρός',
 ];

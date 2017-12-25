@@ -67,7 +67,7 @@
                         <hr>
 
                         <div class="row mt-2">
-                            <div class="col-md-4 font-weight-bold">Physician :</div>
+                            <div class="col-md-4 font-weight-bold">{{__('patients.Physician')}} :</div>
                             <div class="col-md-8">{{ $patient->physician ? $patient->physician->name : ''}}</div>
                         </div>
 

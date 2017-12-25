@@ -56,7 +56,7 @@
                         </div>
                         <hr>
                         <div class="row mt-2 mx-1">
-                            {!! Form::label('physician_id', 'Physician :', ['class'=>'col-md-4 font-weight-bold']) !!}
+                            {!! Form::label('physician_id', __('patients.Physician') . ' :', ['class'=>'col-md-4 font-weight-bold']) !!}
                             {!! Form::select('physician_id', [''=>'Select ...']+$physicians, ['class' => 'form-control col-md-4']) !!}
                         </div>
                         <hr>
