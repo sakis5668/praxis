@@ -9,12 +9,18 @@ class Patient extends Model
 {
     protected $fillable = [
         'last_name', 'first_name', 'middle_name', 'birth_date',
-        'email', 'mobile_number', 'phone_number', 'address', 'information'
+        'email', 'mobile_number', 'phone_number', 'address', 'information',
+        'physician_id'
     ];
 
     protected $dates = ['birth_date'];
 
     private $starting_path = '/docs/patients';
+
+    public function physician()
+    {
+        return $this->belongsTo(Physician::class);
+    }
 
     public function history()
     {

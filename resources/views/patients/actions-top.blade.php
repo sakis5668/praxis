@@ -1,11 +1,11 @@
 <div class="card">
 
     <div class="card-header">
-        <div class="row my-1 lead font-weight-bold">
-            <div class="col-md-10">
+        <div class="row my-1">
+            <div class="col-md-9 lead">
                 {{__('patients.Actions') . ' - ' . $patient->last_name . ' ' . $patient->first_name}}
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 {!! Form::open(['method'=>'get', 'action'=>['PatientsController@show', $patient->id]]) !!}
                 {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
                 {!! Form::close() !!}

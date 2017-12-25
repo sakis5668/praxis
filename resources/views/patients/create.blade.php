@@ -13,8 +13,8 @@
                     <div class="card-header lead">
 
                         <div class="row">
-                            <div class="col-md-10">{{__('patients.New Patient')}}</div>
-                            <div class="col-md-2 ml-auto">
+                            <div class="col-6 col-md-9">{{__('patients.New Patient')}}</div>
+                            <div class="col-6 col-md-3">
                                 {!! Form::open(['method'=>'get','action'=>'PatientsController@index' ]) !!}
                                 {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
                                 {!! Form::close() !!}

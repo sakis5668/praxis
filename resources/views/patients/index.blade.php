@@ -14,7 +14,8 @@
                     {{-- THE HEADER CONTAINS THE SEARCH FIELD --}}
                     <div class="card-header">
                         <div class="row mt-3">
-                            <div class="col-md-4">
+
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <form method="get" action="{{ route('patients.index') }}" role="search">
                                         <div class="input-group">
@@ -29,7 +30,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-2 ml-auto">
+                            <div class="col-md-3 ml-auto">
                                 {!! Form::open(['method'=>'get', 'action'=>'PatientsController@create']) !!}
                                 {!! Form::button('<i class="fa fa-plus fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
                                 {!! Form::close() !!}
@@ -49,8 +50,6 @@
                                     <th>{{__('patients.Last Name') }}</th>
                                     <th>{{__('patients.First Name')}}</th>
                                     <th>{{__('patients.E-Mail')}}</th>
-{{--                                    <th>{{__('patients.Mobile Number')}}</th>--}}
-{{--                                    <th>{{__('patients.Phone Number')}}</th>--}}
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -64,12 +63,6 @@
                                         </td>
                                         <td><a href="{{ route('patients.show', $patient) }}">{{ $patient->email }}</a>
                                         </td>
-                                        {{--<td>--}}
-                                            {{--<a href="{{ route('patients.show', $patient) }}">{{ $patient->mobile_number }}</a>--}}
-                                        {{--</td>--}}
-                                        {{--<td>--}}
-                                            {{--<a href="{{ route('patients.show', $patient) }}">{{ $patient->phone_number }}</a>--}}
-                                        {{--</td>--}}
                                     </tr>
                                 @endforeach
                                 </tbody>

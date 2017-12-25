@@ -24,6 +24,7 @@ class CreatePatientsTable extends Migration
             $table->string('phone_number')->nullable();
             $table->string('address')->nullable();
             $table->text('information')->nullable();
+            $table->integer('physician_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }

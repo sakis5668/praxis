@@ -7,7 +7,7 @@
             </div>
             <div class="col-md-3">
                 <form method="get" action="{{ route('pregnancies.index', $pregnancy->patient) }}">
-                    <button type="submit" class="btn btn-outline-cool col-md-12"><i class="fa fa-arrow-left"></i></button>
+                    <button type="submit" class="btn btn-outline-cool col-md-12"><i class="fa fa-arrow-left fa-lg"></i></button>
                 </form>
             </div>
         </div>
