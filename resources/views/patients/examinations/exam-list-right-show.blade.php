@@ -8,7 +8,7 @@
         </div>
         <div class="row justify-content-end">
             <div class="col-6 col-md-3 mt-1">
-                {!! Form::open(['method'=>'get', 'action'=>['ExaminationsPDFController@pdfExamination', $patient, $examination]]) !!}
+                {!! Form::open(['method'=>'get', 'action'=>['ExaminationsPDFController@pdfExamination', $patient, $examination], 'target'=>'_blank']) !!}
                 {!! Form::button('<i class="fa fa-file-pdf-o fa-lg"></i>', ['type'=>'submit', 'class'=>'form-control btn btn-outline-cool']) !!}
                 {!! Form::close() !!}
             </div>

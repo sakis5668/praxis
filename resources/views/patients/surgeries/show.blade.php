@@ -22,7 +22,7 @@
 
                             <div class="col-md-2 ml-auto">
                                 <form method="get" action="{{ route('surgeries.pdf',[$patient, $surgery]) }}"
-                                      class="form-inline">
+                                      class="form-inline" target="_blank">
                                     <button type="submit" class="btn btn-outline-cool col-md-12"><i
                                                 class="fa fa-file-pdf-o fa-lg"></i></button>
                                 </form>

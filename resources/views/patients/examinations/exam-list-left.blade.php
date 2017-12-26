@@ -8,7 +8,7 @@
     </div>
     <div class="row">
         <div class="col-6 mt-1">
-            {!! Form::open(['method'=>'get', 'action'=>['ExaminationsPDFController@pdfOverview', $patient]]) !!}
+            {!! Form::open(['method'=>'get', 'action'=>['ExaminationsPDFController@pdfOverview', $patient], 'target'=>'_blank']) !!}
             {!! Form::button('<i class="fa fa-file-pdf-o fa"></i>', ['type'=>'submit', 'class'=>'form-control btn btn-outline-cool']) !!}
             {!! Form::close() !!}
         </div>
