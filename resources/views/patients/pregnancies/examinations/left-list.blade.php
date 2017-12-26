@@ -19,7 +19,7 @@
 
         <table class="table">
             <tbody>
-            @foreach($pregnancy->examinations as $examination)
+            @foreach($pregnancy->examinationsOrderByDateDesc as $examination)
                 <tr>
                     <td><a href="{{ route('pregnancy.examinations.show', [$pregnancy, $examination]) }}">{{ $examination->date ? $examination->date->format('d.m.Y') : __('pregnancy.nodate') }}</a></td>
                     <td>{{ $examination->pregnancy_age }}</td>
