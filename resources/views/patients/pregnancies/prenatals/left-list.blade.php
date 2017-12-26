@@ -18,7 +18,7 @@
     <div class="card-body">
         <table class="table">
             <tbody>
-            @foreach($pregnancy->prenatals as $prenatal)
+            @foreach($pregnancy->prenatalsOrderByDateDesc as $prenatal)
                 <tr>
                     <td>
                         <a href="{{ route('pregnancy.prenatals.show', [$pregnancy, $prenatal]) }}">{{ $prenatal->date ? $prenatal->date->format('d.m.Y') : __('pregnancy.nodate') }}</a>
