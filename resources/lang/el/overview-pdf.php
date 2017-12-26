@@ -15,5 +15,6 @@ return [
     'History'      => 'Ιστορικό',
     'Date'         => 'Ημερομηνία',
     'Findings'     => 'Ευρήματα',
-    'Instructions' => 'Οδηγίες'
+    'Instructions' => 'Οδηγίες',
+    'Printed'      => 'ημερομηνία εκτύπωσης',
 ];

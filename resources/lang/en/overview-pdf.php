@@ -15,5 +15,6 @@ return [
     'History'      => 'History',
     'Date'         => 'Date',
     'Findings'     => 'Findings',
-    'Instructions' => 'Instructions'
+    'Instructions' => 'Instructions',
+    'Printed'      => 'printing date',
 ];

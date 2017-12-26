@@ -15,5 +15,6 @@ return [
     'History'      => 'Anamnese',
     'Date'         => 'Datum',
     'Findings'     => 'Befunde',
-    'Instructions' => 'Empfehlungen'
+    'Instructions' => 'Empfehlungen',
+    'Printed'      => 'ausgedruckt am',
 ];
