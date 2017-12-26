@@ -45,14 +45,6 @@
                         </div>
 
                         <div class="row mt-2">
-                            {!! Form::label('termination_type', __('pregnancy.Termination') . ' :', ['class'=>'col-md-3 font-weight-bold']) !!}
-                            @if($outcome->termination_type)
-                                {!! Form::select('termination_type', \App\Enums\PregnancyTerminationType::getDescriptions(), $outcome->termination_type, ['class'=>'form-control col-md-3']) !!}
-                            @else
-                                {!! Form::select('termination_type', [''=>__('pregnancy.select')] + \App\Enums\PregnancyTerminationType::getDescriptions(), ['class'=>'form-control col-md-3']) !!}
-                            @endif
-                        </div>
-                        <div class="row mt-2">
                             {!! Form::label('delivery_type', __('pregnancy.Delivery') . ' :', ['class'=>'col-md-3 font-weight-bold']) !!}
                             @if($outcome->delivery_type)
                                 {!! Form::select('delivery_type', \App\Enums\PregnancyDeliveryMode::getDescriptions(), $outcome->delivery_type, ['class'=>'form-control col-md-3']) !!}

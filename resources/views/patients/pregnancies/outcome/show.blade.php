@@ -40,8 +40,6 @@
                             <div class="col-md-3">{{ $outcome->date ? $outcome->date->format('d.m.Y') : __('pregnancy.nodate') }}</div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-3 font-weight-bold">{{__('pregnancy.Termination')}} :</div>
-                            <div class="col-md-3">{{ $outcome->termination_type ?  \App\Enums\PregnancyTerminationType::getDescription($outcome->termination_type) : __('pregnancy.notavail') }}</div>
                             <div class="col-md-3 font-weight-bold">{{__('pregnancy.Delivery')}} :</div>
                             <div class="col-md-3">{{ $outcome->delivery_type ? \App\Enums\PregnancyDeliveryMode::getDescription($outcome->delivery_type) : __('pregnancy.notavail') }}</div>
                         </div>
