@@ -64,7 +64,7 @@ class Patient extends Model
 
     public function pregnancies()
     {
-        return $this->hasMany(Pregnancy::class)->orderBy('edd');
+        return $this->hasMany(Pregnancy::class)->orderBy('edd' , 'desc');
     }
 
 
