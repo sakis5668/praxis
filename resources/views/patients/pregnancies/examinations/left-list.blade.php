@@ -24,7 +24,7 @@
                     <td><a href="{{ route('pregnancy.examinations.show', [$pregnancy, $examination]) }}">{{ $examination->date ? $examination->date->format('d.m.Y') : __('pregnancy.nodate') }}</a></td>
                     <td>{{ $examination->pregnancy_age }}</td>
                 </tr>
-            @endforeac
+            @endforeach
             </tbody>
         </table>
     </div>
