@@ -29,7 +29,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table table-hover">
                                 <thead class="thead-light">
                                 <tr>
                                     <th scope="col">{{__('pregnancy.LMP')}}</th>
@@ -42,15 +42,15 @@
                                 </thead>
                                 <tbody>
                                 @foreach($patient->pregnancies as $pregnancy)
-                                    <tr>
+                                    <tr onclick="window.location='{{ route('pregnancies.show', [$patient,$pregnancy]) }}'">
                                         <td>
-                                            <a href="{{ route ('pregnancies.show', [$patient,$pregnancy]) }}">{{ $pregnancy->lmp ? $pregnancy->lmp->format('d.m.Y') : 'no date' }}</a>
+                                            {{ $pregnancy->lmp ? $pregnancy->lmp->format('d.m.Y') : 'no date' }}
                                         </td>
                                         <td>
-                                            <a href="{{ route ('pregnancies.show', [$patient,$pregnancy]) }}">{{ $pregnancy->edd ? $pregnancy->edd->format('d.m.Y') : 'no date'}}</a>
+                                            {{ $pregnancy->edd ? $pregnancy->edd->format('d.m.Y') : 'no date'}}
                                         </td>
                                         <td>
-                                            <a href="{{ route ('pregnancies.show', [$patient,$pregnancy]) }}">{{ $pregnancy->corrected_edd ? $pregnancy->corrected_edd->format('d.m.Y') : __('pregnancy.nodate')}}</a>
+                                            {{ $pregnancy->corrected_edd ? $pregnancy->corrected_edd->format('d.m.Y') : __('pregnancy.nodate')}}
                                         </td>
                                         <td>{{ $pregnancy->pregnancy_termination_type ?  \App\Enums\PregnancyTerminationType::getDescription($pregnancy->pregnancy_termination_type) : __('pregnancy.notavail')}}</td>
                                         <td>{{ $pregnancy->finished ? __('pregnancy.Yes') : __('pregnancy.No')}}</td>
@@ -63,7 +63,6 @@
                                 @endforeach
                                 </tbody>
                             </table>
-
                         </div>
                     </div>
 
@@ -73,3 +72,4 @@
     </div>
 
 @endsection
+

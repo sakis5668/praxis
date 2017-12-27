@@ -15,7 +15,7 @@
                                     <div class="input-group">
                                         <input type="text" name="search" class="form-control">
                                         <span class="input-group-btn">
-                                            <button type="submit" class="btn btn-secondary">
+                                            <button type="submit" class="btn btn-outline-cool">
                                                 <i class="fa fa-search"></i>
                                             </button>
                                         </span>
@@ -25,9 +25,9 @@
                             <div class="col-md-4 lead font-weight-bold text-center">
                                 {{__('drug-companies.Products')}}
                             </div>
-                            <div class="col-md-2 ml-auto">
+                            <div class="col-md-3 ml-auto">
                                 {!! Form::open(['method'=>'get', 'action'=>'AdminDrugsController@create']) !!}
-                                {!! Form::button('<i class="fa fa-plus fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-light col-md-12']) !!}
+                                {!! Form::button('<i class="fa fa-plus fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
                                 {!! Form::close() !!}
                             </div>
                         </div>
@@ -46,16 +46,10 @@
                                 </thead>
                                 <tbody>
                                 @foreach($drugs as $drug)
-                                    <tr>
-                                        <td><a href="{{ route('drugs.show', $drug) }}">{{ $drug->name }}</a></td>
-                                        <td><a href="{{ route('drugs.show', $drug) }}">{{ $drug->content }}</a></td>
-                                        @if($drug->drugCompany)
-                                            <td>
-                                                <a href="{{ route('drugs.show', $drug) }}">{{ $drug->drugCompany->name }}</a>
-                                            </td>
-                                        @else
-                                            <td></td>
-                                        @endif
+                                    <tr onclick="window.location='{{ route('drugs.show', $drug) }}'">
+                                        <td>{{ $drug->name }}</td>
+                                        <td>{{ $drug->content }}</td>
+                                        <td>{{ $drug->drugCompany ? $drug->drugCompany->name : '' }}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

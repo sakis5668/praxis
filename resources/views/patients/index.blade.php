@@ -54,14 +54,15 @@
                                 </thead>
                                 <tbody>
                                 @foreach($patients as $patient)
-                                    <tr>
+                                    <tr onclick="window.location='{{route('patients.show', $patient)}}'">
                                         <td>
-                                            <a href="{{ route('patients.show', $patient) }}">{{ $patient->last_name }}</a>
+                                            {{ $patient->last_name }}
                                         </td>
                                         <td>
-                                            <a href="{{ route('patients.show', $patient) }}">{{ $patient->first_name }}</a>
+                                            {{ $patient->first_name }}
                                         </td>
-                                        <td><a href="{{ route('patients.show', $patient) }}">{{ $patient->email }}</a>
+                                        <td>
+                                            {{ $patient->email }}
                                         </td>
                                     </tr>
                                 @endforeach

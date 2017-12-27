@@ -49,21 +49,21 @@
                                 <tbody>
                                 @foreach($pregnancies as $pregnancy)
                                     @if($pregnancy->patient)
-                                        <tr>
+                                        <tr onclick="window.location='{{ route('pregnancies.show', [$pregnancy->patient, $pregnancy]) }}'">
                                             <td>
-                                                <a href="{{ route ('pregnancies.show', [$pregnancy->patient, $pregnancy]) }}">{{ $pregnancy->patient->last_name }}</a>
+                                                {{ $pregnancy->patient->last_name }}
                                             </td>
                                             <td>
-                                                <a href="{{ route ('pregnancies.show', [$pregnancy->patient, $pregnancy]) }}">{{ $pregnancy->patient->first_name }}</a>
+                                                {{ $pregnancy->patient->first_name }}
                                             </td>
                                             <td>
-                                                <a href="{{ route ('pregnancies.show', [$pregnancy->patient, $pregnancy]) }}">{{ $pregnancy->lmp ? $pregnancy->lmp->format('d.m.Y') : __('active-pregnancies-index.no_date') }}</a>
+                                                {{ $pregnancy->lmp ? $pregnancy->lmp->format('d.m.Y') : __('active-pregnancies-index.no_date') }}
                                             </td>
                                             <td>
-                                                <a href="{{ route ('pregnancies.show', [$pregnancy->patient, $pregnancy]) }}">{{ $pregnancy->edd ? $pregnancy->edd->format('d.m.Y') : __('active-pregnancies-index.no_date') }}</a>
+                                                {{ $pregnancy->edd ? $pregnancy->edd->format('d.m.Y') : __('active-pregnancies-index.no_date') }}
                                             </td>
                                             <td>
-                                                <a href="{{ route ('pregnancies.show', [$pregnancy->patient, $pregnancy]) }}">{{ $pregnancy->corrected_edd ? $pregnancy->corrected_edd->format('d.m.Y') : __('active-pregnancies-index.no_date') }}</a>
+                                                {{ $pregnancy->corrected_edd ? $pregnancy->corrected_edd->format('d.m.Y') : __('active-pregnancies-index.no_date') }}
                                             </td>
                                         </tr>
                                     @endif

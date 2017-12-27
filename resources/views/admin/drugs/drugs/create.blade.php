@@ -18,7 +18,7 @@
                             </div>
                             <div class="col-md-3">
                                 {!! Form::open(['method'=>'get', 'action'=>'AdminDrugsController@index']) !!}
-                                {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'form-control btn btn-light col-md-12']) !!}
+                                {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'form-control btn btn-outline-cool col-md-12']) !!}
                                 {!! Form::close() !!}
                             </div>
                         </div>

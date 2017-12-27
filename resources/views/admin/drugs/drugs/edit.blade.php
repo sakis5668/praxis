@@ -10,17 +10,17 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-6 lead">
                                 {{__('drug-companies.Edit Drug Data')}}
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 {!! Form::open(['method'=>'delete', 'action'=>['AdminDrugsController@destroy', $drug], 'onsubmit' => 'return ConfirmDelete()']) !!}
                                 {!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-delete col-md-12']) !!}
                                 {!! Form::close() !!}
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 {!! Form::open(['method'=>'get', 'action'=>'AdminDrugsController@index']) !!}
-                                {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-light col-md-12']) !!}
+                                {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
                                 {!! Form::close() !!}
                             </div>
                         </div>

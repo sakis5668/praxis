@@ -54,8 +54,8 @@
                                 </thead>
                                 <tbody>
                                 @foreach($users as $user)
-                                    <tr>
-                                        <td><a href="{{ route('users.show', $user) }}">{{ $user->name }}</a></td>
+                                    <tr onclick="window.location='{{ route('users.show', $user) }}'">
+                                        <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->role->name }}</td>
                                         <td>{{ $user->language->description }}</td>

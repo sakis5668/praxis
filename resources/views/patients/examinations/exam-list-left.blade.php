@@ -27,12 +27,12 @@
 
             <div class="table-responsive">
 
-            <table class="table">
+            <table class="table table-hover">
                 <tbody>
                 @foreach($patient->examinationsOrderByDateDesc as $examination)
-                    <tr>
+                    <tr onclick="window.location='{{ route('examinations.show', [$patient, $examination]) }}'">
                         <td class="text-center">
-                            <a href="{{ route('examinations.show', [$patient, $examination])  }}">{{ $examination->date ? $examination->date->format('d.m.Y') : __('examinations.no.date.label') }}</a>
+                            {{ $examination->date ? $examination->date->format('d.m.Y') : __('examinations.no.date.label') }}
                         </td>
                     </tr>
                 @endforeach

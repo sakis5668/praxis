@@ -21,14 +21,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table table-hover">
                         <tbody>
                         @foreach($patient->histologies()->orderby('date')->get() as $histology)
-                            <tr>
+                            <tr onclick="window.location='{{ route('histologies.show', [$patient, $histology]) }}'">
                                 <td>
-                                    <a
-                                            href="{{ route('histologies.show', [$patient, $histology]) }}">{{ $histology->date ? $histology->date->format('d.m.Y') : __('$histology.no.date.label') }}
-                                    </a>
+                                    {{ $histology->date ? $histology->date->format('d.m.Y') : __('$histology.no.date.label') }}
                                 </td>
                                 <td>
                                     {!! Form::model($histology, ['method'=>'delete', 'action'=>['HistologiesController@destroy', $patient, $histology], 'onsubmit' => 'return ConfirmDelete()']) !!}

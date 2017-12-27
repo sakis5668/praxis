@@ -14,12 +14,12 @@
 
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-md-8 lead">
+                            <div class="col-md-9 lead">
                                 {{__('drug-companies.Drug Data')}}
                             </div>
-                            <div class="col-md-2 ml-auto">
+                            <div class="col-md-3">
                                 {!! Form::open(['method'=>'get', 'action'=>'UserDrugsController@index']) !!}
-                                {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-light col-md-12']) !!}
+                                {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
                                 {!! Form::close() !!}
                             </div>
                         </div>

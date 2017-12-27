@@ -15,12 +15,12 @@
                             </div>
                             <div class="col-md-2 ml-auto">
                                 {!! Form::open(['method'=>'get', 'action'=>['AdminDrugCompaniesController@edit', $drugCompany]]) !!}
-                                {!! Form::button('<i class="fa fa-pencil fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-light col-md-12']) !!}
+                                {!! Form::button('<i class="fa fa-pencil fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
                                 {!! Form::close() !!}
                             </div>
                             <div class="col-md-2 ml-auto">
                                 {!! Form::open(['method'=>'get', 'action'=>'AdminDrugCompaniesController@index']) !!}
-                                {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-light col-md-12']) !!}
+                                {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
                                 {!! Form::close() !!}
                             </div>
                         </div>

@@ -17,11 +17,11 @@
 
     <div class="card-body">
 
-        <table class="table">
+        <table class="table table-hover">
             <tbody>
             @foreach($pregnancy->examinationsOrderByDateDesc as $examination)
-                <tr>
-                    <td><a href="{{ route('pregnancy.examinations.show', [$pregnancy, $examination]) }}">{{ $examination->date ? $examination->date->format('d.m.Y') : __('pregnancy.nodate') }}</a></td>
+                <tr onclick="window.location='{{ route('pregnancy.examinations.show', [$pregnancy, $examination]) }}'">
+                    <td>{{ $examination->date ? $examination->date->format('d.m.Y') : __('pregnancy.nodate') }}</td>
                     <td>{{ $examination->pregnancy_age }}</td>
                 </tr>
             @endforeach

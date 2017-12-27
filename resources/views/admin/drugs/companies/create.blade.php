@@ -12,12 +12,12 @@
 
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-md-10 lead">
+                            <div class="col-md-9 lead">
                                 {{__('drug-companies.Enter New Company Data')}}
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 {!! Form::open(['method'=>'get', 'action'=>'AdminDrugCompaniesController@index']) !!}
-                                {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-light col-md-12']) !!}
+                                {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
                                 {!! Form::close() !!}
                             </div>
                         </div>
@@ -70,14 +70,13 @@
                             <hr>
                             <div class="form-group row mt-2">
                                 {!! Form::label('logo', __('drug-companies.Logo') . ' :', ['class'=>'col-md-3 font-weight-bold text-right']) !!}
-                                {{--{!! Form::file('logo', null, ['class'=>'form-control filestyle', 'data-classButton'=>'btn btn-primary', 'data-input'=>'false', 'data-classIcon'=>'icon-plus', 'data-buttonText'=>'My text here']) !!}--}}
                                 <input type="button" class="btn btn-outline-cool" id="loadFileXml" value="{{__('drug-companies.Select File')}}" onclick="document.getElementById('logo').click();" />
                                 <input type="file" style="display:none;" id="logo" name="logo"/>
 
                             </div>
                             <hr>
                             <div class="row mt-2">
-                                {!! Form::button('<i class="fa fa-check fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-primary form-control col-md-2 ml-auto']) !!}
+                                {!! Form::button('<i class="fa fa-check fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-primary form-control col-md-3 ml-auto']) !!}
                             </div>
                             {!! Form::close() !!}
                         </div>

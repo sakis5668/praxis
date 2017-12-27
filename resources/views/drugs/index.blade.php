@@ -41,12 +41,12 @@
                                 </thead>
                                 <tbody>
                                 @foreach($drugs as $drug)
-                                    <tr>
-                                        <td><a href="{{ route('user.drugs.show', $drug) }}">{{ $drug->name }}</a></td>
-                                        <td><a href="{{ route('user.drugs.show', $drug) }}">{{ $drug->content }}</a></td>
+                                    <tr onclick="window.location='{{ route('user.drugs.show', $drug) }}'">
+                                        <td>{{ $drug->name }}</td>
+                                        <td>{{ $drug->content }}</td>
                                         @if($drug->drugCompany)
                                             <td>
-                                                <a href="{{ route('user.drugs.show', $drug) }}">{{ $drug->drugCompany->name }}</a>
+                                                {{ $drug->drugCompany->name }}
                                             </td>
                                         @else
                                             <td></td>

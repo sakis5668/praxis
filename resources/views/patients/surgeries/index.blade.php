@@ -39,12 +39,10 @@
                                 </thead>
                                 <tbody>
                                 @foreach($patient->surgeries as $surgery)
-                                    <tr>
-                                        <td>
-                                            <a href="{{ route('surgeries.show', [$patient, $surgery]) }}">{{ $surgery->date ? $surgery->date->format('d.m.Y') : __('surgery.no.date.label') }} </a>
-                                        </td>
-                                        <td><a href="{{ route('surgeries.show', [$patient, $surgery]) }}">{{ $surgery->diagnosis }}</a></td>
-                                        <td><a href="{{ route('surgeries.show', [$patient, $surgery]) }}">{{ $surgery->therapy }}</a></td>
+                                    <tr onclick="window.location='{{ route('surgeries.show', [$patient, $surgery]) }}'">
+                                        <td>{{ $surgery->date ? $surgery->date->format('d.m.Y') : __('surgery.no.date.label') }}</td>
+                                        <td>{{ $surgery->diagnosis }}</td>
+                                        <td>{{ $surgery->therapy }}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

@@ -52,12 +52,12 @@
                                 </thead>
                                 <tbody>
                                 @foreach($physicians as $physician)
-                                    <tr>
+                                    <tr onclick="window.location='{{ route('physicians.show', $physician) }}'">
                                         <td>
-                                            <a href="{{ route('physicians.show', $physician) }}">{{ $physician->name }}</a>
+                                            {{ $physician->name }}
                                         </td>
                                         <td>
-                                            <a href="{{ route('physicians.show', $physician) }}">{{ $physician->specialty }}</a>
+                                            {{ $physician->specialty }}
                                         </td>
                                     </tr>
                                 @endforeach

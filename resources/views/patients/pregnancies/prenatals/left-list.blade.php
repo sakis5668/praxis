@@ -16,15 +16,16 @@
     </div>
 
     <div class="card-body">
-        <table class="table">
+        <table class="table table-hover">
             <tbody>
             @foreach($pregnancy->prenatalsOrderByDateDesc as $prenatal)
-                <tr>
+                <tr onclick="window.location='{{ route('pregnancy.prenatals.show', [$pregnancy, $prenatal]) }}'">
                     <td>
-                        <a href="{{ route('pregnancy.prenatals.show', [$pregnancy, $prenatal]) }}">{{ $prenatal->date ? $prenatal->date->format('d.m.Y') : __('pregnancy.nodate') }}</a>
+                       {{ $prenatal->date ? $prenatal->date->format('d.m.Y') : __('pregnancy.nodate') }}
                     </td>
-                    <td>{{$prenatal->type ? \App\Enums\PregnancyPrenatalType::getDescription($prenatal->type) : '-'}}</td>
-                    {{--<td>{{ $prenatal->pregnancy_age }}</td>--}}
+                    <td>
+                        {{$prenatal->type ? \App\Enums\PregnancyPrenatalType::getDescription($prenatal->type) : '-'}}
+                    </td>
                 </tr>
             @endforeach
             </tbody>
