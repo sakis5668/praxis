@@ -16,14 +16,14 @@ class ActivePregnanciesController extends Controller
     public function index()
     {
         if (request('search')) {
-            $pregnancies = Pregnancy::where('finished', false)->with(['patient' => function ($query){
+            $pregnancies = Pregnancy::where('finished', false)->orderBy('corrected_edd', 'asc')->with(['patient' => function ($query){
                 $query->where('last_name', 'like', '%' . request('search') . '%')->
                 orWhere('first_name', 'like', '%' . request('search') . '%')->
                 orWhere('middle_name', 'like', '%' . request('search') . '%');
             }])->paginate(12);
             return view('patients.active_pregnancies.index', compact('pregnancies'));
         }
-        $pregnancies = Pregnancy::where('finished', false)->paginate(12);
+        $pregnancies = Pregnancy::where('finished', false)->orderBy('corrected_edd', 'asc')->paginate(12);
         return view('patients.active_pregnancies.index', compact('pregnancies'));
     }
 }
