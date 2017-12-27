@@ -29,4 +29,5 @@ return [
     'pregnancy.prenatal.thirdtrimester'  => 'Υπέρηχος τρίτου τριμήνου',
     'pregnancy.prenatal.doppler'         => 'Doppler',
     'pregnancy.prenatal.routine'         => 'Υπέρηχος ρουτίνας',
+    'pregnancy.prenatal.ctg'             => 'ΚΤΓ',
 ];

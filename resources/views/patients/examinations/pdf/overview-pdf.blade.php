@@ -84,11 +84,11 @@
             </td>
         </tr>
         <tr>
-            <td>
+            <td style="vertical-align: top">
                 <regular-text><strong>{{__('overview-pdf.Information')}} :</strong></regular-text>
             </td>
             <td>
-                <regular-text>{{$patient->information ? $patient->information : '-'}}</regular-text>
+                <regular-text>{!! $patient->information ? nl2br(e($patient->information)) : '-' !!}</regular-text>
             </td>
         </tr>
         </tbody>

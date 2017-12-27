@@ -29,4 +29,5 @@ return [
     'pregnancy.prenatal.thirdtrimester'  => 'Third Trimester Scan',
     'pregnancy.prenatal.doppler'         => 'Doppler Sonography',
     'pregnancy.prenatal.routine'         => 'Routine Scan',
+    'pregnancy.prenatal.ctg'             => 'CTG',
 ];

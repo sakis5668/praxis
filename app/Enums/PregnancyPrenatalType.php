@@ -15,6 +15,7 @@ final class PregnancyPrenatalType extends Enum
     const ThirdTrimesterScan = 7;
     const DopplerSonography = 8;
     const RoutineScan = 9;
+    const CTG = 10;
 
 
     public static function getDescription(int $value): string
@@ -46,6 +47,9 @@ final class PregnancyPrenatalType extends Enum
                 break;
             case self::RoutineScan:
                 return __('selectlist.pregnancy.prenatal.routine');
+                break;
+            case self::CTG:
+                return __('selectlist.pregnancy.prenatal.ctg');
                 break;
             default:
                 return self::getKey($value);

@@ -29,5 +29,5 @@ return [
     'pregnancy.prenatal.thirdtrimester'  => 'Sono drittes Trimenon',
     'pregnancy.prenatal.doppler'         => 'Doppler',
     'pregnancy.prenatal.routine'         => 'Routine Sono',
-
+    'pregnancy.prenatal.ctg'             => 'CTG',
 ];
