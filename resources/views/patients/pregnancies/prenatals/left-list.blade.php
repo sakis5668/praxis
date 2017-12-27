@@ -23,7 +23,8 @@
                     <td>
                         <a href="{{ route('pregnancy.prenatals.show', [$pregnancy, $prenatal]) }}">{{ $prenatal->date ? $prenatal->date->format('d.m.Y') : __('pregnancy.nodate') }}</a>
                     </td>
-                    <td>{{ $prenatal->pregnancy_age }}</td>
+                    <td>{{$prenatal->type ? \App\Enums\PregnancyPrenatalType::getDescription($prenatal->type) : '-'}}</td>
+                    {{--<td>{{ $prenatal->pregnancy_age }}</td>--}}
                 </tr>
             @endforeach
             </tbody>
