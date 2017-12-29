@@ -62,7 +62,7 @@ class Patient extends Model
 
     public function examinations()
     {
-        return $this->hasMany(Examination::class);
+        return $this->hasMany(Examination::class)->orderBy('date', 'desc');
     }
 
     public function examinationsOrderByDateDesc()

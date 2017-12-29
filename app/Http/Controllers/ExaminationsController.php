@@ -17,7 +17,12 @@ class ExaminationsController extends Controller
 
     public function index(Patient $patient)
     {
-        return view('patients.examinations.index', compact( 'patient'));
+        $examination = $patient->examinations->first();
+        if ($examination) {
+            return view('patients.examinations.show', compact('patient', 'examination'));
+        } else {
+            return view('patients.examinations.index', compact( 'patient'));
+        }
     }
 
 
