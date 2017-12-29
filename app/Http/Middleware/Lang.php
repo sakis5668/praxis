@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App;
+use Auth;
 use Closure;
 
 class Lang
@@ -16,7 +17,9 @@ class Lang
      */
     public function handle($request, Closure $next)
     {
-        App::setLocale(\Auth::user()->language->language);
+        if (Auth::user()) {
+            App::setLocale(Auth::user()->language->language);
+        }
         return $next($request);
     }
 }
