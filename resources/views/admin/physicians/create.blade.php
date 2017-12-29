@@ -2,8 +2,6 @@
 
 @section('content')
 
-    @include('layouts.language')
-
     <div class="container">
 
         <div class="row mt-3">

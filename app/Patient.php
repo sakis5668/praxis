@@ -17,6 +17,39 @@ class Patient extends Model
 
     private $starting_path = '/docs/patients';
 
+
+
+    public function getFirstNameAttribute($value) {
+        return self::mb_ucfirst ($value, 'UTF-8');
+    }
+
+    public function getLastNameAttribute($value) {
+        return self::mb_ucfirst ($value, 'UTF-8');
+    }
+
+    public function getMiddleNameAttribute($value) {
+        return self::mb_ucfirst ($value, 'UTF-8');
+    }
+
+
+
+    public function setFirstNameAttribute($value)
+    {
+        $this->attributes['first_name'] = self::mb_ucfirst ($value, 'UTF-8');
+    }
+
+    public function setLastNameAttribute($value)
+    {
+        $this->attributes['last_name'] = self::mb_ucfirst ($value, 'UTF-8');
+    }
+
+    public function setMiddleNameAttirbute($value)
+    {
+        $this->attributes['middle_name'] = self::mb_ucfirst ($value, 'UTF-8');
+    }
+
+
+
     public function physician()
     {
         return $this->belongsTo(Physician::class);
@@ -140,5 +173,13 @@ class Patient extends Model
         $k1 = ord(substr($k, 0, 1));
         $k2 = ord(substr($k, 1, 1));
         return $k2 * 256 + $k1;
+    }
+
+    function mb_ucfirst($string, $encoding)
+    {
+        $strlen = mb_strlen($string, $encoding);
+        $firstChar = mb_substr($string, 0, 1, $encoding);
+        $then = mb_substr($string, 1, $strlen - 1, $encoding);
+        return mb_strtoupper($firstChar, $encoding) . $then;
     }
 }

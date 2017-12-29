@@ -2,10 +2,11 @@
 
 @section('content')
 
-    @include('layouts.language')
-
     <div class="container">
+        <!-- Start Row -->
         <div class="row my-3">
+
+            <!-- Start Column -->
             <div class="col-md-12">
 
                 <div class="card">
@@ -75,7 +76,7 @@
                             {!! Form::textarea('information', null, ['class' => 'form-control col-md-8', 'rows' => 5]) !!}
                         </div>
                         <div class="row mt-2 mx-1">
-                            {!! Form::button('<i class="fa fa-check fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-primary col-md-2 ml-auto']) !!}
+                            {!! Form::button('<i class="fa fa-check fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-primary col-md-2 ml-auto', 'data-toggle'=>'modal', 'data-target'=>'#exampleModal']) !!}
                         </div>
                         {!! Form::close() !!}
 
@@ -84,15 +85,32 @@
                 </div>
 
             </div>
+            <!-- End Column -->
+
         </div>
+        <!-- End Row -->
+
+        <!-- Start Row -->
+        <div class="row my-3">
+
+            <!-- Start Column -->
+            <div class="col-md-12">
+
+                @include('layouts.form-errors')
+
+            </div>
+            <!-- End Column -->
+
+        </div>
+        <!-- End Row -->
+
     </div>
 
 @endsection
 
 @section('scripts')
     <script>
-        function ConfirmDelete()
-        {
+        function ConfirmDelete() {
             var x = confirm("Are you sure you want to delete?");
             if (x)
                 return true;

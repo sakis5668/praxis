@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @include('layouts.language')
+    {{--@include('layouts.language')--}}
 
     <div class="container">
         <div class="row mt-5">
@@ -16,7 +16,6 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-
                         <p align="justify">{!! nl2br(e(__('hippocrates.oath-original'))) !!}</p>
                         <hr>
                             <p align="justify"><i>{!! nl2br(e(__('hippocrates.oath'))) !!}</i></p>

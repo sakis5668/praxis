@@ -25,7 +25,8 @@ class PatientsRequest extends FormRequest
     {
         return [
             'last_name' => 'required',
-            'first_name' => 'required'
+            'first_name' => 'required',
+            'email' => 'nullable|email',
         ];
     }
 }

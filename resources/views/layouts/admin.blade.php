@@ -19,9 +19,9 @@
 <body>
 <div id="app">
 
-    @if(Auth::user())
+    {{--@if(Auth::user())
         @include('layouts.language')
-    @endif
+    @endif--}}
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">

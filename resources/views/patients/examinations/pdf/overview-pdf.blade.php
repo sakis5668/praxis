@@ -2,8 +2,6 @@
 
 @section('content')
 
-    @include('layouts.language')
-
     <style>
 
         title-text {
