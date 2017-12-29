@@ -16,7 +16,7 @@ class ActivePregnanciesController extends Controller
     public function index()
     {
         if (request('search')) {
-            $pregnancies = Pregnancy::where('finished', false)->orderBy('corrected_edd', 'asc')->with(['patient' => function ($query){
+            $pregnancies = Pregnancy::where('finished', false)->with(['patient' => function ($query){
                 $query->where('last_name', 'like', '%' . request('search') . '%')->
                 orWhere('first_name', 'like', '%' . request('search') . '%')->
                 orWhere('middle_name', 'like', '%' . request('search') . '%');
