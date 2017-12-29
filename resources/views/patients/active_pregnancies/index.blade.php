@@ -49,8 +49,10 @@
                                 <tbody>
                                 @foreach($pregnancies as $pregnancy)
                                     @if($pregnancy->patient)
-                                        <tr onclick="window.location='{{ route('pregnancies.show', [$pregnancy->patient, $pregnancy]) }}'">
-                                            <td>
+                                        {{--<tr onclick="window.location='{{ route('pregnancies.show', [$pregnancy->patient, $pregnancy]) }}'">--}}
+                                        <tr onclick="window.location=' {{ route('pregnancy.history.show', [$pregnancy, $pregnancy->pregnancyHistory]) }}'">
+
+                                        <td>
                                                 {{ $pregnancy->patient->last_name }}
                                             </td>
                                             <td>
