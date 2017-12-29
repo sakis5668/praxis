@@ -24,9 +24,12 @@ class PatientsRequest extends FormRequest
     public function rules()
     {
         return [
-            'last_name' => 'required',
+            'last_name'  => 'required',
             'first_name' => 'required',
-            'email' => 'nullable|email',
+            'email'      => 'nullable|email',
+            'birth_date' => 'nullable|date|before:today',
+            'mobile_number' =>'nullable|regex:/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/',
+            'phone_number' => 'nullable|regex:/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/',
         ];
     }
 }

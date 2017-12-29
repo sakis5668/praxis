@@ -29,10 +29,15 @@
             <div class="col-md-12">
                 @if(!is_null($imagingResult))
                     <div class='embed-responsive' style='padding-bottom:150%'>
-                        <object
+                        {{--<iframe src="{{url('/') . $patient->getShortPatientPath() . '/imaging_results/' . $imagingResult->filename}}" frameborder="0"></iframe>--}}
+                       {{-- <object
                                 data='{{url('/') . $patient->getShortPatientPath() . '/imaging_results/' . $imagingResult->filename}}'
                                 width='100%' height='100%'>
-                        </object>
+                        </object>--}}
+
+                        <iframe src="https://docs.google.com/viewer?url={{url('/') . $patient->getShortPatientPath() . '/imaging_results/' . $imagingResult->filename}}&embedded=true" frameborder="0" height="500px" width="100%"></iframe>
+                        {{--<iframe src="http://docs.google.com/viewer?url={{url('/') . $patient->getShortPatientPath() . '/imaging_results/' . $imagingResult->filename}}&embedded=true" style="width:100%; height:1000px;" frameborder="0"></iframe>--}}
+
                     </div>
                 @else
                     <iframe src="" name="imagingResultFrame" width="100%" height="600px" frameborder="0"></iframe>

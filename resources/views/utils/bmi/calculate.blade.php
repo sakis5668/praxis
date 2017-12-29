@@ -2,8 +2,6 @@
 
 @section('content')
 
-    @include('layouts.language')
-
     <div class="container">
 
         {{--The calculation card--}}

@@ -41,7 +41,7 @@
                             @if($patient->birth_date)
                                 <div class="col-md-8">{{ $patient->birth_date->format('d.m.Y') }}</div>
                             @else
-                                <div class="col-md-8"><i>{{__('patients.no birth date')}}</i></div>
+                                <div class="col-md-8"></div>
                             @endif
                         </div>
 

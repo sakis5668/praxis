@@ -99,7 +99,7 @@ return [
     |
     */
 
-    'custom'               => [
+    'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
@@ -117,9 +117,11 @@ return [
     */
 
     'attributes' => [
-        'last_name' =>'Επώνυμο',
+        'last_name'  => 'Επώνυμο',
         'first_name' => 'Όνομα',
-        'email' => 'E-Mail',
+        'email'      => 'E-Mail',
+        'birth_date' => 'Ημερομηνία γέννησης',
+
     ],
 
 ];
