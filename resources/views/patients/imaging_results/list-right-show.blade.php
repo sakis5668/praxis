@@ -40,8 +40,6 @@
                                 type="">
                         </object>
 
-                        {{--<iframe src="https://docs.google.com/viewer?url={{url('/') . $patient->getShortPatientPath() . '/imaging_results/' . $imagingResult->filename}}&embedded=true" frameborder="0" height="500px" width="100%"></iframe>--}}
-
                     </div>
                 @else
                     <iframe src="" name="imagingResultFrame" width="100%" height="600px" frameborder="0"></iframe>
