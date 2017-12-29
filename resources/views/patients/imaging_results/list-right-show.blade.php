@@ -35,8 +35,12 @@
                                 width='100%' height='100%'>
                         </object>--}}
 
-                        <iframe src="https://docs.google.com/viewer?url={{url('/') . $patient->getShortPatientPath() . '/imaging_results/' . $imagingResult->filename}}&embedded=true" frameborder="0" height="500px" width="100%"></iframe>
-                        {{--<iframe src="http://docs.google.com/viewer?url={{url('/') . $patient->getShortPatientPath() . '/imaging_results/' . $imagingResult->filename}}&embedded=true" style="width:100%; height:1000px;" frameborder="0"></iframe>--}}
+                        <object data="https://docs.google.com/viewer?url={{url('/') . $patient->getShortPatientPath() . '/imaging_results/' . $imagingResult->filename}}&embedded=true"
+                                width="100%" height="100%"
+                                type="">
+                        </object>
+
+                        {{--<iframe src="https://docs.google.com/viewer?url={{url('/') . $patient->getShortPatientPath() . '/imaging_results/' . $imagingResult->filename}}&embedded=true" frameborder="0" height="500px" width="100%"></iframe>--}}
 
                     </div>
                 @else
