@@ -4,20 +4,30 @@
 
     <div class="container">
 
+        <!-- Start Row -->
         <div class="row mt-3">
             <div class="col-md-12">
                 @include('patients.actions-top')
             </div>
         </div>
+        <!-- End Row -->
 
-        <div class="row">
-            <div class="col-md-4 mt-3">
+        <!-- Start Row -->
+        <div class="row mt-3">
+            <!-- Start Column -->
+            <div class="col-md-4">
                 @include('patients.examinations.exam-list-left')
             </div>
-            <div class="col-md-8 mt-3">
+            <!-- End Column -->
+
+            <!-- Start Column -->
+            <div class="col-md-8">
                 @include('patients.examinations.exam-list-right-create')
             </div>
+            <!-- End Column -->
+
         </div>
+        <!-- End Row -->
 
     </div>
 

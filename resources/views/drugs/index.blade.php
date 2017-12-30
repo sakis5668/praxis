@@ -2,8 +2,6 @@
 
 @section('content')
 
-    @include('layouts.language')
-
     <div class="container">
         <div class="row mt-3">
             <div class="col-md-12">
@@ -16,7 +14,7 @@
                                         <input type="text" name="search" class="form-control">
                                         <span class="input-group-btn">
                                             <button type="submit" class="btn btn-outline-cool">
-                                                <i class="fa fa-search"></i>
+                                                <i class="fa fa-search fa-lg"></i>
                                             </button>
                                         </span>
                                     </div>

@@ -1,11 +1,18 @@
+<!-- Card -->
 <div class="card">
 
+    <!-- Card Header -->
     <div class="card-header">
+
+        <!-- Start Row -->
         <div class="row">
             <div class="col-md-12 lead">
                 {{__('examinations.findings.label')}} - {{ $examination->date->format('d.m.Y') }}
             </div>
         </div>
+        <!-- End Row -->
+
+        <!-- Start Row -->
         <div class="row justify-content-end">
             <div class="col-6 col-md-3 mt-1">
                 {!! Form::model($examination, ['method'=>'delete', 'action'=>['ExaminationsController@destroy', $patient, $examination], 'onsubmit' => 'return ConfirmDelete()']) !!}
@@ -18,27 +25,43 @@
                 {!! Form::close() !!}
             </div>
         </div>
-    </div>
+        <!-- End Row -->
 
+    </div>
+    <!-- End Card Header -->
+
+    <!-- Card Body -->
     <div class="card-body">
+
+        {!! Form::model($examination, ['method'=>'patch', 'action'=>['ExaminationsController@update', $patient, $examination]]) !!}
         <div class="row">
-            <div class="col-md-12">
-                {!! Form::model($examination, ['method'=>'patch', 'action'=>['ExaminationsController@update', $patient, $examination]]) !!}
-                <div class="col-md-12 font-weight-bold">{!! Form::label('date', __('examinations.date.label'). ' :') !!}</div>
-                <div class="col-md-12">{!! Form::text('date', $examination->date ? $examination->date->format('d.m.Y') : '' , ['class'=>'form-control', 'autofocus', 'onfocus'=>'this.select();']) !!}</div>
-                <div class="mt-3 col-md-12 font-weight-bold">{!! Form::label('findings', __('examinations.findings.label').' :') !!}</div>
-                <div class="col-md-12">{!! Form::textarea('findings', null, ['class'=> 'form-control', 'rows'=>'6']) !!}</div>
-                <div class="mt-3 col-md-12 font-weight-bold">{!! Form::label('instructions', __('examinations.instructions.label') . ' :') !!}</div>
-                <div class="col-md-12">{!! Form::textarea('instructions', null, ['class'=>'form-control', 'rows'=>'4']) !!}</div>
-                <hr>
-                <div class="mt-3 col-md-3 ml-auto">
-                    {!! Form::button('<i class="fa fa-check fa-lg" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-primary']) !!}
-                </div>
-            </div>
-            {!! Form::close() !!}
+            <div class="col-md-12 font-weight-bold">{!! Form::label('date', __('examinations.date.label'). ' :') !!}</div>
         </div>
+        <div class="row">
+            <div class="col-md-12">{!! Form::text('date', $examination->date ? $examination->date->format('d.m.Y') : '' , ['class'=>'form-control', 'autofocus', 'onfocus'=>'this.select();']) !!}</div>
+        </div>
+        <div class="row">
+            <div class="mt-3 col-md-12 font-weight-bold">{!! Form::label('findings', __('examinations.findings.label').' :') !!}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">{!! Form::textarea('findings', null, ['class'=> 'form-control', 'rows'=>'6']) !!}</div>
+        </div>
+        <div class="row">
+            <div class="mt-3 col-md-12 font-weight-bold">{!! Form::label('instructions', __('examinations.instructions.label') . ' :') !!}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">{!! Form::textarea('instructions', null, ['class'=>'form-control', 'rows'=>'4']) !!}</div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="mt-3 col-md-3 ml-auto">
+                {!! Form::button('<i class="fa fa-check fa-lg" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-primary']) !!}
+            </div>
+        </div>
+        {!! Form::close() !!}
+
     </div>
+    <!-- End Card Body -->
 
 </div>
-
-</div>
+<!-- End Card -->

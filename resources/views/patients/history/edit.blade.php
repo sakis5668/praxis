@@ -4,23 +4,35 @@
 
     <div class="container">
 
-        <div class="row my-3">
-            <div class="col-md-12">
+        <!-- Start Row -->
+        <div class="row">
+            <div class="col-md-12 mt-3">
                 @include('patients.actions-top')
             </div>
         </div>
+        <!-- End Row -->
 
-        <div class="row my-3">
-            <div class="col-md-12">
+        <!-- Start Row -->
+        <div class="row">
 
+            <!-- Start Column -->
+            <div class="col-md-12 mt-3">
+
+                <!-- Card -->
                 <div class="card">
 
+                    <!-- Card Header -->
                     <div class="card-header">
+
+                        <!-- Start Row -->
                         <div class="row">
                             <div class="col-md-8 lead">
                                 {{ $history->patient->last_name . ', ' . $history->patient->first_name . ' - ' . __('history.medical.history.label')}}
                             </div>
                         </div>
+                        <!-- End Row -->
+
+                        <!-- Start Row -->
                         <div class="row justify-content-end">
                             <div class="col-6 col-md-3">
                                 {!! Form::open(['method' => 'delete', 'action' => ['HistoriesController@destroy', $patient, $history], 'onsubmit' => 'return ConfirmDelete()']) !!}
@@ -33,8 +45,12 @@
                                 {!! Form::close() !!}
                             </div>
                         </div>
-                    </div>
+                        <!-- End Row -->
 
+                    </div>
+                    <!-- End Card Header -->
+
+                    <!-- Card Body -->
                     <div class="card-body">
 
                         {{ Form::model($history, ['method'=>'patch', 'action' => ['HistoriesController@update', $patient, $history]]) }}
@@ -50,11 +66,17 @@
                         {!! Form::close() !!}
 
                     </div>
+                    <!-- End Card Body -->
 
                 </div>
+                <!-- End Card -->
 
             </div>
+            <!-- End Column -->
+
         </div>
+        <!-- End Row -->
+
     </div>
 
 @endsection

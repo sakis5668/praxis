@@ -17,7 +17,7 @@
                                             <input type="text" name="search" class="form-control">
                                             <span class="input-group-btn">
                                                 <button type="submit" class="btn btn-outline-cool">
-                                                    <i class="fa fa-search"></i>
+                                                    <i class="fa fa-search fa-lg"></i>
                                                 </button>
                                              </span>
                                         </div>

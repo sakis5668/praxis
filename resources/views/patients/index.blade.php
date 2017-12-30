@@ -3,16 +3,23 @@
 @section('content')
 
     <div class="container">
+
+        <!-- Start Row -->
         <div class="row mt-3">
+
+            <!-- Start Column -->
             <div class="col-md-12">
 
-                {{-- CREATE A CARD--}}
+                <!-- Start Card -->
                 <div class="card">
 
-                    {{-- THE HEADER CONTAINS THE SEARCH FIELD --}}
+                    <!-- Start Card Header -->
                     <div class="card-header">
+
+                        <!-- Start Row -->
                         <div class="row mt-3">
 
+                            <!-- Start Column -->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <form method="get" action="{{ route('patients.index') }}" role="search">
@@ -20,28 +27,34 @@
                                             <input type="text" name="search" class="form-control">
                                             <span class="input-group-btn">
                                                 <button type="submit" class="btn btn-outline-cool">
-                                                    <i class="fa fa-search"></i>
+                                                    <i class="fa fa-search fa-lg"></i>
                                                 </button>
                                              </span>
                                         </div>
                                     </form>
                                 </div>
                             </div>
+                            <!-- End Column -->
 
+                            <!-- Start Column -->
                             <div class="col-md-3 ml-auto">
                                 {!! Form::open(['method'=>'get', 'action'=>'PatientsController@create']) !!}
                                 {!! Form::button('<i class="fa fa-plus fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
                                 {!! Form::close() !!}
                             </div>
+                            <!-- End Column -->
 
                         </div>
-                    </div>
+                        <!-- End Row -->
 
-                    {{-- THE BODY CONTAINS THE RESULTS TABLE--}}
+                    </div>
+                    <!-- End Card Header -->
+
+                    <!-- Card Body -->
                     <div class="card-body">
 
+                        <!-- Table -->
                         <div class="table-responsive">
-
                             <table class="table table-hover">
                                 <thead class="thead-light">
                                 <tr>
@@ -66,19 +79,27 @@
                                 @endforeach
                                 </tbody>
                             </table>
-
                         </div>
+                        <!-- End Table -->
 
                     </div>
+                    <!-- End Card Body -->
+
                 </div>
+                <!-- End Card -->
 
             </div>
+            <!-- End Column -->
+
         </div>
+        <!-- End Row -->
+
     </div>
 
-    {{-- PAGINATION --}}
+    <!-- Pagination -->
     <div class="container mt-3">
         {{ $patients->appends(\Illuminate\Support\Facades\Input::except('page'))->links() }}
     </div>
+    <!-- End Pagination -->
 
 @endsection

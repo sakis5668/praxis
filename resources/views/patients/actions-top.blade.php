@@ -1,84 +1,121 @@
+<!-- Card -->
 <div class="card">
 
+    <!-- Card Header -->
     <div class="card-header">
-        <div class="row my-1">
-            <div class="col-md-6 lead py-1">
+
+        <!-- Start Row -->
+        <div class="row">
+
+            <!-- Start Column -->
+            <div class="col-md-6 lead">
                 {{  $patient->last_name . ' ' . $patient->first_name}}
             </div>
-            <div class="col-md-3 py-1">
+            <!-- End Column -->
+
+            <!-- Start Column -->
+            <div class="col-md-3 mt-1">
                 {!! Form::open(['method'=>'get', 'action'=>'PatientsController@index']) !!}
                 {!! Form::button('<i class="fa fa-home fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
                 {!! Form::close() !!}
             </div>
-            <div class="col-md-3 py-1">
+            <!-- End Column -->
+
+            <!-- Start Column -->
+            <div class="col-md-3 mt-1">
                 {!! Form::open(['method'=>'get', 'action'=>['PatientsController@show', $patient]]) !!}
                 {!! Form::button('<i class="fa fa-arrow-left fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-outline-cool col-md-12']) !!}
                 {!! Form::close() !!}
             </div>
-        </div>
-    </div>
+            <!-- End Column -->
 
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-3 py-1">
-                <form method="get" action="{{ route('history.show', [$patient, $patient->history]) }}"
-                      class="form-inline">
-                    <button type="submit"
-                            class="btn btn-cool col-md-12">{{__('patients.Medical History')}}</button>
-                </form>
-            </div>
-            <div class="col-md-3 py-1">
-                <form method="get" action="{{ route('examinations.index', $patient) }}"
-                      class="form-inline">
-                    <button type="submit"
-                            class="btn btn-cool col-md-12">{{__('patients.Examinations')}}</button>
-                </form>
-            </div>
-            <div class="col-md-3 py-1">
-                <form method="get" action="{{ route('pregnancies.index', $patient) }}"
-                      class="form-inline">
-                    <button type="submit"
-                            class="btn btn-cool col-md-12">{{__('patients.Pregnancies')}}</button>
-                </form>
-            </div>
-            <div class="col-md-3 py-1">
-                <form method="get" action="{{ route('surgeries.index', $patient) }}"
-                      class="form-inline">
-                    <button type="submit"
-                            class="btn btn-cool col-md-12">{{__('patients.Surgery')}}</button>
-                </form>
-            </div>
         </div>
-        <div class="row">
-            <div class="col-md-3 py-1">
-                <form method="get" action="{{ route('cytologies.index', $patient) }}"
-                      class="form-inline">
-                    <button type="submit"
-                            class="btn btn-cool col-md-12">{{__('patients.Cytologies')}}</button>
-                </form>
-            </div>
-            <div class="col-md-3 py-1">
-                <form method="get" action="{{ route('histologies.index', $patient) }}"
-                      class="form-inline">
-                    <button type="submit"
-                            class="btn btn-cool col-md-12">{{__('patients.Histologies')}}</button>
-                </form>
-            </div>
-            <div class="col-md-3 py-1">
-                <form method="get" action="{{ route('laboratory_examinations.index', $patient) }}"
-                      class="form-inline">
-                    <button type="submit"
-                            class="btn btn-cool col-md-12">{{__('patients.Laboratory')}}</button>
-                </form>
-            </div>
-            <div class="col-md-3 py-1">
-                <form method="get" action="{{ route('imaging_results.index', $patient) }}"
-                      class="form-inline">
-                    <button type="submit"
-                            class="btn btn-cool col-md-12">{{__('patients.Imaging')}}</button>
-                </form>
-            </div>
-        </div>
+        <!-- End Row -->
+
     </div>
+    <!-- End Card Header -->
+
+    <!-- Card Body -->
+    <div class="card-body">
+
+        <!-- Start Row -->
+        <div class="row">
+
+            <!-- Start Column -->
+            <div class="col-md-3 mt-1">
+                {!! Form::open(['method'=>'get', 'action'=>['HistoriesController@show',$patient, $patient->history]]) !!}
+                {!! Form::button(__('patients.Medical History'), ['type'=>'submit', 'class'=>'form-control btn btn-cool']) !!}
+                {!! Form::close() !!}
+            </div>
+            <!-- End Column -->
+
+            <!-- Start Column -->
+            <div class="col-md-3 mt-1">
+                {!! Form::open(['method'=>'get', 'action'=>['ExaminationsController@index', $patient]]) !!}
+                {!! Form::button(__('patients.Examinations'), ['type'=>'submit', 'class'=>'form-control btn btn-cool']) !!}
+                {!! Form::close() !!}
+            </div>
+            <!-- End Column -->
+
+            <!-- Start Column -->
+            <div class="col-md-3 mt-1">
+                {!! Form::open(['method'=>'get', 'action'=>['PregnanciesController@index', $patient]]) !!}
+                {!! Form::button(__('patients.Pregnancies'), ['type'=>'submit', 'class'=>'form-control btn btn-cool']) !!}
+                {!! Form::close() !!}
+            </div>
+            <!-- End Column -->
+
+            <!-- Start Column -->
+            <div class="col-md-3 mt-1">
+                {!! Form::open(['method'=>'get', 'action'=>['SurgeriesController@index', $patient]]) !!}
+                {!! Form::button(__('patients.Surgery'),['type'=>'submit', 'class'=>'form-control btn btn-cool']) !!}
+                {!! Form::close() !!}
+            </div>
+            <!-- End Column -->
+
+        </div>
+        <!-- End Row -->
+
+        <!-- Start Row -->
+        <div class="row">
+
+            <!-- Start Column -->
+            <div class="col-md-3 mt-1">
+                {!! Form::open(['method'=>'get', 'action' => ['CytologiesController@index', $patient]]) !!}
+                {!! Form::button(__('patients.Cytologies'), ['type'=>'submit', 'class'=>'form-control btn btn-cool']) !!}
+                {!! Form::close() !!}
+            </div>
+            <!-- End Column -->
+
+            <!-- Start Column -->
+            <div class="col-md-3 mt-1">
+                {!! Form::open(['method'=>'get', 'action' => ['HistologiesController@index', $patient]]) !!}
+                {!! Form::button(__('patients.Histologies'), ['type'=>'submit', 'class'=>'form-control btn btn-cool']) !!}
+                {!! Form::close() !!}
+            </div>
+            <!-- End Column -->
+
+            <!-- Start Column -->
+            <div class="col-md-3 mt-1">
+                {!! Form::open(['method'=>'get', 'action' => ['LaboratoryExaminationsController@index', $patient]]) !!}
+                {!! Form::button(__('patients.Laboratory'), ['type'=>'submit', 'class'=>'form-control btn btn-cool']) !!}
+                {!! Form::close() !!}
+            </div>
+            <!-- End Column -->
+
+            <!-- Start Column -->
+            <div class="col-md-3 mt-1">
+                {!! Form::open(['method'=>'get', 'action' => ['ImagingResultsController@index', $patient]]) !!}
+                {!! Form::button(__('patients.Imaging'), ['type'=>'submit', 'class'=>'form-control btn btn-cool']) !!}
+                {!! Form::close() !!}
+            </div>
+            <!-- End Column -->
+
+        </div>
+        <!-- End Row -->
+
+    </div>
+    <!-- End Card Body -->
 
 </div>
+<!-- End Card -->

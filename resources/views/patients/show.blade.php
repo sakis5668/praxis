@@ -4,31 +4,52 @@
 
     <div class="container">
 
+        <!-- Start Row -->
         <div class="row">
-            <div class="col-md-12 my-3">
+            <div class="col-md-12 mt-3">
                 @include('patients.actions-top')
             </div>
         </div>
+        <!-- End Row -->
 
+        <!-- Start Row -->
         <div class="row">
-            <div class="col-md-12">
+
+            <!-- Start Column -->
+            <div class="col-md-12 mt-3">
+
+                <!-- Card -->
                 <div class="card">
 
+                    <!-- Card Header -->
                     <div class="card-header lead font-weight-bold">
+
+                        <!-- Start Row -->
                         <div class="row">
-                            <div class="col-md-10">
+
+                            <!-- Start Column -->
+                            <div class="col-md-9">
                                 {{ $patient->last_name . ', ' . $patient->first_name}}
                             </div>
-                            <div class="col-md-2">
+                            <!-- End Column -->
+
+                            <!-- Start Column -->
+                            <div class="col-md-3">
                                 <form method="get" action="{{ route('patients.edit', $patient->id) }}"
                                       class="form-inline">
                                     <button type="submit" class="btn btn-outline-cool col-md-12"><i
                                                 class="fa fa-pencil fa-lg"></i></button>
                                 </form>
                             </div>
-                        </div>
-                    </div>
+                            <!-- End Column -->
 
+                        </div>
+                        <!-- End Row -->
+
+                    </div>
+                    <!-- End Card Header -->
+
+                    <!-- Card Body -->
                     <div class="card-body">
 
                         <div class="row mt-2">
@@ -82,10 +103,16 @@
                         </div>
 
                     </div>
+                    <!-- End Card Body -->
 
                 </div>
+                <!-- End Card -->
+
             </div>
+            <!-- End Column -->
+
         </div>
+        <!-- End Row -->
 
     </div>
 
