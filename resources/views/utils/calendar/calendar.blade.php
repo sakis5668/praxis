@@ -44,8 +44,8 @@
 
 <!-- Scripts -->
 @section('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/moment.min.js"></script>
     <script src="js/fullcalendar.min.js"></script>
     <script src="js/locale-all.js"></script>
