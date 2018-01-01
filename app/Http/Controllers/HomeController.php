@@ -22,4 +22,9 @@ class HomeController extends Controller
     {
         return view('welcome');
     }
+
+    public function calendar()
+    {
+        return view('utils.calendar.calendar');
+    }
 }

@@ -28,4 +28,5 @@ return [
     'Products'                   => 'Products',
     'Physicians'                 => 'Physicians',
     'List Physicians'            => 'List Physicians',
+    'Calendar'                   => 'Calendar',
 ];

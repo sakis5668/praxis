@@ -28,4 +28,6 @@ return [
     'Products'                   => 'Προϊόντα',
     'Physicians'                 => 'Ιατροί',
     'List Physicians'            => 'Λίστα ιατρών',
+    'Calendar'                   => 'Ημερολόγιο',
+
 ];

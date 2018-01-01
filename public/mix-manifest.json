@@ -1,4 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/js/locale-all.js": "/js/locale-all.js",
+    "/js/moment.min.js": "/js/moment.min.js",
+    "/js/fullcalendar.min.js": "/js/fullcalendar.min.js",
+    "/css/fullcalendar.min.css": "/css/fullcalendar.min.css",
+    "/css/fullcalendar.print.min.css": "/css/fullcalendar.print.min.css"
 }
