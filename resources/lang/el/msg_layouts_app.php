@@ -29,5 +29,9 @@ return [
     'Physicians'                 => 'Ιατροί',
     'List Physicians'            => 'Λίστα ιατρών',
     'Calendar'                   => 'Ημερολόγιο',
-
+    'Normal'                     => 'Κανονικό',
+    'Doppler'                    => 'Doppler',
+    'Colposcopy'                 => 'Κολποσκόπηση',
+    'Other'                      => 'Άλλο',
+    'dragevent'                  => 'Σύρετε ένα ραντεβού στο ημερολόγιο',
 ];

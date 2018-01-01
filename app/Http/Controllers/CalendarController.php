@@ -44,11 +44,14 @@ class CalendarController extends Controller
         //Values received from ajax
         $title = $_POST['title'];
         $start = $_POST['start'];
+        $color = $_POST['color'];
 
         $event=new Event();
         $event->start=$start;
         $event->allday=false;
         $event->title=$title;
+        $event->color = $color;
+        $event->constraint = 'businessHours';
 
         $event->save();
     }

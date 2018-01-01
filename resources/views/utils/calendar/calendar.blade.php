@@ -24,18 +24,31 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            Draggable Events
-                        </div>
-                        <div class="row" id="external-events">
-                            <div class="col-md-2 fc-event">Apointment</div>
+                            <div class="col-md-12 lead">
+                                {{__('msg_layouts_app.dragevent')}}
+                            </div>
                         </div>
                     </div>
                     <div class="card-body">
-                        <div id="calendar"></div>
+                        <div class="row" id="external-events">
+                            <div class="mx-1 col-md-2 fc-event btn-success">{{__('msg_layouts_app.Normal')}}</div>
+                            <div class="mx-1 col-md-2 fc-event btn-secondary">{{__('msg_layouts_app.Doppler')}}</div>
+                            <div class="mx-1 col-md-2 fc-event btn-delete">{{__('msg_layouts_app.Colposcopy')}}</div>
+                            <div class="mx-1 col-md-2 fc-event btn-default">{{__('msg_layouts_app.Other')}}</div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="calendar"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 @endsection
 <!-- /Content -->
@@ -82,12 +95,14 @@
                     center: 'title',
                     right: 'listDay agendaWeek,month'
                 },
-                defaultView : 'agendaWeek',
+                defaultView: 'agendaWeek',
                 locale: '{{auth()->user()->language->language}}',
                 defaultDate: '{{\Carbon\Carbon::now()}}',
                 navLinks: true, // can click day/week names to navigate views
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
+
+                //weekends: false,
 
                 slotDuration: '00:15:00',
 
@@ -112,6 +127,42 @@
                 allDaySlot: false,
                 scrollTime: '14:00:00',
 
+                drop: function (date, allDay) {
+
+                    var originalEventObject = $(this).data('eventObject');
+                    var copiedEventObject = $.extend({}, originalEventObject);
+
+                    allDay = false;
+                    copiedEventObject.start = date;
+                    copiedEventObject.allDay = allDay;
+                    copiedEventObject.backgroundColor = $(this).css("background-color");
+                    copiedEventObject.borderColor = $(this).css("border-color");
+
+                    if ($('#drop-remove').is(':checked')) {
+                        $(this).remove();
+                    }
+
+                    var title = copiedEventObject.title;
+                    var start = copiedEventObject.start.format("YYYY-MM-DD HH:mm");
+                    var color = copiedEventObject.backgroundColor;
+
+                    crsfToken = document.getElementsByName("_token")[0].value;
+                    $.ajax({
+                        url: 'createEvent',
+                        data: 'title=' + title + '&start=' + start + '&allday=' + allDay + '&color=' + color,
+                        type: "POST",
+                        headers: {
+                            "X-CSRF-TOKEN": crsfToken
+                        },
+                        success: function (events) {
+                            console.log('Event created');
+                            $('#calendar').fullCalendar('refetchEvents');
+                        },
+                        error: function (json) {
+                            console.log("Error at createEvent");
+                        }
+                    });
+                },
 
                 eventClick: function (event, jsEvent, view) {
                     crsfToken = document.getElementsByName("_token")[0].value;
@@ -138,8 +189,8 @@
 
                     } else {
 
-                        var newTitle = prompt("Enter new Name :",event.title);
-                        if (newTitle==null || newTitle=="") {
+                        var newTitle = prompt("Enter new Name :", event.title);
+                        if (newTitle == null || newTitle == "") {
 
                         } else {
                             var start = event.start.format("YYYY-MM-DD HH:mm");
@@ -218,39 +269,6 @@
                         },
                         error: function (json) {
                             console.log("Error at update eventdrop");
-                        }
-                    });
-                },
-
-                drop: function (date, allDay) {
-
-                    var originalEventObject = $(this).data('eventObject');
-                    var copiedEventObject = $.extend({}, originalEventObject);
-
-                    allDay = false;
-                    copiedEventObject.start = date;
-                    copiedEventObject.allDay = allDay;
-                    if ($('#drop-remove').is(':checked')) {
-                        $(this).remove();
-                    }
-
-                    var title = copiedEventObject.title;
-                    var start = copiedEventObject.start.format("YYYY-MM-DD HH:mm");
-
-                    crsfToken = document.getElementsByName("_token")[0].value;
-                    $.ajax({
-                        url: 'createEvent',
-                        data: 'title=' + title + '&start=' + start + '&allday=' + allDay,
-                        type: "POST",
-                        headers: {
-                            "X-CSRF-TOKEN": crsfToken
-                        },
-                        success: function (events) {
-                            console.log('Event created');
-                            $('#calendar').fullCalendar('refetchEvents');
-                        },
-                        error: function (json) {
-                            console.log("Error at createEvent");
                         }
                     });
                 },
