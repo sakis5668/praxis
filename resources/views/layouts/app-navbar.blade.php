@@ -46,7 +46,7 @@
                             {{__('msg_layouts_app.utils') }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownLeft">
-                            <a href="{{ route('calendar') }}" class="dropdown-item">{{__('msg_layouts_app.Calendar')}}</a>
+                            <a href="{{ route('calendar') }}" class="dropdown-item">{{__('calendar.Calendar')}}</a>
                             <div class="dropdown-divider"></div>
                             <a href="{{ route('wks.calculate') }}"
                                class="dropdown-item">{{__('msg_layouts_app.utils.pregnancy.calculator')}}</a>
