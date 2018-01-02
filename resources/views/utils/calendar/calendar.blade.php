@@ -272,6 +272,7 @@
                             type: "POST",
                             success: function () {
                                 $('#calendar').fullCalendar('removeEvents', event._id);
+                                alertify.notify('{{__('calendar.deleted')}}', 'error', 3, function(){});
                                 console.log("Event deleted - eventclick");
                             }
                         });

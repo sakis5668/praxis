@@ -20,4 +20,5 @@ return [
     'Saved Message' => 'New title saved',
     'Cancel'        => 'Cancel',
     'Ok'            => 'Ok',
+    'deleted'       => 'Event deleted',
 ];

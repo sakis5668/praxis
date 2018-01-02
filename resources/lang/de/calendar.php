@@ -20,4 +20,5 @@ return [
     'Saved Message' => 'Titel gespeichert',
     'Cancel'        => 'Abbruch',
     'Ok'            => 'Ok',
+    'deleted'       => 'Gelöscht',
 ];
