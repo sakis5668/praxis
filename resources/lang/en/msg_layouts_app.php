@@ -28,11 +28,4 @@ return [
     'Products'                   => 'Products',
     'Physicians'                 => 'Physicians',
     'List Physicians'            => 'List Physicians',
-    'Normal'                     => 'Normal',
-    'Doppler'                    => 'Doppler',
-    'Colposcopy'                 => 'Colposcopy',
-    'Other'                      => 'Other',
-    'dragevent'                  => 'Drag an appointment to the calendar',
-    'editEvent'                  => 'Edit title',
-    'deleteEvent'                => 'Delete',
 ];

@@ -29,12 +29,5 @@ return [
     'Products'                   => 'Produkte',
     'Physicians'                 => 'Ärzte',
     'List Physicians'            => 'Ärzte-Liste',
-    'Calendar'                   => 'Kalender',
-    'Normal'                     => 'Normal',
-    'Doppler'                    => 'Doppler',
-    'Colposcopy'                 => 'Kolposkopie',
-    'Other'                      => 'Sonstiges',
-    'dragevent'                  => 'Ziehen Sie einen Termin auf den Kalender',
-    'editEvent'                  => 'Title bearbeiten',
-    'deleteEvent'                => 'Löschen',
+
 ];
