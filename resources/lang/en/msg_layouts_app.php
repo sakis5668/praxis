@@ -33,4 +33,6 @@ return [
     'Colposcopy'                 => 'Colposcopy',
     'Other'                      => 'Other',
     'dragevent'                  => 'Drag an appointment to the calendar',
+    'editEvent'                  => 'Edit title',
+    'deleteEvent'                => 'Delete',
 ];

@@ -1,4 +1,3 @@
-
 window._ = require('lodash');
 
 window.Popper = require('popper.js/dist/umd/popper');
@@ -10,11 +9,14 @@ window.Popper = require('popper.js/dist/umd/popper');
  */
 
 try {
-    window.$ = window.jQuery = require('jquery/dist/jquery.slim');
-
+    // window.$ = window.jQuery = require('jquery/dist/jquery.slim');
+    // window.$ = window.jQuery = require('jquery/dist/jquery.min');
+    window.$ = window.jQuery = require('jquery');
     require('bootstrap');
-} catch (e) {}
+    require('jquery-ui');
 
+} catch (e) {
+}
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the

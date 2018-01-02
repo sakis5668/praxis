@@ -18,18 +18,28 @@ mix
 
 */
 
+mix.webpackConfig({
+    resolve: {
+        alias: {
+            'jquery-ui': 'jquery-ui-dist/jquery-ui.js'
+        }
+    }
+});
 
 mix
     .js('resources/assets/js/app.js', 'public/js')
 
-    .copy('node_modules/jquery/dist/jquery.min.js', 'public/js')
-    .copy('node_modules/jquery-ui-dist/jquery-ui.min.js', 'public/js')
     .copy('node_modules/moment/min/moment.min.js', 'public/js')
     .copy('node_modules/fullcalendar/dist/fullcalendar.min.js', 'public/js')
     .copy('node_modules/fullcalendar/dist/locale-all.js', 'public/js')
+    .copy('resources/assets/alertifyjs/alertify.min.js', 'public/js')
 
     .sass('resources/assets/sass/app.scss', 'public/css')
 
     .copy('node_modules/fullcalendar/dist/fullcalendar.min.css', 'public/css')
     .copy('node_modules/fullcalendar/dist/fullcalendar.print.min.css', 'public/css')
+    .copy('resources/assets/alertifyjs/css/alertify.min.css', 'public/css')
+    .copy('resources/assets/alertifyjs/css/themes/default.css', 'public/css/themes')
+    .copy('resources/assets/alertifyjs/css/themes/bootstrap.css', 'public/css/themes')
+    .copy('resources/assets/alertifyjs/css/themes/semantic.css', 'public/css/themes')
 ;

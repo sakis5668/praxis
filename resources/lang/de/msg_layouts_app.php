@@ -35,4 +35,6 @@ return [
     'Colposcopy'                 => 'Kolposkopie',
     'Other'                      => 'Sonstiges',
     'dragevent'                  => 'Ziehen Sie einen Termin auf den Kalender',
+    'editEvent'                  => 'Title bearbeiten',
+    'deleteEvent'                => 'Löschen',
 ];

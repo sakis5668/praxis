@@ -6,50 +6,102 @@
 @endsection
 <!-- /Styles -->
 
-
-
 <!-- Content -->
 @section('content')
+
     <div class="container">
 
+        <!-- Start Row -->
         <div class="row">
-            <div class="col-md-12">
-                {!! Form::open(['route' => ['createEvent'], 'method' => 'POST', 'id' =>'form-calendar']) !!}
-                {!! Form::close() !!}
-            </div>
+            {!! Form::open(['route' => ['createEvent'], 'method' => 'POST', 'id' =>'form-calendar']) !!}
+            {!! Form::close() !!}
         </div>
+        <!-- End Row -->
 
+        <!-- Start Row -->
         <div class="row mt-3">
-            <div class="col-md-12">
+
+            <!-- Start Column -->
+            <div class="col-md-12 ">
+
+                <!-- Card -->
                 <div class="card">
+
+                    <!-- Card Header -->
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-12 lead">
                                 {{__('msg_layouts_app.dragevent')}}
                             </div>
                         </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="row" id="external-events">
-                            <div class="mx-1 col-md-2 fc-event btn-success">{{__('msg_layouts_app.Normal')}}</div>
-                            <div class="mx-1 col-md-2 fc-event btn-secondary">{{__('msg_layouts_app.Doppler')}}</div>
-                            <div class="mx-1 col-md-2 fc-event btn-delete">{{__('msg_layouts_app.Colposcopy')}}</div>
-                            <div class="mx-1 col-md-2 fc-event btn-default">{{__('msg_layouts_app.Other')}}</div>
-                        </div>
-
-                        <hr>
-
                         <div class="row">
                             <div class="col-md-12">
+                                <small>
+                                    <kbd>click</kbd> : {{__('msg_layouts_app.editEvent')}}, <kbd>Shift-Click</kbd>
+                                    : {{__('msg_layouts_app.deleteEvent')}}
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Card Header -->
+
+                    <!-- Card Body -->
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div id="external-events">
+                                    <div class="fc-event bg-success">{{__('msg_layouts_app.Normal')}}</div>
+                                    <div class="fc-event mt-1 bg-secondary">{{__('msg_layouts_app.Doppler')}}</div>
+                                    <div class="fc-event mt-1 bg-delete">{{__('msg_layouts_app.Colposcopy')}}</div>
+                                    <div class="fc-event mt-1 bg-default">{{__('msg_layouts_app.Other')}}</div>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
                                 <div id="calendar"></div>
                             </div>
                         </div>
+
+                    </div>
+                    <!-- /Card Body -->
+
+                </div>
+                <!-- /Card -->
+
+            </div>
+            <!-- End Column -->
+
+        </div>
+        <!-- End Row -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myModalLabel">Title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="event-title" class="col-form-label">Title:</label>
+                                <input type="text" class="form-control" id="event-title">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" data-whatever="save">Save</button>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- /Modal -->
 
     </div>
+
 @endsection
 <!-- /Content -->
 
@@ -57,8 +109,11 @@
 
 <!-- Scripts -->
 @section('scripts')
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
+    {{-- Moved the following 2 lines to the layout file --}}
+    {{--<script src="js/jquery.min.js"></script>--}}
+    {{--<script src="js/bootstrap.min.js"></script>--}}
+    {{--<script src="js/jquery-ui.min.js"></script>--}}
+
     <script src="js/moment.min.js"></script>
     <script src="js/fullcalendar.min.js"></script>
     <script src="js/locale-all.js"></script>
@@ -102,26 +157,32 @@
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
 
+                eventTextColor: '#ffffff',
+
                 //weekends: false,
 
                 slotDuration: '00:15:00',
 
                 defaultTimedEventDuration: '00:15:00',
 
-                minTime: '14:00:00',
-                maxTime: '22:00:00',
+                minTime: '15:00:00',
+                maxTime: '21:30:00',
 
                 events: {url: "loadevents"},
 
                 editable: true,
+
+                // the following 2 are needed for to drag
+                // a new event only into businessHours
+                eventConstraint: 'businessHours',
+                selectConstraint: 'businessHours',
+
                 droppable: true, // this allows things to be dropped onto the calendar !!!
 
                 businessHours: {
-                    // days of week. an array of zero-based day of week integers (0=Sunday)
-                    dow: [1, 2, 4], // Monday - Thursday
-
-                    start: '16:00', // a start time (10am in this example)
-                    end: '20:00', // an end time (6pm in this example)
+                    dow: [1, 2, 4], // Monday = 1
+                    start: '16:00',
+                    end: '20:00',
                 },
 
                 allDaySlot: false,
@@ -137,6 +198,7 @@
                     copiedEventObject.allDay = allDay;
                     copiedEventObject.backgroundColor = $(this).css("background-color");
                     copiedEventObject.borderColor = $(this).css("border-color");
+                    copiedEventObject.constraint = 'businessHours';
 
                     if ($('#drop-remove').is(':checked')) {
                         $(this).remove();
@@ -145,11 +207,12 @@
                     var title = copiedEventObject.title;
                     var start = copiedEventObject.start.format("YYYY-MM-DD HH:mm");
                     var color = copiedEventObject.backgroundColor;
+                    var constraint = copiedEventObject.constraint;
 
                     crsfToken = document.getElementsByName("_token")[0].value;
                     $.ajax({
                         url: 'createEvent',
-                        data: 'title=' + title + '&start=' + start + '&allday=' + allDay + '&color=' + color,
+                        data: 'title=' + title + '&start=' + start + '&allday=' + allDay + '&color=' + color + '&constraint=' + constraint,
                         type: "POST",
                         headers: {
                             "X-CSRF-TOKEN": crsfToken
@@ -164,12 +227,14 @@
                     });
                 },
 
+                // eventclick, working copy
+                /*
                 eventClick: function (event, jsEvent, view) {
                     crsfToken = document.getElementsByName("_token")[0].value;
 
                     if (jsEvent.originalEvent.shiftKey == true) {
 
-                        var con = confirm("Do you really want to delete this event ?");
+                        /!*var con = confirm("Do you really want to delete this event ?");
                         if (con) {
                             $.ajax({
                                 url: 'deleteEvent',
@@ -185,7 +250,19 @@
                             });
                         } else {
                             console.log("Canceled");
-                        }
+                        }*!/
+                        $.ajax({
+                            url: 'deleteEvent',
+                            data: 'id=' + event.id,
+                            headers: {
+                                "X-CSRF-TOKEN": crsfToken
+                            },
+                            type: "POST",
+                            success: function () {
+                                $('#calendar').fullCalendar('removeEvents', event._id);
+                                console.log("Event deleted");
+                            }
+                        });
 
                     } else {
 
@@ -219,6 +296,8 @@
                         }
                     }
                 },
+
+*/
 
                 eventResize: function (event) {
                     var start = event.start.format("YYYY-MM-DD HH:mm");
@@ -279,8 +358,76 @@
                         $('#calendar').fullCalendar('changeView', 'agendaDay');
                     }
                 },
-            });
 
+
+                // working copy , original is commented out above !!!
+                eventClick: function (event, jsEvent, view) {
+                    crsfToken = document.getElementsByName("_token")[0].value;
+
+                    if (jsEvent.originalEvent.shiftKey == true) {
+                        $.ajax({
+                            url: 'deleteEvent',
+                            data: 'id=' + event.id,
+                            headers: {
+                                "X-CSRF-TOKEN": crsfToken
+                            },
+                            type: "POST",
+                            success: function () {
+                                $('#calendar').fullCalendar('removeEvents', event._id);
+                                console.log("Event deleted");
+                            }
+                        });
+
+                    } else {
+
+                        $('#myModal').modal({
+                            keyboard: false
+                        });
+
+                        $('#myModal').on('shown.bs.modal', function(e){
+                            var titleString = event.title;
+                            var modal = $(this);
+                            modal.find('.modal-body input').val(titleString);
+                        });
+
+                        $('#myModal').on('hide.bs.modal', function(e){
+
+                            var button = $(e.relatedTarget);
+                            var buttonText = button.data('whatever');
+                            console.log(button.data('whatever'));
+                            var modal = $(this);
+                            var newTitle = modal.find('.modal-body input').val();
+                            if (newTitle == null || newTitle == "") {
+
+                            } else {
+                                var start = event.start.format("YYYY-MM-DD HH:mm");
+                                if (event.end) {
+                                    var end = event.end.format("YYYY-MM-DD HH:mm");
+                                } else {
+                                    var end = "null";
+                                }
+                                var id = event.id;
+                                var allday = false;
+                                $.ajax({
+                                    url: 'updateEvent',
+                                    data: 'id=' + id + '&title=' + newTitle + '&start=' + start + '&end=' + end,
+                                    type: "POST",
+                                    headers: {
+                                        "X-CSRF-TOKEN": crsfToken
+                                    },
+                                    success: function (json) {
+                                        console.log("Updated Successfully - eventClick");
+                                        $('#calendar').fullCalendar('refetchEvents');
+                                    },
+                                    error: function (json) {
+                                        console.log("Error at updateEvent - eventClick");
+                                    }
+                                });
+                            }
+                        });
+                    }
+                },
+            });
         });
     </script>
 @endsection
