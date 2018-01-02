@@ -16,8 +16,11 @@
                         <div class="row">
                             <div class="col-md-6 lead mt-1">{{__('patients.Edit Patient')}}</div>
                             <div class="col-md-3 mt-1">
-                                {!! Form::open(['method' => 'delete', 'action' => ['PatientsController@destroy', $patient], 'onsubmit' => 'return ConfirmDelete()']) !!}
-                                {!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-delete col-md-12']) !!}
+                                {{--{!! Form::open(['method' => 'delete', 'action' => ['PatientsController@destroy', $patient], 'onsubmit' => 'return ConfirmDelete()']) !!}--}}
+                                {{--{!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-delete col-md-12', 'id'=>'deleteButton']) !!}--}}
+                                {!! Form::open(['method' => 'delete', 'action' => ['PatientsController@destroy', $patient], 'id'=>'deleteForm']) !!}
+                                {!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['class'=>'btn btn-delete col-md-12', 'id'=>'deleteButton']) !!}
+
                                 {!! Form::close() !!}
                             </div>
                             <div class="col-md-3 mt-1">
@@ -108,14 +111,30 @@
 
 @endsection
 
+
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/alertify.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/themes/default.css') }}">
+@endsection
+
+
 @section('scripts')
+    <script src="{{asset('js/alertify.min.js')}}"></script>
     <script>
-        function ConfirmDelete() {
-            var x = confirm("Are you sure you want to delete?");
-            if (x)
-                return true;
-            else
-                return false;
-        }
+
+        $('#deleteButton').on('click', function () {
+            alertify.confirm(
+                '{{__('msg_layouts_app.Confirmation')}}',
+                '{{__('msg_layouts_app.confirmMsg')}}',
+                function(e) {
+                    if(e) {
+                        $('#deleteForm').submit();
+                    }
+                },
+                function() {
+                    alertify.error('{{__('msg_layouts_app.Cancel')}}');
+                });
+        });
+
     </script>
 @endsection

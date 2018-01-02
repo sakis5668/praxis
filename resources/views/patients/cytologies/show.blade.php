@@ -11,17 +11,22 @@
             </div>
 
             <div class="row  my-3">
+
                 <div class="col-md-4">
                     @include('patients.cytologies.list-left')
                 </div>
+
                 <div class="col-md-8">
                     @include('patients.cytologies.list-right-show')
                 </div>
+
             </div>
 
     </div>
 
 @endsection
+
+
 
 @section('scripts')
     <script>

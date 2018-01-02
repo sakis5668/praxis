@@ -20,8 +20,8 @@
                         <div class="row">
                             <div class="col-md-8">{{__('surgery.Edit Surgery Data')}}</div>
                             <div class="col-md-2">
-                                {!! Form::model($surgery, ['method'=>'delete', 'action'=>['SurgeriesController@destroy', $patient, $surgery], 'onsubmit' => 'return ConfirmDelete()']) !!}
-                                {!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['type'=>'submit', 'class'=> 'btn btn-delete col-md-12 ml-auto']) !!}
+                                {!! Form::model($surgery, ['method'=>'delete', 'action'=>['SurgeriesController@destroy', $patient, $surgery], 'id' => 'deleteForm']) !!}
+                                {!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['class'=> 'btn btn-delete col-md-12 ml-auto', 'id'=>'deleteButton']) !!}
                                 {!! Form::close() !!}
                             </div>
                             <div class="col-md-2">
@@ -103,14 +103,30 @@
 
 @endsection
 
+
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/alertify.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/themes/default.css') }}">
+@endsection
+
+
 @section('scripts')
+    <script src="{{asset('js/alertify.min.js')}}"></script>
     <script>
-        function ConfirmDelete() {
-            var x = confirm("Are you sure you want to delete?");
-            if (x)
-                return true;
-            else
-                return false;
-        }
+
+        $('#deleteButton').on('click', function () {
+            alertify.confirm(
+                '{{__('msg_layouts_app.Confirmation')}}',
+                '{{__('msg_layouts_app.confirmMsg')}}',
+                function(e) {
+                    if(e) {
+                        $('#deleteForm').submit();
+                    }
+                },
+                function() {
+                    alertify.error('{{__('msg_layouts_app.Cancel')}}');
+                });
+        });
+
     </script>
 @endsection

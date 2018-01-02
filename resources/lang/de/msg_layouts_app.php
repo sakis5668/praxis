@@ -29,5 +29,8 @@ return [
     'Products'                   => 'Produkte',
     'Physicians'                 => 'Ärzte',
     'List Physicians'            => 'Ärzte-Liste',
-
+    'Confirmation'               => 'Bestätigung',
+    'confirmMsg'                 => 'Sind Sie sicher, dass Sie diese Daten löschen möchten ?',
+    'Ok'                         => 'Ok',
+    'Cancel'                     => 'Abbruch',
 ];

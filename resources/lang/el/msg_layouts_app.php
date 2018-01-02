@@ -28,5 +28,8 @@ return [
     'Products'                   => 'Προϊόντα',
     'Physicians'                 => 'Ιατροί',
     'List Physicians'            => 'Λίστα ιατρών',
-
+    'Confirmation'               => 'Επιβεβαίωση',
+    'confirmMsg'                 => 'Σίγουρα θέλετε να διαγράψετε τα δεδομένα ;',
+    'Ok'                         => 'Ok',
+    'Cancel'                     => 'Διακοπή',
 ];

@@ -1,14 +1,6 @@
 @extends('layouts.app')
 
-<!-- Styles -->
-@section('styles')
-    <link rel="stylesheet" href="css/fullcalendar.min.css"/>
-    <link rel="stylesheet" href="css/alertify.min.css">
-    <link rel="stylesheet" href="css/themes/default.css">
-@endsection
-<!-- /Styles -->
 
-<!-- Content -->
 @section('content')
 
     <div class="container">
@@ -79,11 +71,15 @@
     </div>
 
 @endsection
-<!-- /Content -->
 
 
+@section('styles')
+    <link rel="stylesheet" href="css/fullcalendar.min.css"/>
+    <link rel="stylesheet" href="css/alertify.min.css">
+    <link rel="stylesheet" href="css/themes/default.css">
+@endsection
 
-<!-- Scripts -->
+
 @section('scripts')
     <script src="js/moment.min.js"></script>
     <script src="js/fullcalendar.min.js"></script>
@@ -331,4 +327,3 @@
         });
     </script>
 @endsection
-<!-- /Scripts -->

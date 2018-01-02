@@ -15,8 +15,8 @@
         <!-- Start Row -->
         <div class="row justify-content-end">
             <div class="col-6 col-md-3 mt-1">
-                {!! Form::model($examination, ['method'=>'delete', 'action'=>['ExaminationsController@destroy', $patient, $examination], 'onsubmit' => 'return ConfirmDelete()']) !!}
-                {!! Form::button('<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-delete col-md-12']) !!}
+                {!! Form::model($examination, ['method'=>'delete', 'action'=>['ExaminationsController@destroy', $patient, $examination], 'id'=>'deleteForm']) !!}
+                {!! Form::button('<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>', ['class' => 'form-control btn btn-delete col-md-12', 'id'=>'deleteButton']) !!}
                 {!! Form::close() !!}
             </div>
             <div class="col-6 col-md-3 mt-1">

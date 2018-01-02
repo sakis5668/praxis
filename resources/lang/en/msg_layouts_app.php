@@ -28,4 +28,8 @@ return [
     'Products'                   => 'Products',
     'Physicians'                 => 'Physicians',
     'List Physicians'            => 'List Physicians',
+    'Confirmation'               => 'Confirmation',
+    'confirmMsg'                 => 'Are you sure you want to delete this data ?',
+    'Ok'                         => 'Ok',
+    'Cancel'                     => 'Cancel',
 ];
