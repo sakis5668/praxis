@@ -14,8 +14,8 @@
                                 {{__('drug-companies.Edit Company Data')}}
                             </div>
                             <div class="col-md-3 ml-md-auto">
-                                {!! Form::open(['method'=>'delete', 'action'=>['AdminDrugCompaniesController@destroy', $drugCompany], 'onsubmit' => 'return ConfirmDelete()']) !!}
-                                {!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-delete col-md-12']) !!}
+                                {!! Form::open(['method'=>'delete', 'action'=>['AdminDrugCompaniesController@destroy', $drugCompany], 'id' => 'deleteForm']) !!}
+                                {!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['id'=>'deleteButton', 'class'=>'btn btn-delete col-md-12']) !!}
                                 {!! Form::close() !!}
                             </div>
                             <div class="col-md-3 ml-md-auto">
@@ -89,13 +89,18 @@
 
 @section('scripts')
     <script>
-        function ConfirmDelete()
-        {
-            var x = confirm("Are you sure you want to delete?");
-            if (x)
-                return true;
-            else
-                return false;
-        }
+        $('#deleteButton').on('click', function () {
+            alertify.confirm(
+                '{{__('msg_layouts_app.Confirmation')}}',
+                '{{__('msg_layouts_app.confirmMsg')}}',
+                function(e) {
+                    if(e) {
+                        $('#deleteForm').submit();
+                    }
+                },
+                function() {
+                    alertify.error('{{__('msg_layouts_app.Cancel')}}');
+                });
+        });
     </script>
 @endsection

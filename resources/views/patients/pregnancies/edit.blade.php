@@ -20,9 +20,6 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6 col-md-3 mt-1">
-                               {{-- {!! Form::model($pregnancy, ['method'=>'delete', 'action'=>['PregnanciesController@destroy', $patient, $pregnancy], 'onsubmit' => 'return ConfirmDelete()']) !!}
-                                {!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['type'=>'submit', 'class'=> 'btn btn-delete col-md-12 ml-auto']) !!}
-                                {!! Form::close() !!}--}}
                                 {!! Form::model($pregnancy, ['method'=>'delete', 'action'=>['PregnanciesController@destroy', $patient, $pregnancy], 'id' => 'deleteForm']) !!}
                                 {!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['id'=>'deleteButton', 'class'=> 'btn btn-delete col-md-12 ml-auto']) !!}
                                 {!! Form::close() !!}
@@ -81,18 +78,8 @@
 @endsection
 
 
-
-@section('styles')
-    {{--<link rel="stylesheet" href="{{ asset('css/alertify.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/themes/default.css') }}">--}}
-@endsection
-
-
-
 @section('scripts')
 
-    {{--<script src="{{asset('js/alertify.min.js')}}"></script>--}}
-    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.4/moment.min.js"></script>--}}
     <script src="{{ asset('js/moment.min.js') }}"></script>
 
     <script>
@@ -109,20 +96,7 @@
                     alertify.error('{{__('msg_layouts_app.Cancel')}}');
                 });
         });
-
     </script>
-
-    <script>
-        function ConfirmDelete() {
-            var x = confirm("Are you sure you want to delete?");
-            if (x)
-                return true;
-            else
-                return false;
-        }
-    </script>
-
-
 
     <script>
         function calculateET(){

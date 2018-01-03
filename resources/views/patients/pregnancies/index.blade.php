@@ -40,8 +40,6 @@
                                 </thead>
                                 <tbody>
                                 @foreach($patient->pregnancies as $pregnancy)
-                                    {{--{{ route('pregnancy.history.show', [$pregnancy, $pregnancy->pregnancyHistory]) }}--}}
-                                    {{--<tr onclick="window.location='{{ route('pregnancies.show', [$patient,$pregnancy]) }}'">--}}
                                     <tr onclick="window.location=' {{ route('pregnancy.history.show', [$pregnancy, $pregnancy->pregnancyHistory]) }}'">
                                         <td>
                                             {{ $pregnancy->lmp ? $pregnancy->lmp->format('d.m.Y') : 'no date' }}

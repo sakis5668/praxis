@@ -28,11 +28,6 @@
                                 <td class="text-center">
                                     {{ $histology->date ? $histology->date->format('d.m.Y') : __('$histology.no.date.label') }}
                                 </td>
-                                {{--<td>
-                                    {!! Form::model($histology, ['method'=>'delete', 'action'=>['HistologiesController@destroy', $patient, $histology], 'onsubmit' => 'return ConfirmDelete()']) !!}
-                                    {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-delete']) !!}
-                                    {!! Form::close() !!}
-                                </td>--}}
                             </tr>
                         @endforeach
                         </tbody>

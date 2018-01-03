@@ -26,9 +26,6 @@
                                 {{__('pregnancy.edit.prenatal.title')}}
                             </div>
                             <div class="col-3">
-                               {{-- {!! Form::model($prenatal, ['method'=>'delete', 'action'=>['PregnancyPrenatalsController@destroy', $pregnancy, $prenatal], 'onsubmit'=>'return ConfirmDelete()']) !!}
-                                {!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['type'=>'submit', 'class'=>'form-control btn btn-delete']) !!}
-                                {!! Form::close() !!}--}}
                                 {!! Form::model($prenatal, ['method'=>'delete', 'action'=>['PregnancyPrenatalsController@destroy', $pregnancy, $prenatal], 'id'=>'deleteForm']) !!}
                                 {!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['id'=>'deleteButton', 'class'=>'form-control btn btn-delete']) !!}
                                 {!! Form::close() !!}
@@ -78,17 +75,8 @@
 @endsection
 
 
-
-@section('styles')
-    <link rel="stylesheet" href="{{ asset('css/alertify.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/themes/default.css') }}">
-@endsection
-
-
 @section('scripts')
-    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.4/moment.min.js"></script>--}}
     <script src="{{asset('js/moment.min.js')}}"></script>
-    <script src="{{asset('js/alertify.min.js')}}"></script>
 
     <script>
         $('#deleteButton').on('click', function () {
@@ -105,19 +93,6 @@
                 });
         });
     </script>
-
-
-    <script>
-        function ConfirmDelete() {
-            var x = confirm("Are you sure you want to delete?");
-            if (x)
-                return true;
-            else
-                return false;
-        }
-    </script>
-
-
 
     <script>
         function getWksString(){
