@@ -23,6 +23,7 @@
 
 @endsection
 
+{{--
 @section('scripts')
     <script>
         function ConfirmDelete() {
@@ -36,5 +37,5 @@
 @endsection
 
 @section('styles')
-
 @endsection
+--}}

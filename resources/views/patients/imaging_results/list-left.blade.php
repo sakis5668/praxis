@@ -25,14 +25,14 @@
                         <tbody>
                         @foreach($patient->imagingResults()->orderby('date')->get() as $imagingResult)
                             <tr onclick="window.location='{{ route('imaging_results.show', [$patient, $imagingResult]) }}'">
-                                <td>
+                                <td class="text-center">
                                     {{ $imagingResult->date ? $imagingResult->date->format('d.m.Y') : __('imaging.no.date.label') }}
                                 </td>
-                                <td>
+                                {{--<td>
                                     {!! Form::model($imagingResult, ['method'=>'delete', 'action'=>['ImagingResultsController@destroy', $patient, $imagingResult], 'onsubmit' => 'return ConfirmDelete()']) !!}
                                     {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-delete']) !!}
                                     {!! Form::close() !!}
-                                </td>
+                                </td>--}}
                             </tr>
                         @endforeach
                         </tbody>

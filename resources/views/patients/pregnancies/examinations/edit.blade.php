@@ -25,8 +25,11 @@
                                 {{__('pregnancy.edit.exam.title')}}
                             </div>
                             <div class="col-3">
-                                {!! Form::model($examination, ['method'=>'delete', 'action'=>['PregnancyExaminationsController@destroy', $pregnancy, $examination], 'onsubmit'=>'return ConfirmDelete()']) !!}
+                                {{--{!! Form::model($examination, ['method'=>'delete', 'action'=>['PregnancyExaminationsController@destroy', $pregnancy, $examination], 'onsubmit'=>'return ConfirmDelete()']) !!}
                                 {!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-delete form-control']) !!}
+                                {!! Form::close() !!}--}}
+                                {!! Form::model($examination, ['method'=>'delete', 'action'=>['PregnancyExaminationsController@destroy', $pregnancy, $examination], 'id'=>'deleteForm']) !!}
+                                {!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['id'=>'deleteButton', 'class'=>'btn btn-delete form-control']) !!}
                                 {!! Form::close() !!}
                             </div>
                             <div class="col-3">
@@ -71,11 +74,33 @@
 
 @endsection
 
+@section('styles')
+    {{--<link rel="stylesheet" href="{{ asset('css/alertify.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/themes/default.css') }}">--}}
+@endsection
 
 
 @section('scripts')
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.4/moment.min.js"></script>
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.4/moment.min.js"></script>--}}
+    <script src="{{asset('js/moment.min.js')}}"></script>
+{{--    <script src="{{asset('js/alertify.min.js')}}"></script>--}}
+
+    <script>
+        $('#deleteButton').on('click', function () {
+            alertify.confirm(
+                '{{__('msg_layouts_app.Confirmation')}}',
+                '{{__('msg_layouts_app.confirmMsg')}}',
+                function(e) {
+                    if(e) {
+                        $('#deleteForm').submit();
+                    }
+                },
+                function() {
+                    alertify.error('{{__('msg_layouts_app.Cancel')}}');
+                });
+        });
+    </script>
 
     <script>
         function getWksString(){

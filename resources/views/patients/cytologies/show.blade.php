@@ -27,9 +27,17 @@
 @endsection
 
 
+{{--
+@section('styles')
+    <link rel="stylesheet" href="{{asset('css/alertify.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/themes/default.css')}}">
+@endsection
+
 
 @section('scripts')
+    <script src="{{asset('js/alertify.min.js')}}"></script>
     <script>
+
         function ConfirmDelete() {
             var x = confirm("Are you sure you want to delete?");
             if (x)
@@ -37,5 +45,7 @@
             else
                 return false;
         }
+
     </script>
 @endsection
+--}}

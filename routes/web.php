@@ -74,3 +74,9 @@ Route::get('loadevents', 'CalendarController@index');
 Route::post('deleteEvent', 'CalendarController@delete');
 Route::post('createEvent', array('as' => 'createEvent','uses' => 'CalendarController@create'));
 Route::post('updateEvent', 'CalendarController@update');
+
+
+/**
+ * DeleteController
+ */
+Route::get('delete/cytology', 'DeleteController@deleteCytology')->name('deleteCytology');

@@ -20,7 +20,6 @@
                                 {{--{!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-delete col-md-12', 'id'=>'deleteButton']) !!}--}}
                                 {!! Form::open(['method' => 'delete', 'action' => ['PatientsController@destroy', $patient], 'id'=>'deleteForm']) !!}
                                 {!! Form::button('<i class="fa fa-trash-o fa-lg"></i>', ['class'=>'btn btn-delete col-md-12', 'id'=>'deleteButton']) !!}
-
                                 {!! Form::close() !!}
                             </div>
                             <div class="col-md-3 mt-1">

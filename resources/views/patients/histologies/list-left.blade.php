@@ -25,14 +25,14 @@
                         <tbody>
                         @foreach($patient->histologies()->orderby('date')->get() as $histology)
                             <tr onclick="window.location='{{ route('histologies.show', [$patient, $histology]) }}'">
-                                <td>
+                                <td class="text-center">
                                     {{ $histology->date ? $histology->date->format('d.m.Y') : __('$histology.no.date.label') }}
                                 </td>
-                                <td>
+                                {{--<td>
                                     {!! Form::model($histology, ['method'=>'delete', 'action'=>['HistologiesController@destroy', $patient, $histology], 'onsubmit' => 'return ConfirmDelete()']) !!}
                                     {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-delete']) !!}
                                     {!! Form::close() !!}
-                                </td>
+                                </td>--}}
                             </tr>
                         @endforeach
                         </tbody>

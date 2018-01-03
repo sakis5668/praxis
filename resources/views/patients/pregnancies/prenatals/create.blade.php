@@ -73,8 +73,8 @@
 
 @section('scripts')
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.4/moment.min.js"></script>
-
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.4/moment.min.js"></script>--}}
+    <script src="{{ asset('js/moment.min.js') }}"></script>
     <script>
         function getWksString() {
             var date = moment(document.getElementById('date').value, 'D.M.YYYY');

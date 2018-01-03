@@ -23,7 +23,29 @@
 
 @endsection
 
+@section('styles')
+    {{--<link rel="stylesheet" href="{{ asset('css/alertify.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/themes/default.css') }}">--}}
+@endsection
+
 @section('scripts')
+{{--    <script src="{{asset('js/alertify.min.js')}}"></script>--}}
+    <script>
+        $('#deleteButton').on('click', function () {
+            alertify.confirm(
+                '{{__('msg_layouts_app.Confirmation')}}',
+                '{{__('msg_layouts_app.confirmMsg')}}',
+                function (e) {
+                    if (e) {
+                        $('#deleteForm').submit();
+                    }
+                },
+                function () {
+                    alertify.error('{{__('msg_layouts_app.Cancel')}}');
+                });
+        });
+    </script>
+
     <script>
         function ConfirmDelete() {
             var x = confirm("Are you sure you want to delete?");

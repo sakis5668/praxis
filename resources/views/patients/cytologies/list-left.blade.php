@@ -25,14 +25,14 @@
                         <tbody>
                         @foreach($patient->cytologies()->orderby('date')->get() as $cytology)
                             <tr onclick="window.location='{{ route('cytologies.show', [$patient, $cytology]) }}'">
-                                <td>
+                                <td class="text-center">
                                     {{ $cytology->date ? $cytology->date->format('d.m.Y') : __('cytology.no.date.label') }}
                                 </td>
-                                <td>
-                                    {!! Form::model($cytology, ['method'=>'delete', 'action'=>['CytologiesController@destroy', $patient, $cytology], 'onsubmit' => 'return ConfirmDelete()']) !!}
+                                {{--<td>
+                                    --}}{{--{!! Form::model($cytology, ['method'=>'delete', 'action'=>['CytologiesController@destroy', $patient, $cytology], 'onsubmit' => 'return ConfirmDelete()']) !!}
                                     {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i>', ['type'=>'submit', 'class' => 'form-control btn btn-delete']) !!}
-                                    {!! Form::close() !!}
-                                </td>
+                                    {!! Form::close() !!}--}}{{--
+                                </td>--}}
                             </tr>
                         @endforeach
                         </tbody>

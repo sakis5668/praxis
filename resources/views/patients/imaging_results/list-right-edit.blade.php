@@ -13,6 +13,13 @@
                 {!! Form::close() !!}
             </div>
         </div>
+        <div class="row justify-content-end">
+            <div class="col-md-4">
+                {!! Form::open(['method'=>'delete', 'action'=>['ImagingResultsController@destroy', $patient, $imagingResult], 'id' => 'deleteForm']) !!}
+                {!! Form::button('<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>', ['class'=>'btn btn-delete col-md-12 mt-1', 'id'=> 'deleteButton']) !!}
+                {!! Form::close() !!}
+            </div>
+        </div>
     </div>
 
     <div class="card-body">
