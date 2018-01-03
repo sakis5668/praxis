@@ -79,7 +79,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="font-weight-bold">{{__('surgery.Text')}} :</div>
-                                <div"><p align="justify">{!! nl2br(e($surgery->text)) !!}</p></div>
+                                <div><p align="justify">{!! nl2br(e($surgery->text)) !!}</p></div>
                             </div>
                         </div>
                     </div>

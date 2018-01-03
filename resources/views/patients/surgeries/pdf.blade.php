@@ -103,6 +103,6 @@
     </table>
     <hr class="style2">
 
-    <p align="justify" style="padding: 40px"><regular-text>{{$surgery->text}}</regular-text></p>
+    <p align="justify" style="padding: 40px"><regular-text>{!! nl2br(e($surgery->text)) !!}</regular-text></p>
 
 @endsection
