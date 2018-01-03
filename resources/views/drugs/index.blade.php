@@ -12,11 +12,11 @@
                                 <form method="get" action="{{ route('user.drugs.index') }}" role="search">
                                     <div class="input-group">
                                         <input type="text" name="search" class="form-control">
-                                        <span class="input-group-btn">
+                                        <div class="input-group-append">
                                             <button type="submit" class="btn btn-outline-cool">
                                                 <i class="fa fa-search fa-lg"></i>
                                             </button>
-                                        </span>
+                                        </div>
                                     </div>
                                 </form>
                             </div>

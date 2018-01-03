@@ -18,11 +18,11 @@
                                 <form method="get" action="{{ route('physicians.index') }}" role="search">
                                     <div class="input-group">
                                         <input type="text" name="search" class="form-control">
-                                        <span class="input-group-btn">
-                                                <button type="submit" class="btn btn-outline-cool">
-                                                    <i class="fa fa-search"></i>
-                                                </button>
-                                             </span>
+                                        <div class="input-group-append">
+                                            <button type="submit" class="btn btn-outline-cool">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
