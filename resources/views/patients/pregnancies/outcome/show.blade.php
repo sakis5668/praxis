@@ -33,9 +33,18 @@
 
                     <div class="card-body">
 
+                        <input type="hidden" name="corret" id="corret"
+                               value="{{ $pregnancy->corrected_edd->format('d.m.Y') }}">
+                        <input type="hidden" name="date" id="date"
+                               value="{{ $outcome->date ? $outcome->date->format('d.m.Y') : \Carbon\Carbon::now()->format('d.m.Y')}}">
+
                         <div class="row mt-2">
                             <div class="col-md-3 font-weight-bold">{{__('pregnancy.Date')}} :</div>
                             <div class="col-md-3">{{ $outcome->date ? $outcome->date->format('d.m.Y') : __('pregnancy.nodate') }}</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-3 font-weight-bold">Wks :</div>
+                            <div class="col-md-3" id="wks"></div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-md-3 font-weight-bold">{{__('pregnancy.Delivery')}} :</div>
@@ -61,5 +70,24 @@
             </div>
         </div>
     </div>
+
+@endsection
+
+@section('scripts')
+
+    <script src="{{ asset('js/moment.min.js') }}"></script>
+
+    <script>
+        // Calculate the pregnacy age (wks) at the time of delivery
+        // if date of delivery is not set in the outcomes table,
+        // use current date (see above, via Carbon)
+        $(document).ready(function () {
+            var date = moment($('#date').val(), 'D.M.YYYY');
+            var corret = moment($('#corret').val(), 'D.M.YYYY');
+            var days = 280 + moment.duration(date.diff(corret)).asDays();
+            var wksString = ~~(days / 7) + '+' + ~~(days % 7);
+            document.getElementById('wks').innerHTML = wksString;
+        });
+    </script>
 
 @endsection

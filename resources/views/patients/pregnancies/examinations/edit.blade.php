@@ -41,10 +41,11 @@
 
                     <div class="card-body">
                         {!! Form::model($examination, ['method'=>'patch', 'action'=>['PregnancyExaminationsController@update', $pregnancy, $examination]]) !!}
-                        <input type="hidden" name="corret" id="corret" value="{{ $pregnancy->corrected_edd->format('d.m.Y') }}">
+                        <input type="hidden" name="corret" id="corret"
+                               value="{{ $pregnancy->corrected_edd->format('d.m.Y') }}">
                         <div class="row mt-3">
                             {!! Form::label('date', __('pregnancy.Date') . ' :', ['class'=>'col-md-4 font-weight-bold']) !!}
-                            {!! Form::text('date', $examination->date ? $examination->date->format('d.m.Y') : '', ['class'=>'form-control col-md-4', 'autofocus', 'onblur'=>'return getWksString()']) !!}
+                            {!! Form::text('date', $examination->date ? $examination->date->format('d.m.Y') : '', ['class'=>'form-control col-md-4', 'autofocus']) !!}
                         </div>
                         <div class="row mt-3">
                             {!! Form::label('pregnancy_age', __('pregnancy.Weeks') . ' :', ['class'=>'col-md-4 font-weight-bold']) !!}
@@ -78,23 +79,35 @@
     <script src="{{asset('js/moment.min.js')}}"></script>
 
     <script>
-        $('#deleteButton').on('click', function () {
-            alertify.confirm(
-                '{{__('msg_layouts_app.Confirmation')}}',
-                '{{__('msg_layouts_app.confirmMsg')}}',
-                function(e) {
-                    if(e) {
-                        $('#deleteForm').submit();
-                    }
-                },
-                function() {
-                    alertify.error('{{__('msg_layouts_app.Cancel')}}');
-                });
+        $('#date').on('blur', function () {
+            var date = moment($('#date').val(), 'D.M.YYYY');
+            var corret = moment($('#corret').val(), 'D.M.YYYY');
+            var days = 280 + moment.duration(date.diff(corret)).asDays();
+            var wksString = ~~(days / 7) + '+' + ~~(days % 7);
+            $('#date').val(date.format('DD.MM.YYYY'));
+            $('#pregnancy_age').val(wksString);
         });
     </script>
 
     <script>
-        function getWksString(){
+        $('#deleteButton').on('click', function () {
+            alertify.confirm(
+                '{{__('msg_layouts_app.Confirmation')}}',
+                '{{__('msg_layouts_app.confirmMsg')}}',
+                function (e) {
+                    if (e) {
+                        $('#deleteForm').submit();
+                    }
+                },
+                function () {
+                    alertify.error('{{__('msg_layouts_app.Cancel')}}');
+                }
+            );
+        });
+    </script>
+
+   {{-- <script>
+        function getWksString() {
             var date = moment(document.getElementById('date').value, 'D.M.YYYY');
             var corret = moment(document.getElementById('corret').value, 'D.M.YYYY');
             var days = 280 + moment.duration(date.diff(corret)).asDays();
@@ -104,6 +117,6 @@
             document.getElementById('date').value = date.format('DD.MM.YYYY');
             document.getElementById('pregnancy_age').value = wksString;
         }
-    </script>
+    </script>--}}
 
 @endsection

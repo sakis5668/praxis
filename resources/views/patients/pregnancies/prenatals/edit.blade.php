@@ -43,7 +43,7 @@
                         <input type="hidden" name="corret" id="corret" value="{{ $pregnancy->corrected_edd->format('d.m.Y') }}">
                         <div class="row mt-3">
                             {!! Form::label('date', __('pregnancy.Date') . ' :', ['class'=>'col-md-4 font-weight-bold']) !!}
-                            {!! Form::text('date', $prenatal->date ? $prenatal->date->format('d.m.Y'): __('pregnancy.nodate'), ['class'=>'form-control col-md-4', 'autofocus', 'onblur'=>'return getWksString()']) !!}
+                            {!! Form::text('date', $prenatal->date ? $prenatal->date->format('d.m.Y'): __('pregnancy.nodate'), ['class'=>'form-control col-md-4', 'autofocus']) !!}
                         </div>
                         <div class="row mt-3">
                             {!! Form::label('pregnancy_age', __('pregnancy.Weeks') . ' :', ['class'=>'col-md-4 font-weight-bold']) !!}
@@ -79,6 +79,17 @@
     <script src="{{asset('js/moment.min.js')}}"></script>
 
     <script>
+        $('#date').on('blur', function () {
+            var date = moment($('#date').val(), 'D.M.YYYY');
+            var corret = moment($('#corret').val(), 'D.M.YYYY');
+            var days = 280 + moment.duration(date.diff(corret)).asDays();
+            var wksString = ~~(days / 7) + '+' + ~~(days % 7);
+            $('#date').val(date.format('DD.MM.YYYY'));
+            $('#pregnancy_age').val(wksString);
+        });
+    </script>
+
+    <script>
         $('#deleteButton').on('click', function () {
             alertify.confirm(
                 '{{__('msg_layouts_app.Confirmation')}}',
@@ -94,7 +105,7 @@
         });
     </script>
 
-    <script>
+   {{-- <script>
         function getWksString(){
             var date = moment(document.getElementById('date').value, 'D.M.YYYY');
             var corret = moment(document.getElementById('corret').value, 'D.M.YYYY');
@@ -106,5 +117,6 @@
             document.getElementById('pregnancy_age').value = wksString;
         }
     </script>
+--}}
 
 @endsection

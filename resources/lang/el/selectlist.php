@@ -11,6 +11,7 @@ return [
     'pregnancy.termination.type.active'    => 'ενεργός',
     'pregnancy.termination.type.delivered' => 'τοκετός',
     'pregnancy.termination.type.aborted'   => 'αποβολή',
+    'pregnancy.termination.type.other'     => 'άλλο',
 
     'pregnancy.delivery.mode.spontaneous' => 'Φυσιολογικός Τοκετός',
     'pregnancy.delivery.mode.forceps'     => 'Εμβρυουλκία',

@@ -9,6 +9,7 @@ final class PregnancyTerminationType extends Enum
     const active = 1;
     const delivered = 2;
     const aborted = 3;
+    const other = 4;
 
     /**
      * Get the description for an enum value
@@ -27,6 +28,9 @@ final class PregnancyTerminationType extends Enum
                 break;
             case self::aborted:
                 return __('selectlist.pregnancy.termination.type.aborted');
+                break;
+            case self::other:
+                return __('selectlist.pregnancy.termination.type.other');
                 break;
             default:
                 return self::getKey($value);

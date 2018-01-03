@@ -11,6 +11,7 @@ return [
     'pregnancy.termination.type.active'    => 'aktiv',
     'pregnancy.termination.type.delivered' => 'Geburt',
     'pregnancy.termination.type.aborted'   => 'Fehlgeburt',
+    'pregnancy.termination.type.other'     => 'Sonstiges',
 
     'pregnancy.delivery.mode.spontaneous' => 'Spontangeburt',
     'pregnancy.delivery.mode.forceps'     => 'Forceps',
