@@ -43,7 +43,7 @@
                             <div class="col-md-3">{{ $outcome->date ? $outcome->date->format('d.m.Y') : __('pregnancy.nodate') }}</div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-3 font-weight-bold">Wks :</div>
+                            <div class="col-md-3 font-weight-bold">{{__('pregnancy.Weeks')}} :</div>
                             <div class="col-md-3" id="wks"></div>
                         </div>
                         <div class="row mt-2">
