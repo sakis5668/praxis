@@ -65,7 +65,9 @@
                                 </thead>
                                 <tbody>
                                 @foreach($patients as $patient)
-                                    <tr onclick="window.location='{{route('patients.show', $patient)}}'">
+                                    <tr onclick="window.location='{{route('patients.show', $patient)}}'"
+                                        data-toggle="tooltip"
+                                        title="{{$patient->information}}">
                                         <td>
                                             {{ $patient->last_name }}
                                         </td>
@@ -102,4 +104,17 @@
     </div>
     <!-- End Pagination -->
 
+@endsection
+
+
+@section('scripts')
+    <script>
+
+    </script>
+@endsection
+
+@section('styles')
+    <style>
+
+    </style>
 @endsection
