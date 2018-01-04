@@ -1,14 +1,20 @@
 {
-    "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/js/bstest-util.js": "/js/bstest-util.js",
+    "/js/jquery.min.js": "/js/jquery.min.js",
+    "/js/popper.min.js": "/js/popper.min.js",
+    "/js/bootstrap.min.js": "/js/bootstrap.min.js",
+    "/js/jquery-ui.js": "/js/jquery-ui.js",
+    "/js/alertify.min.js": "/js/alertify.min.js",
     "/js/moment.min.js": "/js/moment.min.js",
     "/js/fullcalendar.min.js": "/js/fullcalendar.min.js",
-    "/js/locale-all.js": "/js/locale-all.js",
-    "/js/alertify.min.js": "/js/alertify.min.js",
-    "/css/fullcalendar.min.css": "/css/fullcalendar.min.css",
-    "/css/fullcalendar.print.min.css": "/css/fullcalendar.print.min.css",
+    "/js/fullcalendar/locale-all.js": "/js/fullcalendar/locale-all.js",
+    "/css/bootstrap.min.css": "/css/bootstrap.min.css",
+    "/css/jquery-ui.css": "/css/jquery-ui.css",
     "/css/alertify.min.css": "/css/alertify.min.css",
-    "/css/themes/default.css": "/css/themes/default.css",
-    "/css/themes/bootstrap.css": "/css/themes/bootstrap.css",
-    "/css/themes/semantic.css": "/css/themes/semantic.css"
+    "/css/alertify-themes/default.min.css": "/css/alertify-themes/default.min.css",
+    "/css/alertify-themes/bootstrap.min.css": "/css/alertify-themes/bootstrap.min.css",
+    "/css/alertify-themes/semantic.min.css": "/css/alertify-themes/semantic.min.css",
+    "/css/fullcalendar.min.css": "/css/fullcalendar.min.css",
+    "/css/fullcalendar.print.min.css": "/css/fullcalendar.print.min.css"
 }

@@ -11,9 +11,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/alertify.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/themes/default.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/alertify-themes/default.min.css') }}">
     @yield('styles')
 </head>
 
@@ -26,63 +27,11 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
-
-<script src="{{asset('js/alertify.min.js')}}"></script>
-<script>
-    alertify.defaults = {
-        // dialogs defaults
-        autoReset:true,
-        basic:false,
-        closable:false,
-        closableByDimmer:true,
-        frameless:false,
-        maintainFocus:true, // <== global default not per instance, applies to all dialogs
-        maximizable:true,
-        modal:false,
-        movable:true,
-        moveBounded:true,
-        overflow:true,
-        padding: true,
-        pinnable:false,
-        pinned:true,
-        preventBodyShift:false, // <== global default not per instance, applies to all dialogs
-        resizable:true,
-        startMaximized:false,
-        transition:'zoom',
-
-        // notifier defaults
-        notifier:{
-            // auto-dismiss wait time (in seconds)
-            delay:3,
-            // default position
-            position:'bottom-right',
-            // adds a close button to notifier messages
-            closeButton: false
-        },
-
-        // language resources
-        glossary:{
-            // dialogs default title
-            title:'Praxis',
-            // ok button text
-            ok: '{{ __('msg_layouts_app.Ok') }}',
-            // cancel button text
-            cancel: '{{__('msg_layouts_app.Cancel')}}'
-        },
-
-        // theme settings
-        theme:{
-            // class name attached to prompt dialog input textbox.
-            input:'ajs-input',
-            // class name attached to ok button
-            ok:'ajs-ok',
-            // class name attached to cancel button
-            cancel:'ajs-cancel'
-        }
-    };
-</script>
-
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/popper.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/alertify.min.js')}}"></script>
+<script src="{{ asset('js/bstest-util.js') }}"></script>
 
 @yield('scripts')
 

@@ -74,17 +74,15 @@
 
 
 @section('styles')
-    <link rel="stylesheet" href="css/fullcalendar.min.css"/>
-    <link rel="stylesheet" href="css/alertify.min.css">
-    <link rel="stylesheet" href="css/themes/default.css">
+    <link rel="stylesheet" href="{{ asset('css/fullcalendar.min.css') }}"/>
 @endsection
 
 
 @section('scripts')
-    <script src="js/moment.min.js"></script>
-    <script src="js/fullcalendar.min.js"></script>
-    <script src="js/locale-all.js"></script>
-    <script src="js/alertify.min.js"></script>
+    <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="{{ asset('js/fullcalendar.min.js') }}"></script>
+    <script src="{{ asset('js/fullcalendar/locale-all.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.js') }}"></script>
 
     <script>
         $(function () {
@@ -312,12 +310,6 @@
                                 alertify.error('{{__('calendar.Cancel')}}')
                             }
                         ).set({
-                            'modal': false,
-                            transition: 'fade',
-                            'movable':true,
-                            'moveBounded': true,
-                            'pinnable': false,
-                            'closable': false,
                             'labels': {ok:'{{__('calendar.Ok')}}', cancel:'{{__('calendar.Cancel')}}'}
                         });
                     }

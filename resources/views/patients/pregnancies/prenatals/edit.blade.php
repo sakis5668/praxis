@@ -101,7 +101,9 @@
                 },
                 function() {
                     alertify.error('{{__('msg_layouts_app.Cancel')}}');
-                });
+                }).set({
+                'labels': {ok: '{{__('msg_layouts_app.Ok')}}', cancel: '{{__('msg_layouts_app.Cancel')}}'}
+            });
         });
     </script>
 
