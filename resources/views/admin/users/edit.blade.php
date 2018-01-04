@@ -88,14 +88,16 @@
             alertify.confirm(
                 '{{__('msg_layouts_app.Confirmation')}}',
                 '{{__('msg_layouts_app.confirmMsg')}}',
-                function(e) {
-                    if(e) {
+                function (e) {
+                    if (e) {
                         $('#deleteForm').submit();
                     }
                 },
-                function() {
+                function () {
                     alertify.error('{{__('msg_layouts_app.Cancel')}}');
-                });
+                }).set({
+                'labels': {ok: '{{__('msg_layouts_app.Ok')}}', cancel: '{{__('msg_layouts_app.Cancel')}}'}
+            });
         });
     </script>
 @endsection

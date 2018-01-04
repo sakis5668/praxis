@@ -51,7 +51,8 @@
                             <div class="row mt-2">
                                 <div class="col-md-3 ml-auto">
                                     {!! Form::button('<i class="fa fa-check fa-lg"></i>', ['type'=>'submit', 'class'=>'btn btn-primary form-control']) !!}
-                                </div></div>
+                                </div>
+                            </div>
                             {!! Form::close() !!}
                         </div>
                     </div>
@@ -69,14 +70,16 @@
             alertify.confirm(
                 '{{__('msg_layouts_app.Confirmation')}}',
                 '{{__('msg_layouts_app.confirmMsg')}}',
-                function(e) {
-                    if(e) {
+                function (e) {
+                    if (e) {
                         $('#deleteForm').submit();
                     }
                 },
-                function() {
+                function () {
                     alertify.error('{{__('msg_layouts_app.Cancel')}}');
-                });
+                }).set({
+                'labels': {ok: '{{__('msg_layouts_app.Ok')}}', cancel: '{{__('msg_layouts_app.Cancel')}}'}
+            });
         });
     </script>
 @endsection
