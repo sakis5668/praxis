@@ -44,13 +44,13 @@
             <div class="mt-3 col-md-12 font-weight-bold">{!! Form::label('findings', __('examinations.findings.label').' :') !!}</div>
         </div>
         <div class="row">
-            <div class="col-md-12">{!! Form::textarea('findings', null, ['class'=> 'form-control', 'rows'=>'6']) !!}</div>
+            <div class="col-md-12">{!! Form::textarea('findings', null, ['class'=> 'form-control', 'rows'=>'6', 'onkeydown'=>'processKey(this,event)']) !!}</div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-12 font-weight-bold">{!! Form::label('instructions', __('examinations.instructions.label') . ' :') !!}</div>
         </div>
         <div class="row">
-            <div class="col-md-12">{!! Form::textarea('instructions', null, ['class'=>'form-control', 'rows'=>'4']) !!}</div>
+            <div class="col-md-12">{!! Form::textarea('instructions', null, ['class'=>'form-control', 'rows'=>'4', 'onkeydown'=>'processKey(this,event)']) !!}</div>
         </div>
         <hr>
         <div class="row">

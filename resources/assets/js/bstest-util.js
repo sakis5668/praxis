@@ -51,3 +51,30 @@ alertify.defaults = {
             'ajs-cancel'
     }
 };
+
+
+function processKey(control, event) {
+    var keyCode = ('which' in event) ? event.which : event.keyCode;
+    if (event.ctrlKey) {
+        switch (event.key) {
+            case '1':
+                $(control).val($(control).val() + 'Κύκλος σταθερός. ');
+                break;
+            case '2':
+                $(control).val($(control).val() + 'Παπ και καλλιέργειες ελήφθησαν. ');
+                break;
+            case'3':
+                $(control).val($(control).val() + 'Κολπικός υπέρηχος κ.φ. ');
+                break;
+            case '4':
+                $(control).val($(control).val() + 'Μαστοί άμφω κ.φ. ');
+                break;
+            case 'q':
+                $(control).val($(control).val() + 'Επανέλεγχος σε 1 χρόνο. ');
+                break;
+            case 'w':
+                $(control).val($(control).val() + 'Μαστογραφία και υπέρηχος μαστών. ');
+                break;
+        }
+    }
+}
