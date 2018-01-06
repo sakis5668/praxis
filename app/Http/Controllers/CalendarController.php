@@ -96,11 +96,14 @@ class CalendarController extends Controller
                 'title' => $pregnancy->patient->last_name,
                 'start' => $pregnancy->corrected_edd->toDateTimeString(),
                 'end' => null,
-                'allDay' => true
+                'allDay' => true,
+                'url' => 'pregnancies/' . $pregnancy->id . '/history/' . $pregnancy->pregnancyHistory->id,
             );
             array_push($data, $tmp);
         }
         json_encode($data);
         return $data;
     }
+
+
 }
