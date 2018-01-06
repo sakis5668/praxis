@@ -74,7 +74,10 @@
 
 
 @section('styles')
+
     <link rel="stylesheet" href="{{ asset('css/fullcalendar.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/fullcalendar.print.min.css') }}" media="print">
+
 @endsection
 
 
@@ -122,24 +125,18 @@
                 navLinks: true, // can click day/week names to navigate views
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
-
                 eventTextColor: '#ffffff',
 
-                //weekends: false,
-
-                slotDuration: '00:15:00',
-
-                defaultTimedEventDuration: '00:15:00',
-
-                minTime: '15:00:00',
-                maxTime: '21:30:00',
-
                 events: {url: "loadevents"},
-
                 // the following 2 are needed for to drag
                 // a new event only into businessHours
                 eventConstraint: 'businessHours',
                 selectConstraint: 'businessHours',
+
+                slotDuration: '00:15:00',
+                defaultTimedEventDuration: '00:15:00',
+                minTime: '15:00:00',
+                maxTime: '21:30:00',
 
                 droppable: true, // this allows things to be dropped onto the calendar !!!
 

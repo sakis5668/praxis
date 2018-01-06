@@ -38,6 +38,7 @@
 @section('styles')
 
     <link rel="stylesheet" href="{{ asset('css/fullcalendar.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/fullcalendar.print.min.css') }}" media="print">
 
 @endsection
 
@@ -54,7 +55,7 @@
                 header: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'agendaDay agendaWeek,month'
+                    right: 'listMonth,month'
                 },
                 locale: '{{auth()->user()->language->language}}',
                 defaultDate: '{{\Carbon\Carbon::now()}}',
