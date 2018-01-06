@@ -1,11 +1,5 @@
 <?php
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-
-
 Auth::routes();
 
 Route::get('/admin', 'AdminController@index')->name('admin.index');
@@ -67,16 +61,13 @@ Route::get('user/drugs', 'UserDrugsController@index')->name('user.drugs.index');
 Route::get('user/drugs/{drug}', 'UserDrugsController@show')->name('user.drugs.show');
 
 /**
- * Calendar
+ * Appointment - Calendar
  */
 Route::get('calendar', 'HomeController@calendar')->name('calendar');
+Route::get('deliveries', 'ActivePregnanciesController@activePregnanciesCalendar')->name('deliveries');
+
 Route::get('loadevents', 'CalendarController@index');
 Route::post('deleteEvent', 'CalendarController@delete');
 Route::post('createEvent', array('as' => 'createEvent','uses' => 'CalendarController@create'));
 Route::post('updateEvent', 'CalendarController@update');
-
-
-/**
- * DeleteController
- */
-Route::get('delete/cytology', 'DeleteController@deleteCytology')->name('deleteCytology');
+Route::get('loaddeliveries', 'CalendarController@indexDeliveries');

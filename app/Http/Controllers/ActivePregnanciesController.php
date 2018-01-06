@@ -26,4 +26,9 @@ class ActivePregnanciesController extends Controller
         $pregnancies = Pregnancy::where('finished', false)->orderBy('corrected_edd', 'asc')->paginate(12);
         return view('patients.active_pregnancies.index', compact('pregnancies'));
     }
+
+    public function activePregnanciesCalendar()
+    {
+        return view('patients.active_pregnancies.calendar');
+    }
 }

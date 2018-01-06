@@ -136,8 +136,6 @@
 
                 events: {url: "loadevents"},
 
-                editable: true,
-
                 // the following 2 are needed for to drag
                 // a new event only into businessHours
                 eventConstraint: 'businessHours',

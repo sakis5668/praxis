@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\Pregnancy;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Response;
 
@@ -82,5 +84,23 @@ class CalendarController extends Controller
         $event->allday = false;
 
         $event->save();
+    }
+
+    public function indexDeliveries()
+    {
+        $pregnancies = Pregnancy::where('finished', false)->get();
+        $data = array();
+        foreach ($pregnancies as $pregnancy) {
+            $tmp = array(
+                'id' => $pregnancy->id,
+                'title' => $pregnancy->patient->last_name,
+                'start' => $pregnancy->corrected_edd->toDateTimeString(),
+                'end' => null,
+                'allDay' => true
+            );
+            array_push($data, $tmp);
+        }
+        json_encode($data);
+        return $data;
     }
 }

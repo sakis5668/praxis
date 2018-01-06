@@ -23,6 +23,7 @@
                                class="dropdown-item">{{__('msg_layouts_app.list.patients')}}</a>
                             <div class="dropdown-divider"></div>
                             <a href="{{ route('pregnancies') }}" class="dropdown-item">{{__('msg_layouts_app.Pregnant')}}</a>
+                            <a href="{{ route('deliveries') }}" class="dropdown-item">{{__('msg_layouts_app.Delivery Calendar')}}</a>
                         </div>
                     </li>
 

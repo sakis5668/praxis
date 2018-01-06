@@ -23,6 +23,7 @@ return [
     'utils.pregnancy.calculator' => 'Υπολογιστής κύησης',
     'utils.calculate.bmi'        => 'Δείκτης μάζας σώματος',
     'Pregnant'                   => 'Κυήσεις',
+    'Delivery Calendar'          => 'Ημερολόγιο τοκετών',
     'Drugs'                      => 'Σκευάσματα',
     'Companies'                  => 'Εταιρείες',
     'Products'                   => 'Προϊόντα',

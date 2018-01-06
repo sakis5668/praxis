@@ -24,6 +24,7 @@ return [
     'utils.pregnancy.calculator' => 'SSW berechnen',
     'utils.calculate.bmi'        => 'BMI berechnen',
     'Pregnant'                   => 'Schwangere',
+    'Delivery Calendar'          => 'Entbindungskalender',
     'Drugs'                      => 'Medikation',
     'Companies'                  => 'Unternehmen',
     'Products'                   => 'Produkte',
