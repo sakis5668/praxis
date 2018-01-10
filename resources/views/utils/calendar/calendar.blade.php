@@ -31,8 +31,8 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <small>
-                                    <kbd>click</kbd> : {{__('calendar.editEvent')}}, <kbd>Shift-Click</kbd>
-                                    : {{__('calendar.deleteEvent')}}
+                                    <kbd>Shift-Click</kbd> : {{__('calendar.deleteEvent')}}, <kbd>Shift-Alt-Click</kbd>
+                                    : {{__('calendar.editEvent')}}
                                 </small>
                             </div>
                         </div>
@@ -69,6 +69,8 @@
         <!-- End Row -->
 
     </div>
+
+    @include('footer')
 
 @endsection
 
@@ -142,7 +144,7 @@
 
                 businessHours: {
                     dow: [1, 2, 4], // Monday = 1
-                    start: '16:00',
+                    start: '15:30',
                     end: '20:00',
                 },
 
@@ -166,14 +168,19 @@
                     }
 
                     var title = copiedEventObject.title;
+                    //var title = patientLastName + ', ' + patientFirstName;
+                    //var url = patientURL;
+
                     var start = copiedEventObject.start.format("YYYY-MM-DD HH:mm");
                     var color = copiedEventObject.backgroundColor;
                     var constraint = copiedEventObject.constraint;
 
+
                     crsfToken = document.getElementsByName("_token")[0].value;
                     $.ajax({
                         url: 'createEvent',
-                        data: 'title=' + title + '&start=' + start + '&allday=' + allDay + '&color=' + color + '&constraint=' + constraint,
+                        data: 'title=' + title + '&start=' + start + '&allDay='
+                        + allDay + '&color=' + color + '&constraint=' + constraint ,
                         type: "POST",
                         headers: {
                             "X-CSRF-TOKEN": crsfToken
@@ -251,7 +258,8 @@
                 eventClick: function (event, jsEvent, view) {
                     crsfToken = document.getElementsByName("_token")[0].value;
 
-                    if (jsEvent.originalEvent.shiftKey == true) {
+                    if (jsEvent.originalEvent.shiftKey == true && jsEvent.originalEvent.altKey==false)
+                    {
                         $.ajax({
                             url: 'deleteEvent',
                             data: 'id=' + event.id,
@@ -265,9 +273,10 @@
                                 console.log("Event deleted - eventclick");
                             }
                         });
-
-                    } else {
-
+                        return false;
+                    }
+                    else if (jsEvent.originalEvent.shiftKey == true && jsEvent.originalEvent.altKey==true)
+                    {
                         alertify.prompt(
                             '{{ __('calendar.Change Title') }}',
                             '{{ __('calendar.New Title') }}',
@@ -307,10 +316,13 @@
                         ).set({
                             'labels': {ok:'{{__('calendar.Ok')}}', cancel:'{{__('calendar.Cancel')}}'}
                         });
+                        return false;
                     }
                 },
 
             });
         });
     </script>
+
+
 @endsection

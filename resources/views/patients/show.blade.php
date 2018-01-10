@@ -28,10 +28,21 @@
                         <div class="row">
 
                             <!-- Start Column -->
-                            <div class="col-md-9">
+                            <div class="col-md-6">
                                 {{ $patient->last_name . ', ' . $patient->first_name}}
                             </div>
                             <!-- End Column -->
+
+                            <div class="col-md-3">
+                                <form method="get" action="{{ route('calendar') }}"
+                                      class="form-inline">
+
+
+                                    <button type="submit" class="btn btn-outline-cool col-md-12"><i
+                                                class="fa fa-calendar-o fa-lg"></i></button>
+                                </form>
+                            </div>
+
 
                             <!-- Start Column -->
                             <div class="col-md-3">

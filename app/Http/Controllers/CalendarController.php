@@ -54,13 +54,15 @@ class CalendarController extends Controller
         $start = $_POST['start'];
         $color = $_POST['color'];
         $constraint = $_POST['constraint'];
+        //$url = $_POST['url'];
 
         $event=new Event();
         $event->start=$start;
-        $event->allday=false;
+        $event->allDay=false;
         $event->title=$title;
         $event->color = $color;
         $event->constraint = $constraint;
+        //$event->url = $url;
 
         $event->save();
     }

@@ -21,6 +21,7 @@ class CreateEventsTable extends Migration
             $table->boolean('allday')->nullable();
             $table->string('color')->nullable();
             $table->string('constraint')->nullable();
+            $table->string('url')->nullable();
             $table->timestamps();
         });
     }
