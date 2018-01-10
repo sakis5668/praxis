@@ -24,11 +24,16 @@
                     <table class="table table-hover">
                         <tbody>
                         @foreach($patient->histologies()->orderby('date')->get() as $histology)
-                            <tr onclick="window.location='{{ route('histologies.show', [$patient, $histology]) }}'">
+                           {{-- <tr onclick="window.location='{{ route('histologies.show', [$patient, $histology]) }}'">
                                 <td class="text-center">
                                     {{ $histology->date ? $histology->date->format('d.m.Y') : __('$histology.no.date.label') }}
                                 </td>
-                            </tr>
+                            </tr>--}}
+                           <tr>
+                               <form action="{{ route('histologies.show', [$patient, $histology]) }}">
+                                   <input class="btn btn-outline-cool col-md-12 mt-1" type="submit" value="{{ $histology->date ? $histology->date->format('d.m.Y') : __('$histology.no.date.label') }}">
+                               </form>
+                           </tr>
                         @endforeach
                         </tbody>
                     </table>

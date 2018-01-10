@@ -24,15 +24,20 @@
                     <table class="table table-hover">
                         <tbody>
                         @foreach($patient->laboratoryExaminations()->orderby('date')->get() as $laboratoryExamination)
-                            <tr onclick="window.location='{{ route('laboratory_examinations.show', [$patient, $laboratoryExamination]) }}'">
+                            {{--<tr onclick="window.location='{{ route('laboratory_examinations.show', [$patient, $laboratoryExamination]) }}'">
                                 <td class="text-center">
                                     {{ $laboratoryExamination->date ? $laboratoryExamination->date->format('d.m.Y') : __('laboratory.no.date.label') }}
                                 </td>
-                                {{--<td>
+                                --}}{{--<td>
                                     {!! Form::model($laboratoryExamination, ['method'=>'delete', 'action'=>['LaboratoryExaminationsController@destroy', $patient, $laboratoryExamination], 'onsubmit' => 'return ConfirmDelete()']) !!}
                                     {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i>', ['type'=>'submit' ,'class' => 'form-control btn btn-delete']) !!}
                                     {!! Form::close() !!}
-                                </td>--}}
+                                </td>--}}{{--
+                            </tr>--}}
+                            <tr>
+                                <form action="{{ route('laboratory_examinations.show', [$patient, $laboratoryExamination]) }}">
+                                    <input class="btn btn-outline-cool col-md-12 mt-1" type="submit" value="{{ $laboratoryExamination->date ? $laboratoryExamination->date->format('d.m.Y') : __('laboratory.no.date.label') }}">
+                                </form>
                             </tr>
                         @endforeach
                         </tbody>
