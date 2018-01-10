@@ -12,7 +12,7 @@ class ExaminationsPDFController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('is.user');
     }
 
     public function pdfOverview(Patient $patient)
