@@ -19,13 +19,20 @@
         <table class="table table-hover">
             <tbody>
             @foreach($pregnancy->prenatalsOrderByDateDesc as $prenatal)
-                <tr onclick="window.location='{{ route('pregnancy.prenatals.show', [$pregnancy, $prenatal]) }}'">
+                {{--<tr onclick="window.location='{{ route('pregnancy.prenatals.show', [$pregnancy, $prenatal]) }}'">
                     <td>
                        {{ $prenatal->date ? $prenatal->date->format('d.m.Y') : __('pregnancy.nodate') }}
                     </td>
                     <td>
                         {{$prenatal->type ? \App\Enums\PregnancyPrenatalType::getDescription($prenatal->type) : '-'}}
                     </td>
+                </tr>--}}
+                <tr>
+                    <form action="{{ route('pregnancy.prenatals.show', [$pregnancy, $prenatal]) }}">
+                        <input class="btn btn-outline-cool col-md-12 mt-1"
+                               type="submit"
+                               value="{{ $prenatal->date ? $prenatal->date->format('d.m.Y') : __('pregnancy.nodate') }} ({{$prenatal->type ? \App\Enums\PregnancyPrenatalType::getDescription($prenatal->type) : '-'}})">
+                    </form>
                 </tr>
             @endforeach
             </tbody>

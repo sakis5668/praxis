@@ -20,9 +20,16 @@
         <table class="table table-hover">
             <tbody>
             @foreach($pregnancy->examinationsOrderByDateDesc as $examination)
-                <tr onclick="window.location='{{ route('pregnancy.examinations.show', [$pregnancy, $examination]) }}'">
+                {{--<tr onclick="window.location='{{ route('pregnancy.examinations.show', [$pregnancy, $examination]) }}'">
                     <td>{{ $examination->date ? $examination->date->format('d.m.Y') : __('pregnancy.nodate') }}</td>
                     <td>{{ $examination->pregnancy_age }}</td>
+                </tr>--}}
+                <tr>
+                    <form action="{{ route('pregnancy.examinations.show', [$pregnancy, $examination]) }}">
+                        <input class="btn btn-outline-cool col-md-12 mt-1"
+                               type="submit"
+                               value="{{ $examination->date ? $examination->date->format('d.m.Y') : __('pregnancy.nodate') }} ({{ $examination->pregnancy_age }})">
+                    </form>
                 </tr>
             @endforeach
             </tbody>
