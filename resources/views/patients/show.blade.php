@@ -77,6 +77,11 @@
                             @endif
                         </div>
 
+                        <div class="row mt-2">
+                            <div class="col-md-4 font-weight-bold">{{__('patients.amka')}} :</div>
+                            <div class="col-md-8">{{ $patient->amka }}</div>
+                        </div>
+
                         <hr>
 
                         <div class="row mt-2">

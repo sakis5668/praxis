@@ -30,4 +30,5 @@ return [
     'Surgery'         => 'Surgery',
     'Pregnancies'     => 'Pregnancies',
     'Physician'       => 'Physician',
+    'amka'            => 'AMKA',
 ];

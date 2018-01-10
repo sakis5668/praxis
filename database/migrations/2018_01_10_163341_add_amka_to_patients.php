@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddUrlColumnToEvents extends Migration
+class AddAmkaToPatients extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddUrlColumnToEvents extends Migration
      */
     public function up()
     {
-        Schema::table('events', function($table) {
-            $table->string('url')->after('constraint')->nullable();
+        Schema::table('patients', function($table) {
+            $table->string('amka')->nullable()->after('middle_name');
         });
     }
 
@@ -25,8 +25,8 @@ class AddUrlColumnToEvents extends Migration
      */
     public function down()
     {
-        Schema::table('events', function($table) {
-            $table->dropColumn('url');
+        Schema::table('patients', function($table) {
+            $table->dropColumn('amka');
         });
     }
 }

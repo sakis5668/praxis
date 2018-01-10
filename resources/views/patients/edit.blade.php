@@ -43,6 +43,10 @@
                             {!! Form::label('middle_name', __('patients.Middle Name') . ' :', ['class'=>'col-md-4 font-weight-bold']) !!}
                             {!! Form::text('middle_name', null, ['class' => 'form-control col-md-8']) !!}
                         </div>
+                        <div class="row mt-2 mx-1">
+                            {!! Form::label('amka', __('patients.amka') . ' :', ['class'=>'col-md-4 font-weight-bold']) !!}
+                            {!! Form::text('amka', null, ['class' => 'form-control col-md-8']) !!}
+                        </div>
                         <hr>
                         <div class="row mt-2 mx-1">
                             {!! Form::label('birth_date', __('patients.Birth Date') . ' :', ['class'=>'col-md-4 font-weight-bold']) !!}
