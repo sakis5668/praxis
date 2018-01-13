@@ -31,7 +31,7 @@
     <!-- End Card Header -->
 
     <!-- Card Body -->
-    <div class="card-body">
+    <div class="card-body scroller">
 
         <!-- Start Row -->
         <div class="row">

@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="card-body">
+    <div class="card-body scroller">
 
         <table class="table table-hover">
             <tbody>

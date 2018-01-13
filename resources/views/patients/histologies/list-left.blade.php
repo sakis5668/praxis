@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <div class="card-body">
+    <div class="card-body scroller">
         <div class="row">
             <div class="col-md-12">
                 <div class="table-responsive">

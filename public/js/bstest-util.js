@@ -54,7 +54,7 @@ alertify.defaults = {
 
 
 function processKey(control, event) {
-    var keyCode = ('which' in event) ? event.which : event.keyCode;
+    //var keyCode = ('which' in event) ? event.which : event.keyCode;
     if (event.ctrlKey) {
         switch (event.key) {
             case '1':

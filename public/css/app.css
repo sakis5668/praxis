@@ -13551,3 +13551,8 @@ a.text-delete:hover {
 
 */
 
+.scroller {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
